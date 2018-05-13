@@ -2,22 +2,22 @@
 	<head>
 		<meta charset="utf-8">
 		<meta title="Who Wants to be a Millioanire? - Controller">
-		<title>Who Wants to be a Millioanire? - Controller</title>
+		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
 		<script>
 			function onload(){
-				addEvent(window, "storage", function (event) {
+				document.getElementById("body").addEventListener("storage", function (event) {
 					if ((event.key == "verifycode")&&(event.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
 						alert("Screen synced successfully");
 					};
 				});
-				
+
 				localStorage.setItem("verifycode", parseInt(prompt("Open the contestant page and enter the code displayed there below:")));
 				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
 			};
 		</script>
 	</head>
-	<body onload="onload()">
+	<body onload="onload()" id="body">
 	
 	</body>
 </html>
