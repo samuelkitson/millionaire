@@ -2,11 +2,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta title="Who Wants to be a Millioanire? - Contestant">
-		<title>(Beta) Who Wants to be a Millioanire? - Contestant</title>
+		<title>Who Wants to be a Millioanire? - Contestant</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Contestant's screen.">
 		<script>
 			function onload(){
-				localStorage.setItem("verifycode", "45582A");
+				var nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+				var code = nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)];
+				alert("Enter this code on the controller screen: "+code);
+				localStorage.setItem("verifycode", code+"A");
 			};
 		</script>
 	</head>
