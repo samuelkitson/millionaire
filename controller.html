@@ -2,15 +2,24 @@
 	<head>
 		<meta charset="utf-8">
 		<meta title="Who Wants to be a Millioanire? - Controller">
-		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
+		<title>Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
 		<script>
 			function onload(){
-				document.getElementById("body").addEventListener("storage", function (event) {
+				window.addEventListener('storage', storage_handler, false);
+				function storage_handler(evt){
+					alert('The modified key was '+evt.key);
+					alert('The original value was '+evt.oldValue);
+					alert('The new value is '+evt.newValue);
+					alert('The URL of the page that made the change was '+evt.url);
+					alert('The window where the change was made was '+evt.source);
+				};
+				
+				/*document.getElementById("body").addEventListener("storage", function (event) {
 					if ((event.key == "verifycode")&&(event.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
 						alert("Screen synced successfully");
 					};
-				});
+				});*/
 
 				localStorage.setItem("verifycode", parseInt(prompt("Open the contestant page and enter the code displayed there below:")));
 				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
