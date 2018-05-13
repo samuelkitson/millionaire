@@ -2,17 +2,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta title="Who Wants to be a Millioanire? - Controller">
-		<title>Who Wants to be a Millioanire? - Controller</title>
+		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
 		<script>
 			function onload(){
-				window.addEventListener('storage', storage_handler, false);
+				window.addEventListener("storage", storage_handler, false);
 				function storage_handler(evt){
-					alert('The modified key was '+evt.key);
-					alert('The original value was '+evt.oldValue);
-					alert('The new value is '+evt.newValue);
-					alert('The URL of the page that made the change was '+evt.url);
-					alert('The window where the change was made was '+evt.source);
+					alert("The new value for "+evt.key+" is "+evt.newValue);
 				};
 				
 				/*document.getElementById("body").addEventListener("storage", function (event) {
