@@ -4,6 +4,23 @@
 		<meta title="Who Wants to be a Millioanire? - Contestant">
 		<title>(Beta) Who Wants to be a Millioanire? - Contestant</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Contestant's screen.">
+		<style>
+			#body{
+				background-color: MidnightBlue;
+			}
+			#questiontable{
+				border: none;
+				table-layout: fixed;
+				width: 70vw;
+				position: absolute;
+				left: 2vw;
+				bottom: 2vw
+			}
+			td {
+				width: 35vw;
+			}
+
+		</style>
 		<script>
 			function onload(){
 				window.addEventListener("storage", storage_handler, false);
@@ -22,7 +39,19 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
-	
+		<table id="questiontable">
+			<tr>
+				<td colspan="2" id="questioncell"><img src="images/millionaire large.png" width="100%" height="100%" style="display:block;"></td>
+			</tr>
+			<tr>
+				<td id="answer1cell"><img src="images/millionaire small left.png" width="100%" height="100%" style="display:block;"></td>
+				<td id="answer2cell"><img src="images/millionaire small right.png" width="100%" height="100%" style="display:block;"></td>
+			</tr>
+			<tr>
+				<td id="answer3cell"><img src="images/millionaire small left.png" width="100%" height="100%" style="display:block;"></td>
+				<td id="answer4cell"><img src="images/millionaire small right.png" width="100%" height="100%" style="display:block;"></td>
+			</tr>
+		</table>
 	</body>
 </html>
  
