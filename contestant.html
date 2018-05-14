@@ -60,6 +60,9 @@
 					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb"))) {
 						localStorage.setItem("verifycode", code+"A");
 					};
+					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb")+"AA")) {
+						document.getElementById("questiontext").innerHTML = "Screens synced<br>Waiting for controller to start...";
+					};
 				};
 				
 				var nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
