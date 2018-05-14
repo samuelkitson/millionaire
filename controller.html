@@ -78,9 +78,9 @@
 		</style>
 		<script>
 			function fillPrizesTable(values) {
-				document.getElementById("prizes1A").innerHTML = "15";
-				document.getElementById("prizes1B").innerHTML = "~";
-				document.getElementById("prizes1C").innerHTML = values[14];
+				document.getElementById("prizes15A").innerHTML = "15";
+				document.getElementById("prizes15B").innerHTML = "~";
+				document.getElementById("prizes15C").innerHTML = values[14];
 				
 				for (i = 0; i < (values.length)-1; i++) {
 					var dataTable = document.getElementById("prizestable");
@@ -92,7 +92,6 @@
 					dataCell2.innerHTML = "<a class='prizesB' id='prizes"+String(i+1)+"B'>~</a>";
 					dataCell3.innerHTML = "<a class='prizesC' id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
 				};
-				
 				var table = document.getElementById("prizestable");
 				var row = table.insertRow(-1);
 				var cell1 = row.insertCell(0);
@@ -156,9 +155,9 @@
 		</table>
 		<table id="prizestable">
 			<tr>
-				<td><a id="prizes1A" class="prizesA"></a></td>
-				<td><a id="prizes1B" class="prizesB"></a></td>
-				<td><a id="prizes1C" class="prizesC"></a></td>
+				<td><a id="prizes15A" class="prizesA"></a></td>
+				<td><a id="prizes15B" class="prizesB"></a></td>
+				<td><a id="prizes15C" class="prizesC"></a></td>
 			</tr>
 		</table>
 	</body>
