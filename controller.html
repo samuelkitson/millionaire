@@ -4,29 +4,106 @@
 		<meta title="Who Wants to be a Millioanire? - Controller">
 		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
+		<style>
+			#body{
+				background-color: MidnightBlue;
+			}
+			#questiontable{
+				border: none;
+				table-layout: fixed;
+				width: 70vw;
+				position: absolute;
+				left: 2vw;
+				bottom: 2vw
+			}
+			td {
+				width: 35vw;
+			}
+			.imgcontainer {
+				position: relative;
+				color: white;
+				font-family: arial;
+			}
+			.tableimg {
+				height: auto;
+				width: 100%;
+			}
+			#questiontext {
+				font-size: 2.2vw;
+				display: table-cell; 
+				text-align: center;
+				vertical-align: middle; 
+				position: absolute;
+				top: 10%;
+				left: 10%;
+				width: 80%;
+				height: 80%;
+			}
+			.answertext {
+				font-size: 2vw;
+				display: table-cell; 
+				text-align: center;
+				vertical-align: middle; 
+				position: absolute;
+				top: 27%;
+				left: 2%;
+				width: 80%;
+				height: 80%;
+			}
+		</style>
 		<script>
 			function onload(){
 				window.addEventListener("storage", storage_handler, false);
 				function storage_handler(evt){
-					//alert("The new value for "+evt.key+" is "+evt.newValue);
+					//Check code receiveed from other window
 					if ((evt.key == "verifycode")&&(evt.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
 						alert("Screen synced successfully");
 						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
 					};
 				};
-				
-				/*document.getElementById("body").addEventListener("storage", function (event) {
-					if ((event.key == "verifycode")&&(event.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
-						alert("Screen synced successfully");
-					};
-				});*/
-
 				localStorage.setItem("verifycode", parseInt(prompt("Open the contestant page and enter the code displayed there below:")));
 				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
 			};
 		</script>
 	</head>
 	<body onload="onload()" id="body">
-	
+		<table id="questiontable">
+			<tr>
+				<td colspan="2" id="questioncell">
+					<div class="imgcontainer">
+						<img src="images/millionaire large.png" class="tableimg">
+						<div id="questiontext">CONTROLLER SCREEN</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="answer1cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small left.png" class="tableimg">
+						<div class="answertext" id="answer1text"></div>
+					</div>
+				</td>
+				<td id="answer2cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small right.png" class="tableimg">
+						<div class="answertext" id="answer2text"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="answer3cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small left.png" class="tableimg">
+						<div class="answertext" id="answer3text"></div>
+					</div>
+				</td>
+				<td id="answer4cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small right.png" class="tableimg">
+						<div class="answertext" id="answer4text"></div>
+					</div>
+				</td>
+			</tr>
+		</table>
 	</body>
 </html>
