@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta title="Who Wants to be a Millioanire? - Controller">
-		<title>Who Wants to be a Millioanire? - Controller</title>
+		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
 		<script>
 			function onload(){
@@ -11,6 +11,7 @@
 					//alert("The new value for "+evt.key+" is "+evt.newValue);
 					if ((evt.key == "verifycode")&&(evt.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
 						alert("Screen synced successfully");
+						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
 					};
 				};
 				
