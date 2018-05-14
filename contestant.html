@@ -24,6 +24,23 @@
 				color: white;
 				font-family: arial;
 			}
+			#lifelinestable{
+				border: none;
+				table-layout: fixed;
+				width: 70vw;
+				height: 6vw;
+				position: absolute;
+				left: 2vw;
+				bottom: 30vw
+			}
+			.lifelineimg{
+				width: 60%;
+				height: auto;
+				position: relative;
+				left: 20%;
+				display: block;
+				text-align: center;
+			}
 			.tableimg {
 				height: auto;
 				width: 100%;
@@ -159,6 +176,15 @@
 							document.getElementById("answer3text").innerHTML = "???";
 							document.getElementById("answer4text").innerHTML = "???";
 						};
+						if ((evt.key == "lifeline5050")&&(evt.newValue == "used")) {
+							document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
+						};
+						if ((evt.key == "lifelinephone")&&(evt.newValue == "used")) {
+							document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
+						};
+						if ((evt.key == "lifelineaudience")&&(evt.newValue == "used")) {
+							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
+						};
 					};
 
 				};
@@ -172,6 +198,13 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<table id="lifelinestable">
+			<tr>
+				<td><img id="lifeline5050" class="lifelineimg" src="images/millionaire 5050.png" onclick="lifeline('5050')"></td>
+				<td><img id="lifelinephone" class="lifelineimg" src="images/millionaire phone.png" onclick="lifeline('phone')"></td>
+				<td><img id="lifelineaudience" class="lifelineimg" src="images/millionaire audience.png" onclick="lifeline('audience')"></td>
+			</tr>
+		</table>
 		<table id="questiontable">
 			<tr>
 				<td colspan="2" id="questioncell">
