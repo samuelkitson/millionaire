@@ -57,7 +57,7 @@
 				function storage_handler(evt){
 					//Check code receiveed from other window
 					if ((evt.key == "verifycode")&&(evt.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
-						alert("Screen synced successfully");
+						document.getElementById("questiontext").innerHTML = "Screens synced<br>Ready to start...";
 						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
 					};
 				};
