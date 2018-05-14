@@ -52,7 +52,27 @@
 			}
 		</style>
 		<script>
+			function fillPrizesTable(values) {
+				for (i = 0; i < values.length i++) {
+					var dataTable = document.getElementById("prizestable");
+					var dataRow = dataTable.insertRow(1);
+					var dataCell1 = dataRow.insertCell(0);
+					var dataCell2 = dataRow.insertCell(1);
+					var dataCell3 = dataRow.insertCell(2);
+					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
+					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"B'>~</a>";
+					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
+				};
+				
+				var table = document.getElementById("prizestable");
+				var row = table.insertRow(-1);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+			};
+			
 			function onload(){
+				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
+				
 				window.addEventListener("storage", storage_handler, false);
 				function storage_handler(evt){
 					//Check code receiveed from other window
@@ -104,6 +124,8 @@
 					</div>
 				</td>
 			</tr>
+		</table>
+		<table id="prizestable">
 		</table>
 	</body>
 </html>
