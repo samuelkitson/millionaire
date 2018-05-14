@@ -102,6 +102,14 @@
 			
 			function highlightCurrentPrize(current){
 				fixPrizeHighlight();
+				if (String(current) == "5" || String(current) == "10" || String(current) == "15")) {
+					document.getElementById("prizes"+String(current)+"A").style.color = "orange";
+					document.getElementById("prizes"+String(current)+"B").style.color = "orange";
+					document.getElementById("prizes"+String(current)+"C").style.color = "orange";
+				};
+				document.getElementById("prizes"+String(current)+"A").style.backgroundColor = "orange";
+				document.getElementById("prizes"+String(current)+"B").style.backgroundColor = "orange";
+				document.getElementById("prizes"+String(current)+"C").style.backgroundColor = "orange";
 			};
 			
 			function fillPrizesTable(values) {
@@ -126,12 +134,12 @@
 			};
 			
 			function onload(){
-            	if (window.innerWidth > window.innerHeight*(3/2)) {
-                	document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
-                } else {
-                	document.getElementById("prizestable").style.fontSize = "3.5vw";
-                };
-            
+				if (window.innerWidth > window.innerHeight*(3/2)) {
+					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
+				} else {
+					document.getElementById("prizestable").style.fontSize = "3.5vw";
+				};
+				fixPrizeHighlight();
 				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
 				fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
 				window.addEventListener("storage", storage_handler, false);
