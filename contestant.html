@@ -16,34 +16,31 @@
 				left: 2vw;
 				bottom: 2vw
 			}
-			.celltext{
-				color: white;
-				font: 2.5vw arial, sans-serif;
-				word-wrap: break-word;
-				overflow: auto;
-				position: relative;
-				top: 50%;
-				transform: translateY(-50%); 
-			}
-			table.questiontable td{
-				height: 20vh;
+			td {
 				width: 35vw;
-				min-width: 35vw;
-				position: relative;
-				overflow: hidden;
-				vertical-align: middle;
-				text-align: center;
-				color: white;
-				top: 2px;
-				
 			}
-			table.questiontable td img{
+			.imgcontainer {
+				position: relative;
+				color: white;
+				font-family: arial;
+				border: solid black;
+				width: 60vw;
+			}
+			.tableimg {
 				height: auto;
 				width: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
 			}
+			#questiontext {
+				display: table-cell; 
+				text-align: center;
+				vertical-align: middle; 
+				position: absolute;
+				top: 10%;
+				left: 10%;
+				width: 80%;
+				height: 80%;
+			}
+
 		</style>
 		<script>
 			function onload(){
@@ -63,11 +60,13 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
-		<table id="questiontable" class="questiontable">
+		<table id="questiontable">
 			<tr>
 				<td colspan="2" id="questioncell">
-					<img id="questionimg" src="images/millionaire large.png">
-					This is a question
+					<div class="imgcontainer">
+						<img src="images/millionaire large.png" class="tableimg">
+						<div id="questiontext"></div>
+					</div>
 				</td>
 			</tr>
 			<tr>
