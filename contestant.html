@@ -50,10 +50,95 @@
 				width: 80%;
 				height: 80%;
 			}
-
+			#prizestable{
+				border: 1px solid white;
+				font-family: arial;
+				/*font-size: 3vw;*/
+				color: orange;
+				width: 25vw;
+				position: absolute;
+				bottom: 1vw;
+				right: 1vw;
+			}
+			#prizestable td {
+				height: 5.5vh;
+			}
+			.prizesA {
+				width: 6.5vw;
+				align: right;
+				height: 3vh;
+			}
+			.prizesB {
+				width: 2vw;
+				align: centre;
+				height: 3vh;
+			}
+			.prizesA {
+				width: 16.5vw;
+				align: left;
+				height: 3vh;
+			}
 		</style>
 		<script>
+			function fixPrizeHighlight(){
+				for (i = 0; i < 15; i++) {
+					if ((String(i+1))=="5"||(String(i+1))=="10"||(String(i+1))=="15") {
+						document.getElementById("prizes"+String(i+1)+"A").style.color = "white";
+						document.getElementById("prizes"+String(i+1)+"B").style.color = "white";
+						document.getElementById("prizes"+String(i+1)+"C").style.color = "white";
+					} else {
+						document.getElementById("prizes"+String(i+1)+"A").style.color = "orange";
+						document.getElementById("prizes"+String(i+1)+"B").style.color = "orange";
+						document.getElementById("prizes"+String(i+1)+"C").style.color = "orange";
+					};
+					document.getElementById("prizes"+String(i+1)+"A").style.backgroundColor = "transparent";
+					document.getElementById("prizes"+String(i+1)+"B").style.backgroundColor = "transparent";
+					document.getElementById("prizes"+String(i+1)+"C").style.backgroundColor = "transparent";
+				};
+			};
+			
+			function highlightCurrentPrize(current){
+				fixPrizeHighlight();
+				if (String(current) == "5" || String(current) == "10" || String(current) == "15") {
+					document.getElementById("prizes"+String(current)+"A").style.color = "orange";
+					document.getElementById("prizes"+String(current)+"B").style.color = "orange";
+					document.getElementById("prizes"+String(current)+"C").style.color = "orange";
+				};
+				document.getElementById("prizes"+String(current)+"A").style.backgroundColor = "orange";
+				document.getElementById("prizes"+String(current)+"B").style.backgroundColor = "orange";
+				document.getElementById("prizes"+String(current)+"C").style.backgroundColor = "orange";
+			};
+			
+			function fillPrizesTable(values) {
+				document.getElementById("prizes15A").innerHTML = "15";
+				document.getElementById("prizes15B").innerHTML = "~";
+				document.getElementById("prizes15C").innerHTML = values[14];
+				
+				for (i = 0; i < (values.length)-1; i++) {
+					var dataTable = document.getElementById("prizestable");
+					var dataRow = dataTable.insertRow(1);
+					var dataCell1 = dataRow.insertCell(0);
+					var dataCell2 = dataRow.insertCell(1);
+					var dataCell3 = dataRow.insertCell(2);
+					dataCell1.innerHTML = "<a class='prizesA' id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
+					dataCell2.innerHTML = "<a class='prizesB' id='prizes"+String(i+1)+"B'>~</a>";
+					dataCell3.innerHTML = "<a class='prizesC' id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
+				};
+				var table = document.getElementById("prizestable");
+				var row = table.insertRow(-1);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+			};
+			
 			function onload(){
+				if (window.innerWidth > window.innerHeight*(3/2)) {
+					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
+				} else {
+					document.getElementById("prizestable").style.fontSize = "3.5vw";
+				};
+				fixPrizeHighlight();
+				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
+				fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
 				window.addEventListener("storage", storage_handler, false);
 				function storage_handler(evt){
 					//alert("The new value for "+evt.key+" is "+evt.newValue);
@@ -110,6 +195,13 @@
 						<div class="answertext" id="answer4text"></div>
 					</div>
 				</td>
+			</tr>
+		</table>
+		<table id="prizestable">
+			<tr>
+				<td><a id="prizes15A" class="prizesA"></a></td>
+				<td><a id="prizes15B" class="prizesB"></a></td>
+				<td><a id="prizes15C" class="prizesC"></a></td>
 			</tr>
 		</table>
 	</body>
