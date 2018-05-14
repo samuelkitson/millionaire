@@ -53,7 +53,7 @@
 			#prizestable{
 				border: 1px solid white;
 				font-family: arial;
-				font-size: 3vw;
+				/*font-size: 3vw;*/
 				color: orange;
 				width: 25vw;
 				position: absolute;
@@ -61,7 +61,7 @@
 				right: 1vw;
 			}
 			#prizestable td {
-				height: 3vh;
+				height: 5.5vh;
 			}
 			.prizesA {
 				width: 6.5vw;
@@ -126,6 +126,12 @@
 			};
 			
 			function onload(){
+            	if (window.innerWidth > window.innerHeight*(3/2)) {
+                	document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
+                } else {
+                	document.getElementById("prizestable").style.fontSize = "3.5vw";
+                };
+            
 				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
 				fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
 				window.addEventListener("storage", storage_handler, false);
