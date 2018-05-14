@@ -131,6 +131,7 @@
 			};
 			
 			function onload(){
+				localStorage.setItem("status", "idle");
 				if (window.innerWidth > window.innerHeight*(3/2)) {
 					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
 				} else {
@@ -147,6 +148,13 @@
 					};
 					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb")+"AA")) {
 						document.getElementById("questiontext").innerHTML = "Screens synced<br>Waiting for controller to start...";
+					};
+					if ((evt.key == "status")&&(evt.newValue == "start")) {
+						document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
+						document.getElementById("answer1text").innerHTML = "???";
+						document.getElementById("answer2text").innerHTML = "???";
+						document.getElementById("answer3text").innerHTML = "???";
+						document.getElementById("answer4text").innerHTML = "???";
 					};
 				};
 				
