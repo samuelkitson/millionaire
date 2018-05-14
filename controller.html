@@ -59,13 +59,13 @@
 				
 				for (i = 0; i < (values.length)-1; i++) {
 					var dataTable = document.getElementById("prizestable");
-					var dataRow = dataTable.insertRow(1);
+					var dataRow = dataTable.insertRow(-1);
 					var dataCell1 = dataRow.insertCell(0);
 					var dataCell2 = dataRow.insertCell(1);
 					var dataCell3 = dataRow.insertCell(2);
 					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
-					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"B'>~</a>";
-					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"C'>"+values[i+1]+"</a>";
+					dataCell2.innerHTML = "<a id='prizes"+String(i+1)+"B'>~</a>";
+					dataCell3.innerHTML = "<a id='prizes"+String(i+1)+"C'>"+values[i+1]+"</a>";
 				};
 				
 				var table = document.getElementById("prizestable");
