@@ -9,7 +9,7 @@ function fixPrizeHighlight(){
       document.getElementById("prizes"+String(i+1)+"B").style.color = "orange";
       document.getElementById("prizes"+String(i+1)+"C").style.color = "orange";
     };
-    document.getElementById("prizes"+String(i+1)+"A").parentElement.ParentElement.style.backgroundColor = "transparent";
+    document.getElementById("prizes"+String(i+1)+"A").parentElement.parentElement.style.backgroundColor = "transparent";
   };
 };
 
