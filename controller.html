@@ -71,7 +71,7 @@
 				left: 12%;
 			}
 			.answertextright {
-				left: 5%;
+				left: 4%;
 			}
 			#prizestable{
 				border: 1px solid white;
@@ -162,6 +162,11 @@
 			function start(){
 				document.getElementById("startbutton").style.display = "none";
 				localStorage.setItem("status", "start");
+				document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
+				document.getElementById("answer1text").innerHTML = "???";
+				document.getElementById("answer2text").innerHTML = "???";
+				document.getElementById("answer3text").innerHTML = "???";
+				document.getElementById("answer4text").innerHTML = "???";
 			};
 			
 			function onload(){
