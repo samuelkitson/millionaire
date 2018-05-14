@@ -53,30 +53,57 @@
 			#prizestable{
 				border: 1px solid white;
 				font-family: arial;
-				font-size: 5vh;
+				font-size: 3vw;
 				color: orange;
 				width: 25vw;
 				position: absolute;
 				bottom: 1vw;
 				right: 1vw;
 			}
+			#prizestable td {
+				height: 3vh;
+			}
 			.prizesA {
 				width: 6.5vw;
 				align: right;
+				height: 3vh;
 			}
 			.prizesB {
 				width: 2vw;
 				align: centre;
+				height: 3vh;
 			}
 			.prizesA {
 				width: 16.5vw;
 				align: left;
+				height: 3vh;
 			}
-			#prizes5A, #prizes5B, #prizes5C, #prizes10A, #prizes10B, #prizes10C, #prizes15A, #prizes15B, #prizes15C{
+			/*#prizes5A, #prizes5B, #prizes5C, #prizes10A, #prizes10B, #prizes10C, #prizes15A, #prizes15B, #prizes15C{
 				color: white;
-			}
+			}*/
 		</style>
 		<script>
+			function fixPrizeHighlight(){
+				for (i = 0; i < 15; i++) {
+					if ((String(i+1))=="5"||(String(i+1))=="10"||(String(i+1))=="15") {
+						document.getElementById("prizes"+String(i+1)+"A").style.color = "white";
+						document.getElementById("prizes"+String(i+1)+"B").style.color = "white";
+						document.getElementById("prizes"+String(i+1)+"C").style.color = "white";
+					} else {
+						document.getElementById("prizes"+String(i+1)+"A").style.color = "orange";
+						document.getElementById("prizes"+String(i+1)+"B").style.color = "orange";
+						document.getElementById("prizes"+String(i+1)+"C").style.color = "orange";
+					};
+					document.getElementById("prizes"+String(i+1)+"A").style.backgroundColor = "transparent";
+					document.getElementById("prizes"+String(i+1)+"B").style.backgroundColor = "transparent";
+					document.getElementById("prizes"+String(i+1)+"C").style.backgroundColor = "transparent";
+				};
+			};
+			
+			function highlightCurrentPrize(current){
+				fixPrizeHighlight();
+			};
+			
 			function fillPrizesTable(values) {
 				document.getElementById("prizes15A").innerHTML = "15";
 				document.getElementById("prizes15B").innerHTML = "~";
