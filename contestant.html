@@ -23,14 +23,24 @@
 				position: relative;
 				color: white;
 				font-family: arial;
-				border: solid black;
-				width: 60vw;
 			}
 			.tableimg {
 				height: auto;
 				width: 100%;
 			}
 			#questiontext {
+				font-size: 2.2vw;
+				display: table-cell; 
+				text-align: center;
+				vertical-align: middle; 
+				position: absolute;
+				top: 10%;
+				left: 10%;
+				width: 80%;
+				height: 80%;
+			}
+			.answertext {
+				font-size: 1.5vw;
 				display: table-cell; 
 				text-align: center;
 				vertical-align: middle; 
@@ -70,12 +80,32 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="answer1cell"><img id="answer1img" src="images/millionaire small left.png" width="100%" height="100%" style="display:block;"></td>
-				<td id="answer2cell"><img id="answer2img" src="images/millionaire small right.png" width="100%" height="100%" style="display:block;"></td>
+				<td id="answer1cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small left.png" class="tableimg">
+						<div class="answertext" id="answer1text"></div>
+					</div>
+				</td>
+				<td id="answer2cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small right.png" class="tableimg">
+						<div class="answertext" id="answer2text"></div>
+					</div>
+				</td>
 			</tr>
 			<tr>
-				<td id="answer3cell"><img id="answer3img" src="images/millionaire small left.png" width="100%" height="100%" style="display:block;"></td>
-				<td id="answer4cell"><img id="answer4img" src="images/millionaire small right.png" width="100%" height="100%" style="display:block;"></td>
+				<td id="answer3cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small left.png" class="tableimg">
+						<div class="answertext" id="answer3text"></div>
+					</div>
+				</td>
+				<td id="answer4cell">
+					<div class="imgcontainer">
+						<img src="images/millionaire small right.png" class="tableimg">
+						<div class="answertext" id="answer4text"></div>
+					</div>
+				</td>
 			</tr>
 		</table>
 	</body>
