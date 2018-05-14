@@ -149,14 +149,18 @@
 					};
 					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb")+"AA")) {
 						document.getElementById("questiontext").innerHTML = "Screens synced<br>Waiting for controller to start...";
+						localStorage.setItem("verifycode", sessionStorage.getItem("verifycodetempb")+"AAA");
 					};
-					if ((evt.key == "status")&&(evt.newValue == "start")) {
-						document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
-						document.getElementById("answer1text").innerHTML = "???";
-						document.getElementById("answer2text").innerHTML = "???";
-						document.getElementById("answer3text").innerHTML = "???";
-						document.getElementById("answer4text").innerHTML = "???";
+					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb")+"AAA")) {
+						if ((evt.key == "status")&&(evt.newValue == "start")) {
+							document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
+							document.getElementById("answer1text").innerHTML = "???";
+							document.getElementById("answer2text").innerHTML = "???";
+							document.getElementById("answer3text").innerHTML = "???";
+							document.getElementById("answer4text").innerHTML = "???";
+						};
 					};
+
 				};
 				
 				var nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
