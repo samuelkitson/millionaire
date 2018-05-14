@@ -188,6 +188,14 @@
 					alert("5050 used");
 					document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
 					localStorage.setItem("lifeline5050", "used");
+				} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
+					alert("Phone a friend used");
+					document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
+					localStorage.setItem("lifelinephone", "used");
+				} else if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
+					alert("Ask the audience used");
+					document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
+					localStorage.setItem("lifelineaudience", "used");
 				};
 			};
 			
@@ -225,9 +233,9 @@
 		<button id="startbutton" class="button" onclick="start()">Start game</button>
 		<table id="lifelinestable">
 			<tr>
-				<td><img id="lifline5050" class="lifelineimg" src="images/millionaire 5050.png" onclick="lifeline('5050')"></td>
-				<td><img id="liflinephone" class="lifelineimg" src="images/millionaire phone.png" onclick="lifeline('phone')"></td>
-				<td><img id="liflineaudience" class="lifelineimg" src="images/millionaire audience.png" onclick="lifeline('audience')"></td>
+				<td><img id="lifeline5050" class="lifelineimg" src="images/millionaire 5050.png" onclick="lifeline('5050')"></td>
+				<td><img id="lifelinephone" class="lifelineimg" src="images/millionaire phone.png" onclick="lifeline('phone')"></td>
+				<td><img id="lifelineaudience" class="lifelineimg" src="images/millionaire audience.png" onclick="lifeline('audience')"></td>
 			</tr>
 		</table>
 		<table id="questiontable">
