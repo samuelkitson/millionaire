@@ -40,13 +40,13 @@
 				height: 80%;
 			}
 			.answertext {
-				font-size: 1.5vw;
+				font-size: 2vw;
 				display: table-cell; 
 				text-align: center;
 				vertical-align: middle; 
 				position: absolute;
-				top: 10%;
-				left: 10%;
+				top: 27%;
+				left: 2%;
 				width: 80%;
 				height: 80%;
 			}
@@ -65,7 +65,8 @@
 				var nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 				var code = nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)] + nums[Math.floor(Math.random() * 10)];
 				sessionStorage.setItem("verifycodetempb", code);
-				alert("Enter this code on the controller screen: "+code+"\nPress the enter key to continue...");
+				document.getElementById("questiontext").innerHTML = "Enter this code on the controller screen: "+code+"<br>Press the enter key to continue..."
+				//alert("Enter this code on the controller screen: "+code+"\nPress the enter key to continue...");
 			};
 		</script>
 	</head>
