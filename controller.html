@@ -16,7 +16,7 @@
 				left: 2vw;
 				bottom: 2vw
 			}
-			td {
+			#questiontable td {
 				width: 35vw;
 			}
 			.imgcontainer {
@@ -50,6 +50,26 @@
 				width: 80%;
 				height: 80%;
 			}
+			#prizestable{
+				border: 1px solid white;
+				font-family: arial;
+				font-size: 2.5vw;
+				color: white;
+				width: 25vw;
+				position: absolute;
+				bottom: 1vw;
+				right: 1vw;
+			}
+			.prizesA {
+				width: 6.5vw;
+			}
+			.prizesB {
+				width: 2vw;
+				align: centre;
+			}
+			.prizesA {
+				width: 16.5vw;
+			}
 		</style>
 		<script>
 			function fillPrizesTable(values) {
@@ -63,9 +83,9 @@
 					var dataCell1 = dataRow.insertCell(0);
 					var dataCell2 = dataRow.insertCell(1);
 					var dataCell3 = dataRow.insertCell(2);
-					dataCell1.innerHTML = "<a id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
-					dataCell2.innerHTML = "<a id='prizes"+String(i+1)+"B'>~</a>";
-					dataCell3.innerHTML = "<a id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
+					dataCell1.innerHTML = "<a class='prizesA' id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
+					dataCell2.innerHTML = "<a class='prizesB' id='prizes"+String(i+1)+"B'>~</a>";
+					dataCell3.innerHTML = "<a class='prizesC' id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
 				};
 				
 				var table = document.getElementById("prizestable");
@@ -131,9 +151,9 @@
 		</table>
 		<table id="prizestable">
 			<tr>
-				<td><a id="prizes1A"></a></td>
-				<td><a id="prizes1B"></a></td>
-				<td><a id="prizes1C"></a></td>
+				<td><a id="prizes1A" class="prizesA"></a></td>
+				<td><a id="prizes1B" class="prizesB"></a></td>
+				<td><a id="prizes1C" class="prizesC"></a></td>
 			</tr>
 		</table>
 	</body>
