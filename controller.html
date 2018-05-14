@@ -5,7 +5,23 @@
 		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
 		<style>
-			
+			.button{
+				background-color: orange;
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 2vw;
+			}
+			#startbutton{
+				width: 20vw;
+				height: 6vh;
+				position: absolute;
+				top: 15vh;
+				left: 10vw;
+				display: none;
+			}
 			#body{
 				background-color: MidnightBlue;
 			}
@@ -65,17 +81,20 @@
 				height: 5.5vh;
 			}
 			.prizesA {
-				width: 6.5vw;
+				/*width: 6.5vw;*/
+				width: auto;
 				align: right;
 				height: 3vh;
 			}
 			.prizesB {
-				width: 2vw;
+				/*width: 2vw;*/
+				width: auto;
 				align: centre;
 				height: 3vh;
 			}
 			.prizesA {
-				width: 16.5vw;
+				/*width: 16.5vw;*/
+				width: auto;
 				align: left;
 				height: 3vh;
 			}
@@ -134,6 +153,10 @@
 				var cell2 = row.insertCell(1);
 			};
 			
+			function start(){
+				document.getElementById("startbutton").style.display = "none";
+			};
+			
 			function onload(){
 				if (window.innerWidth > window.innerHeight*(3/2)) {
 					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
@@ -149,6 +172,7 @@
 					if ((evt.key == "verifycode")&&(evt.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
 						document.getElementById("questiontext").innerHTML = "Screens synced<br>Ready to start...";
 						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
+						document.getElementById("startbutton").style.display = "block";
 					};
 				};
 				localStorage.setItem("verifycode", parseInt(prompt("Open the contestant page and enter the code displayed there below:")));
@@ -157,6 +181,7 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<button id="startbutton" class="button" onclick="start">Start game</button>
 		<table id="questiontable">
 			<tr>
 				<td colspan="2" id="questioncell">
