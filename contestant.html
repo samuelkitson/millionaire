@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta title="Who Wants to be a Millioanire? - Contestant">
-		<title>(Beta) Who Wants to be a Millioanire? - Contestant</title>
+		<title>Who Wants to be a Millioanire? - Contestant</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Contestant's screen.">
 		<style>
 			#body{
@@ -16,9 +16,6 @@
 				left: 2vw;
 				bottom: 2vw
 			}
-			td {
-				width: 35vw;
-			}
 			.celltext{
 				color: white;
 				font: 2.5vw arial, sans-serif;
@@ -27,6 +24,22 @@
 				position: relative;
 				top: 50%;
 				transform: translateY(-50%); 
+			}
+			table.questiontable td{
+				height: 20vh;
+				width: 35vw;
+				min-width: 35vw;
+				position: relative;
+				overflow: hidden;
+				vertical-align: middle;
+				text-align: center;
+			}
+			table.questiontable td img{
+				height: auto;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
 			}
 		</style>
 		<script>
@@ -47,9 +60,12 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
-		<table id="questiontable">
+		<table id="questiontable" class="questiontable">
 			<tr>
-				<td colspan="2" id="questioncell"><img id="questionimg" src="images/millionaire large.png" width="100%" height="100%" style="display:block;"><p id="questiontext" class="celltext">This is a question</p></td>
+				<td colspan="2" id="questioncell">
+					<img id="questionimg" src="images/millionaire large.png">
+					This is a question
+				</td>
 			</tr>
 			<tr>
 				<td id="answer1cell"><img id="answer1img" src="images/millionaire small left.png" width="100%" height="100%" style="display:block;"></td>
