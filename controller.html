@@ -5,6 +5,7 @@
 		<title>(Beta) Who Wants to be a Millioanire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the Controller's screen.">
 		<style>
+			
 			#body{
 				background-color: MidnightBlue;
 			}
@@ -102,7 +103,7 @@
 			
 			function highlightCurrentPrize(current){
 				fixPrizeHighlight();
-				if (String(current) == "5" || String(current) == "10" || String(current) == "15")) {
+				if (String(current) == "5" || String(current) == "10" || String(current) == "15") {
 					document.getElementById("prizes"+String(current)+"A").style.color = "orange";
 					document.getElementById("prizes"+String(current)+"B").style.color = "orange";
 					document.getElementById("prizes"+String(current)+"C").style.color = "orange";
