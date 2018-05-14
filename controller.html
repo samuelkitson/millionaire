@@ -16,11 +16,12 @@
 			}
 			#startbutton{
 				width: 30vw;
-				height: 6vh;
+				height: 15vh;
 				position: absolute;
 				top: 15vh;
 				left: 25vw;
 				display: none;
+				cursor: pointer;
 			}
 			#body{
 				background-color: MidnightBlue;
@@ -155,9 +156,11 @@
 			
 			function start(){
 				document.getElementById("startbutton").style.display = "none";
+				localStorage.setItem("status", "start");
 			};
 			
 			function onload(){
+				localStorage.setItem("status", "idle");
 				if (window.innerWidth > window.innerHeight*(3/2)) {
 					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
 				} else {
