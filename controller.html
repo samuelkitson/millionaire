@@ -128,14 +128,10 @@
 			
 			function highlightCurrentPrize(current){
 				fixPrizeHighlight();
-				if (String(current) == "5" || String(current) == "10" || String(current) == "15") {
-					document.getElementById("prizes"+String(current)+"A").style.color = "orange";
-					document.getElementById("prizes"+String(current)+"B").style.color = "orange";
-					document.getElementById("prizes"+String(current)+"C").style.color = "orange";
-				};
-				document.getElementById("prizes"+String(current)+"A").style.backgroundColor = "orange";
-				document.getElementById("prizes"+String(current)+"B").style.backgroundColor = "orange";
-				document.getElementById("prizes"+String(current)+"C").style.backgroundColor = "orange";
+				document.getElementById("prizes"+String(current)+"A").style.color = "white";
+				document.getElementById("prizes"+String(current)+"B").style.color = "white";
+				document.getElementById("prizes"+String(current)+"C").style.color = "white";
+				document.getElementById("prizes"+String(current)+"A").parentElement.parentElement.style.backgroundColor = "orange";
 			};
 			
 			function fillPrizesTable(values) {
