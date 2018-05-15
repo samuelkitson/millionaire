@@ -192,7 +192,6 @@
 			function lifeline(type){
 				if (localStorage.getItem("status")!="idle"){
 					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
-						alert("5050 used");
 						var numstemp = ["1", "2", "3", "4"];
 						var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
 						numstemp.splice(temp, temp);
@@ -216,7 +215,16 @@
 						document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
 						localStorage.setItem("lifelinephone", "used");
 					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
-						alert("Ask the audience used");
+						var a = parseInt(prompt("Enter votes for answer A:"));
+						var b = parseInt(prompt("Enter votes for answer B:"));
+						var c = parseInt(prompt("Enter votes for answer C:"));
+						var d = parseInt(prompt("Enter votes for answer D:"));
+						var total = a+b+c+d;
+						var aa = String((a/total)*100);
+						var ba = String((b/total)*100);
+						var ca = String((c/total)*100);
+						var da = String((d/total)*100);
+						alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
 					};
