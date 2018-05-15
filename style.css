@@ -7,9 +7,9 @@
   cursor: pointer;
 }
 #codeinput{
-  width: 15%;
-  height: 5%;
-  position: relative;
+  width: 25%;
+  height: 4%;
+  position: absolute;
   top: 5%;
   left: 5%;
   font-size: 1vw;
@@ -17,7 +17,7 @@
 #startbutton{
   width: 15%;
   height: 10%;
-  position: relative;
+  position: absolute;
   top: 5%;
   left: 5%;
   display: none;
