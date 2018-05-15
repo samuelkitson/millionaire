@@ -173,6 +173,8 @@
 				var cell2 = row.insertCell(1);
 			};*/
 			
+			var done = [];
+			
 			function start(){
 				highlightCurrentPrize(1);
 				document.getElementById("music1").play();
@@ -237,11 +239,35 @@
 			};
 			
 			function loadQuestion() {
-				localStorage.setItem("status", "answer");
+				if (localStorage.getItem("status") != "answer") {
+					localStorage.setItem("status", "answer");
+					localStorage.setItem("current", parseInt(localStorage.getItem("status"))+1);
+					if (parseInt(localStorage.getItem("current")) == < 4) {
+						localStorage.setItem("currentStage", "1");
+						while (True) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage1.length)));
+							if !(done.includes("A"+localStorage.getItem("questionNum"))) {
+								done.push("A"+localStorage.getItem("questionNum"));
+								break;
+							}
+						};
+					} else if (parseInt(localStorage.getItem("current")) == < 8) {
+						localStorage.setItem("currentStage", "2");
+					} else if (parseInt(localStorage.getItem("current")) == < 13) {
+						localStorage.setItem("currentStage", "3");
+					} else {
+						localStorage.setItem("currentStage", "4");
+					};
+					localStorage.setItem("currentQuestion", questionset.stage1[localStorage.getItem("questionNum")].Q);
+					document.getElementById("questiontext").innerHTML = localStorage.getItem("currentQuestion");
+					resetQuestion();
+					highlightCurrentPrize(localStorage.getItem("current"));
+				};
 			};
 			
 			function onload() {
-				localStorage.setItem("current", "1");
+				localStorage.setItem("current", "0");
+				localStorage.setItem("currentStage", "1");
 				localStorage.setItem("lifeline5050", "ready");
 				localStorage.setItem("lifelinephone", "ready");
 				localStorage.setItem("lifelineaudience", "ready");
