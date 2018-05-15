@@ -19,6 +19,9 @@
   left: 2vw;
   bottom: 30vw
 }
+#prizestable td{
+  width: 35vw;
+}
 .lifelineimg{
   width: 60%;
   height: auto;
