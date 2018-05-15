@@ -204,6 +204,30 @@
 				};
 			};
 			
+			function resetQuestion() {
+				document.getElementbytId("answer1img").src = "images/millionaire small left.png";
+				document.getElementbytId("answer2img").src = "images/millionaire small right.png";
+				document.getElementbytId("answer3img").src = "images/millionaire small left.png";
+				document.getElementbytId("answer4img").src = "images/millionaire small right.png";
+				document.getElementById("questiontext").innerHTML = "";
+				document.getElementById("answer1text").innerHTML = "";
+				document.getElementById("answer2text").innerHTML = "";
+				document.getElementById("answer3text").innerHTML = "";
+				document.getElementById("answer4text").innerHTML = "";
+			};
+			
+			function selectans(num) {
+				if (localStorage.getItem("status")=="answer") {
+					localStorage.setItem("status", "answered");
+					localStorage.setItem("answer", String(num));
+					if (num == "1" || num == "3") {
+						document.getElementbytId("answer"+String(num)+"img").src = "images/millionaire small left orange.png";
+					} else {
+						document.getElementbytId("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
+					};
+				};
+			};
+			
 			function submitCode() {
 				localStorage.setItem("verifycode", parseInt(document.getElementById("codeinput").value));
 				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
@@ -211,7 +235,7 @@
 				document.getElementById("entercodebutton").style.display = "none";
 			};
 			
-			function onload(){
+			function onload() {
 				localStorage.setItem("lifeline5050", "ready");
 				localStorage.setItem("lifelinephone", "ready");
 				localStorage.setItem("lifelineaudience", "ready");
@@ -263,13 +287,13 @@
 			<tr>
 				<td id="answer1cell">
 					<div class="imgcontainer">
-						<img src="images/millionaire small left.png" class="tableimg">
+						<img onclick="selectans(1)" id="answer1img" src="images/millionaire small left.png" class="tableimg">
 						<div class="answertext answertextleft" id="answer1text"></div>
 					</div>
 				</td>
 				<td id="answer2cell">
 					<div class="imgcontainer">
-						<img src="images/millionaire small right.png" class="tableimg">
+						<img onclick="selectans(2)" id="answer2img" src="images/millionaire small right.png" class="tableimg">
 						<div class="answertext answertextright" id="answer2text"></div>
 					</div>
 				</td>
@@ -277,13 +301,13 @@
 			<tr>
 				<td id="answer3cell">
 					<div class="imgcontainer">
-						<img src="images/millionaire small left.png" class="tableimg">
+						<img onclick="selectans(3)" id="answer3img" src="images/millionaire small left.png" class="tableimg">
 						<div class="answertext answertextleft" id="answer3text"></div>
 					</div>
 				</td>
 				<td id="answer4cell">
 					<div class="imgcontainer">
-						<img src="images/millionaire small right.png" class="tableimg">
+						<img onclick="selectans(4)" id="answer4img" src="images/millionaire small right.png" class="tableimg">
 						<div class="answertext answertextright" id="answer4text"></div>
 					</div>
 				</td>
