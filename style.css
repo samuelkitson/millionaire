@@ -1,10 +1,9 @@
 #entercodebutton{
   width: 15%;
   height: 10%;
-  position: relative;
+  position: absolute;
   top: 12%;
   left: 5%;
-  display: none;
   cursor: pointer;
 }
 #codeinput{
@@ -13,7 +12,7 @@
   position: relative;
   top: 5%;
   left: 5%;
-  font-size: 2vw;
+  font-size: 1vw;
 }
 #startbutton{
   width: 15%;
@@ -39,7 +38,7 @@
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 #body{
   background-color: MidnightBlue;
