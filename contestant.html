@@ -173,6 +173,7 @@
 				fixPrizeHighlight();
 				window.addEventListener("storage", storage_handler, false);
 				function storage_handler(evt){
+					console.log("Storage key "+evt.key+" was changed to "+evt.newValue);
 					//alert("The new value for "+evt.key+" is "+evt.newValue);
 					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb"))) {
 						localStorage.setItem("verifycode", code+"A");
@@ -199,6 +200,7 @@
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						};
 						if (evt.key == "answer") {
+							console.log("Answer received");
 							if (evt.newValue == "1" || evt.newValue == "3") {
 								document.getElementById("answer"+String(evt.newValue)+"img").src = "images/millionaire small left orange.png";
 							} else {
