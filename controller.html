@@ -193,6 +193,22 @@
 				if (localStorage.getItem("status")!="idle"){
 					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
 						alert("5050 used");
+						var numstemp = ["1", "2", "3", "4"];
+						var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
+						numstemp.splice(temp, temp);
+						var tempa = numstemp[Math.floor(Math.random() * 3)];
+						var temp = numstemp.indexOf(tempa);
+						numstemp.splice(temp, temp);
+						var tempb = numstemp[Math.floor(Math.random() * 3)];
+						var temp = numstemp.indexOf(tempb);
+						numstemp.splice(temp, temp);
+						document.getElementById("answer"+tempa+"text").innerHTML = "";
+						document.getElementById("answer"+tempb+"text").innerHTML = "";
+						localStorage.setItem("answer"+tempa+"text", "");
+						localStorage.setItem("answer"+tempb+"text", "");
+						var tempc = localStorage.getItem("currentQuestion");
+						localStorage.setItem("currentQuestion", "");
+						localStorage.setItem("currentQuestion", tempc);
 						document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
 						localStorage.setItem("lifeline5050", "used");
 					} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
