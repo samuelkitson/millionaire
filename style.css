@@ -1,6 +1,22 @@
+#entercodebutton{
+  width: 15%;
+  height: 10%;
+  position: relative;
+  top: 5%;
+  left: 5%;
+  display: none;
+  cursor: pointer;
+}
+#codeinput{
+  width: 15%;
+  height: 10%;
+  position: relative;
+  top: 5%;
+  left: 5%;
+}
 #startbutton{
-  width: 30%;
-  height: 15%;
+  width: 15%;
+  height: 10%;
   position: relative;
   top: 5%;
   left: 5%;
