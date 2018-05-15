@@ -244,7 +244,7 @@
 					localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
 					if (parseInt(localStorage.getItem("current")) < 4) {
 						localStorage.setItem("currentStage", "1");
-						while (True) {
+						while (1==1) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage1.length)));
 							if (done.includes("A"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
