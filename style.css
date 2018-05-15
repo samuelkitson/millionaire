@@ -17,10 +17,7 @@
   height: 6vw;
   position: absolute;
   left: 2vw;
-  bottom: 30vw
-}
-#prizestable td{
-  width: 35vw;
+  bottom: 22vw
 }
 .lifelineimg{
   width: 60%;
@@ -89,6 +86,7 @@
 }
 #prizestable td {
   height: 5.5vh;
+  width: 35vw;
 }
 .prizesA {
   /*width: 6.5vw;*/
