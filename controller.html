@@ -201,6 +201,8 @@
 			function submitCode() {
 				localStorage.setItem("verifycode", parseInt(document.getElementById("codeinput").value));
 				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
+				document.getElementById("codeinput").style.display = "none";
+				document.getElementById("entercodebutton").style.display = "none";
 			};
 			
 			function onload(){
