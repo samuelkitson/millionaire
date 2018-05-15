@@ -205,10 +205,10 @@
 			};
 			
 			function resetQuestion() {
-				document.getElementbytId("answer1img").src = "images/millionaire small left.png";
-				document.getElementbytId("answer2img").src = "images/millionaire small right.png";
-				document.getElementbytId("answer3img").src = "images/millionaire small left.png";
-				document.getElementbytId("answer4img").src = "images/millionaire small right.png";
+				document.getElementById("answer1img").src = "images/millionaire small left.png";
+				document.getElementById("answer2img").src = "images/millionaire small right.png";
+				document.getElementById("answer3img").src = "images/millionaire small left.png";
+				document.getElementById("answer4img").src = "images/millionaire small right.png";
 				document.getElementById("questiontext").innerHTML = "";
 				document.getElementById("answer1text").innerHTML = "";
 				document.getElementById("answer2text").innerHTML = "";
@@ -221,9 +221,9 @@
 					localStorage.setItem("status", "answered");
 					localStorage.setItem("answer", String(num));
 					if (num == "1" || num == "3") {
-						document.getElementbyId("answer"+String(num)+"img").src = "images/millionaire small left orange.png";
+						document.getElementById("answer"+String(num)+"img").src = "images/millionaire small left orange.png";
 					} else {
-						document.getElementbyId("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
+						document.getElementById("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
 					};
 				};
 			};
