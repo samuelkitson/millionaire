@@ -226,9 +226,23 @@
 				document.getElementById("entercodebutton").style.display = "none";
 			};
 			
+			function reavealAnswer() {
+				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
+					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
+				} else {
+					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small right green.png";
+				};
+				if (localStorage.getItem("answer")==localStorage.getItem("correctAnswerNum")) {
+					document.getElementById("loadquestionbutton").style.display = "block";
+				};
+				document.getElementById("revealanswerbutton").style.display = "none";
+			};
+			
 			function loadQuestion() {
 				if (localStorage.getItem("status") != "answer") {
 					resetQuestion();
+					document.getElementById("loadquestionbutton").style.display = "none";
+					document.getElementById("revealanswerbutton").style.display = "block";
 					localStorage.setItem("status", "answer");
 					localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
 					if (parseInt(localStorage.getItem("current")) < 4) {
