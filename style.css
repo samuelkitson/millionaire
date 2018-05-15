@@ -17,13 +17,13 @@
   height: 6vw;
   position: absolute;
   left: 2vw;
-  bottom: 22vw
+  bottom: 21vw
 }
 .lifelineimg{
-  width: 60%;
+  width: 40%;
   height: auto;
   position: relative;
-  left: 20%;
+  left: 30%;
   display: block;
   text-align: center;
 }
