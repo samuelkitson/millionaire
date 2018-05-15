@@ -1,3 +1,8 @@
+function addScript( src ) {
+  var s = document.createElement( 'script' );
+  s.setAttribute( 'src', src );
+  document.body.appendChild( s );
+};
 function fixPrizeHighlight(){
   for (i = 0; i < 15; i++) {
     if ((String(i+1))=="5"||(String(i+1))=="10"||(String(i+1))=="15") {
