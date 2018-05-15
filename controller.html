@@ -226,7 +226,7 @@
 						var da = String(Math.round((d/total)*100));
 						//alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
 						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"<br>B: "+ba+"<br>C: "+ca+"<br>D: "+da;
-						document.getElementById("audienceresults").style.dispaly = "block";
+						document.getElementById("audienceresults").style.display = "block";
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
 					};
@@ -259,7 +259,7 @@
 			};
 			
 			function revealAnswer() {
-				document.getElementById("audienceresults").style.dispaly = "none";
+				document.getElementById("audienceresults").style.display = "none";
 				localStorage.setItem("status", "revealed");
 				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
