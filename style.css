@@ -21,6 +21,17 @@
   left: 5%;
   cursor: pointer;
 }
+#revealanswerbutton{
+  background-color: blue;
+  width: 25%;
+  height: 11%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: none;
+  cursor: pointer;
+  display: none;
+}
 #loadquestionbutton{
   background-color: green;
   width: 25%;
