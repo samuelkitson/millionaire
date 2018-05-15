@@ -13,12 +13,24 @@
   font-family: arial;
 }
 #entercodebutton{
+  background-color: orange;
   width: 25%;
   height: 6%;
   position: absolute;
   top: 10%;
   left: 5%;
   cursor: pointer;
+}
+#loadquestionbutton{
+  background-color: green;
+  width: 25%;
+  height: 11%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: none;
+  cursor: pointer;
+  display: none;
 }
 #codeinput{
   width: 25%;
@@ -29,6 +41,7 @@
   font-size: 1.5vw;
 }
 #startbutton{
+  background-color: orange;
   width: 25%;
   height: 11%;
   position: absolute;
@@ -46,7 +59,6 @@
   border: solid black;
 }
 .button{
-  background-color: orange;
   border: none;
   color: white;
   text-align: center;
