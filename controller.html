@@ -237,7 +237,7 @@
 				if (localStorage.getItem("answer")==localStorage.getItem("correctAnswerNum")) {
 					document.getElementById("loadquestionbutton").style.display = "block";
 				} else {
-					document.getElementById("resetButton").style.display = "block";
+					document.getElementById("resetbutton").style.display = "block";
 				};
 				document.getElementById("revealanswerbutton").style.display = "none";
 			};
@@ -365,6 +365,7 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
 		<button id="loadquestionbutton" class="button" onclick="loadQuestion()">Load next question</button>
 		<button id="resetbutton" class="button" onclick="onload()">Reset</button>
 		<button id="revealanswerbutton" class="button" onclick="revealAnswer()">Reveal answer</button>
