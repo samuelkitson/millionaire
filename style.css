@@ -1,9 +1,9 @@
 #startbutton{
-  width: 31vw;
-  height: 15vh;
-  position: absolute;
-  top: 15vh;
-  left: 15.75vw;
+  width: 30%;
+  height: 15%;
+  position: relative;
+  top: 15%;
+  left: 35%;
   display: none;
   cursor: pointer;
 }
@@ -22,7 +22,7 @@
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 3vw;
 }
 #body{
   background-color: MidnightBlue;
