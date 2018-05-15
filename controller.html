@@ -228,6 +228,7 @@
 			};
 			
 			function revealAnswer() {
+				localStorage.setItem("status", "revealed");
 				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
 				} else {
@@ -321,7 +322,7 @@
 							};
 						};
 					};
-					localStorage.setItem("currentQuestion", questionset.stage1[localStorage.getItem("questionNum")].Q);
+					localStorage.setItem("currentQuestion", set[localStorage.getItem("questionNum")].Q);
 					document.getElementById("questiontext").innerHTML = localStorage.getItem("currentQuestion");
 					highlightCurrentPrize(localStorage.getItem("current"));
 				};
