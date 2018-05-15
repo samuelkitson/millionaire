@@ -183,6 +183,10 @@
 							document.getElementById("answer"+String(localStorage.getItem("answer"))+"img").src = "images/millionaire small right orange.png";
 						};
 					};
+					if (evt.key == "audienceresults") {
+						document.getElementById("audienceResults").style.display = "block";
+						document.getElementById("audienceResults").innerHTML = evt.newValue;
+					};
 					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb"))) {
 						localStorage.setItem("verifycode", code+"A");
 					};
@@ -217,6 +221,7 @@
 							document.getElementById("answer4text").innerHTML = localStorage.getItem("answer4text");
 						};
 						if (evt.key == "status" && evt.newValue == "revealed") {
+							document.getElementById("audienceResults").style.display = "none";
 							if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 								document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
 							} else {
@@ -236,6 +241,7 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<div id="audienceresults"></div>
 		<table id="lifelinestable">
 			<tr>
 				<td><img id="lifeline5050" class="lifelineimg" src="images/millionaire 5050.png" onclick="lifeline('5050')"></td>
