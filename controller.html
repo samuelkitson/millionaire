@@ -240,6 +240,7 @@
 			
 			function loadQuestion() {
 				if (localStorage.getItem("status") != "answer") {
+					resetQuestion();
 					localStorage.setItem("status", "answer");
 					localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
 					if (parseInt(localStorage.getItem("current")) < 4) {
@@ -262,7 +263,6 @@
 					};
 					localStorage.setItem("currentQuestion", questionset.stage1[localStorage.getItem("questionNum")].Q);
 					document.getElementById("questiontext").innerHTML = localStorage.getItem("currentQuestion");
-					resetQuestion();
 					highlightCurrentPrize(localStorage.getItem("current"));
 				};
 			};
