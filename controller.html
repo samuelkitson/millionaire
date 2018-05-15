@@ -242,7 +242,7 @@
 				if (localStorage.getItem("status") != "answer") {
 					localStorage.setItem("status", "answer");
 					localStorage.setItem("current", parseInt(localStorage.getItem("status"))+1);
-					if (parseInt(localStorage.getItem("current")) == < 4) {
+					if (parseInt(localStorage.getItem("current")) < 4) {
 						localStorage.setItem("currentStage", "1");
 						while (True) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage1.length)));
@@ -251,9 +251,9 @@
 								break;
 							}
 						};
-					} else if (parseInt(localStorage.getItem("current")) == < 8) {
+					} else if (parseInt(localStorage.getItem("current")) < 8) {
 						localStorage.setItem("currentStage", "2");
-					} else if (parseInt(localStorage.getItem("current")) == < 13) {
+					} else if (parseInt(localStorage.getItem("current")) < 13) {
 						localStorage.setItem("currentStage", "3");
 					} else {
 						localStorage.setItem("currentStage", "4");
