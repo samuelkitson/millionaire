@@ -1,8 +1,8 @@
 #entercodebutton{
-  width: 15%;
+  width: 25%;
   height: 10%;
   position: absolute;
-  top: 12%;
+  top: 8%;
   left: 5%;
   cursor: pointer;
 }
