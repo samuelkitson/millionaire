@@ -261,6 +261,34 @@
 					} else {
 						localStorage.setItem("currentStage", "4");
 					};
+					var filled = [];
+					for (i = 0; i < 4; i++) {
+						while (1==1) {
+							var num = (Math.floor(Math.random() * 4))+1;
+							if (filled.includes(num)) {
+								num = 0;
+							} else {
+								filled.push(num);
+								if (i===0) {
+									localStorage.setItem("correctAnswerText", questionset.stage1[localStorage.getItem("questionNum")].Y);
+									localStorage.setItem("correctAnswerNum", num);
+									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].Y);
+									document.getElementById("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].Y);
+								} else if (i==1) {
+									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N1);
+									document.getElementById("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N1);
+								} else if (i==2) {
+									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N2);
+									document.getElementById("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N2);
+								} else if (i==3) {
+									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N3);
+									document.getElementById("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N3);
+								};
+								break;
+							};
+						};
+					};
+					
 					localStorage.setItem("currentQuestion", questionset.stage1[localStorage.getItem("questionNum")].Q);
 					document.getElementById("questiontext").innerHTML = localStorage.getItem("currentQuestion");
 					highlightCurrentPrize(localStorage.getItem("current"));
