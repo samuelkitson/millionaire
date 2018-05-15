@@ -190,7 +190,7 @@
 			};
 			
 			function lifeline(type){
-				if (localStorage.getItem("status")=="start"){
+				if (localStorage.getItem("status")!="idle"){
 					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
 						alert("5050 used");
 						document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
@@ -244,10 +244,37 @@
 						};
 					} else if (parseInt(localStorage.getItem("current")) < 8) {
 						localStorage.setItem("currentStage", "2");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage2.length)));
+							if (done.includes("B"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								done.push("B"+localStorage.getItem("questionNum"));
+								break;
+							};
+						};
 					} else if (parseInt(localStorage.getItem("current")) < 13) {
 						localStorage.setItem("currentStage", "3");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage3.length)));
+							if (done.includes("C"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								done.push("C"+localStorage.getItem("questionNum"));
+								break;
+							};
+						};
 					} else {
 						localStorage.setItem("currentStage", "4");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage4.length)));
+							if (done.includes("D"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								done.push("D"+localStorage.getItem("questionNum"));
+								break;
+							};
+						};
 					};
 					var filled = [];
 					for (i = 0; i < 4; i++) {
@@ -276,7 +303,6 @@
 							};
 						};
 					};
-					
 					localStorage.setItem("currentQuestion", questionset.stage1[localStorage.getItem("questionNum")].Q);
 					document.getElementById("questiontext").innerHTML = localStorage.getItem("currentQuestion");
 					highlightCurrentPrize(localStorage.getItem("current"));
