@@ -181,18 +181,20 @@
 			};
 			
 			function lifeline(type){
-				if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
-					alert("5050 used");
-					document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
-					localStorage.setItem("lifeline5050", "used");
-				} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
-					alert("Phone a friend used");
-					document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
-					localStorage.setItem("lifelinephone", "used");
-				} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
-					alert("Ask the audience used");
-					document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
-					localStorage.setItem("lifelineaudience", "used");
+				if (localStorage.getItem("status")=="start"){
+					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
+						alert("5050 used");
+						document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
+						localStorage.setItem("lifeline5050", "used");
+					} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
+						alert("Phone a friend used");
+						document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
+						localStorage.setItem("lifelinephone", "used");
+					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
+						alert("Ask the audience used");
+						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
+						localStorage.setItem("lifelineaudience", "used");
+					};
 				};
 			};
 			
@@ -217,7 +219,7 @@
 						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
 						document.getElementById("startbutton").style.display = "block";
 					};
-					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb")+"AAA")) {
+					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb")+"AAA")&&localStorage.getItem("status")=="start") {
 						//Other functions on storage change event
 					};
 				};
