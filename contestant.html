@@ -181,7 +181,7 @@
 						document.getElementById("questiontext").innerHTML = "Screens synced<br>Waiting for controller to start...";
 						localStorage.setItem("verifycode", sessionStorage.getItem("verifycodetempb")+"AAA");
 					};
-					if (localStorage.getItem("status")=="start") {
+					if (localStorage.getItem("status")!="idle") {
 						if ((evt.key == "status")&&(evt.newValue == "start")) {
 							document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
 							document.getElementById("answer1text").innerHTML = "???";
