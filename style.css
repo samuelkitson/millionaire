@@ -1,15 +1,16 @@
 #syncfailed{
   width: 25%;
-  height: 6%;
+  height: 11%;
   position: absolute;
-  top: 10%;
+  top: 5%;
   left: 5%;
   background-color: red;
   border: none;
   color: white;
   text-align: center;
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 1.5vw;
+  font: arial;
 }
 #entercodebutton{
   width: 25%;
