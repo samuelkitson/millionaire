@@ -220,11 +220,13 @@
 						var c = parseInt(prompt("Enter votes for answer C:"));
 						var d = parseInt(prompt("Enter votes for answer D:"));
 						var total = a+b+c+d;
-						var aa = String((a/total)*100);
-						var ba = String((b/total)*100);
-						var ca = String((c/total)*100);
-						var da = String((d/total)*100);
-						alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
+						var aa = String(Math.round((a/total)*100));
+						var ba = String(Math.round((b/total)*100));
+						var ca = String(Math.round((c/total)*100));
+						var da = String(Math.round((d/total)*100));
+						//alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
+						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"<br>B: "+ba+"<br>C: "ca+"<br>D: "+da;
+						document.getElementById("audienceresults").style.dispaly = "block";
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
 					};
@@ -257,6 +259,7 @@
 			};
 			
 			function revealAnswer() {
+				document.getElementById("audienceresults").style.dispaly = "none";
 				localStorage.setItem("status", "revealed");
 				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
@@ -399,6 +402,7 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<div id="audienceresults"></div>
 		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
 		<button id="loadquestionbutton" class="button" onclick="loadQuestion()">Load next question</button>
 		<button id="resetbutton" class="button" onclick="resetGame()">Reset</button>
