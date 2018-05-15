@@ -12,6 +12,16 @@
   font-size: 1.5vw;
   font-family: arial;
 }
+#takemoneybutton{
+  background-color: red;
+  width: 25%;
+  height: 6%;
+  position: absolute;
+  top: 10%;
+  display: none;
+  left: 35%;
+  cursor: pointer;
+}
 #resetbutton{
   background-color: red;
   width: 25%;
