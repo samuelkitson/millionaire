@@ -214,6 +214,13 @@
 							document.getElementById("answer3text").innerHTML = localStorage.getItem("answer3text");
 							document.getElementById("answer4text").innerHTML = localStorage.getItem("answer4text");
 						};
+						if (evt.key == "status" && evt.newValue == "revealed") {
+							if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
+								document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
+							} else {
+								document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small right green.png";
+							};
+						};
 					};
 
 				};
