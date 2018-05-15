@@ -1,0 +1,107 @@
+.button{
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2vw;
+}
+#body{
+  background-color: MidnightBlue;
+}
+#lifelinestable{
+  border: none;
+  table-layout: fixed;
+  width: 70vw;
+  height: 6vw;
+  position: absolute;
+  left: 2vw;
+  bottom: 30vw
+}
+.lifelineimg{
+  width: 60%;
+  height: auto;
+  position: relative;
+  left: 20%;
+  display: block;
+  text-align: center;
+}
+#questiontable{
+  border: none;
+  table-layout: fixed;
+  width: 70vw;
+  position: absolute;
+  left: 2vw;
+  bottom: 2vw
+}
+#questiontable td {
+  width: 35vw;
+}
+.imgcontainer {
+  position: relative;
+  color: white;
+  font-family: arial;
+}
+.tableimg {
+  height: auto;
+  width: 100%;
+}
+#questiontext {
+  font-size: 2.2vw;
+  display: table-cell; 
+  text-align: center;
+  vertical-align: middle; 
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+}
+.answertext {
+  font-size: 2vw;
+  display: table-cell; 
+  text-align: left;
+  vertical-align: middle; 
+  position: absolute;
+  top: 27%;
+  width: 80%;
+  height: 80%;
+}
+.answertextleft {
+  left: 12%;
+}
+.answertextright {
+  left: 4%;
+}
+#prizestable{
+  border: 1px solid white;
+  font-family: arial;
+  /*font-size: 3vw;*/
+  color: orange;
+  width: 25vw;
+  position: absolute;
+  bottom: 1vw;
+  right: 1vw;
+}
+#prizestable td {
+  height: 5.5vh;
+}
+.prizesA {
+  /*width: 6.5vw;*/
+  width: auto;
+  align: right;
+  height: 3vh;
+}
+.prizesB {
+  /*width: 2vw;*/
+  width: auto;
+  align: centre;
+  height: 3vh;
+}
+.prizesA {
+  /*width: 16.5vw;*/
+  width: auto;
+  align: left;
+  height: 3vh;
+}
