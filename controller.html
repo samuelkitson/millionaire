@@ -236,6 +236,8 @@
 				};
 				if (localStorage.getItem("answer")==localStorage.getItem("correctAnswerNum")) {
 					document.getElementById("loadquestionbutton").style.display = "block";
+				} else {
+					document.getElementById("resetButton").style.display = "block";
 				};
 				document.getElementById("revealanswerbutton").style.display = "none";
 			};
@@ -282,7 +284,7 @@
 								break;
 							};
 						};
-					} else {
+					} else if (parseInt(localStorage.getItem("current")) > 12) {
 						localStorage.setItem("currentStage", "4");
 						while (1==1) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage4.length)));
@@ -329,6 +331,7 @@
 			};
 			
 			function onload() {
+				document.getElementById("resetButton").style.display = "none";
 				localStorage.setItem("current", "0");
 				localStorage.setItem("currentStage", "1");
 				localStorage.setItem("lifeline5050", "ready");
@@ -363,6 +366,7 @@
 	</head>
 	<body onload="onload()" id="body">
 		<button id="loadquestionbutton" class="button" onclick="loadQuestion()">Load next question</button>
+		<button id="resetbutton" class="button" onclick="onload()">Reset</button>
 		<button id="revealanswerbutton" class="button" onclick="revealAnswer()">Reveal answer</button>
 		<div id="syncfailed"><br>The pages failed to sync.<br>Please reload both and try again.</div>
 		<input type="text" id="codeinput" placeholder="Enter code from contestant page...">
