@@ -198,6 +198,11 @@
 				};
 			};
 			
+			function submitCode() {
+				localStorage.setItem("verifycode", parseInt(document.getElementById("codeinput").value));
+				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
+			};
+			
 			function onload(){
 				localStorage.setItem("lifeline5050", "ready");
 				localStorage.setItem("lifelinephone", "ready");
@@ -223,12 +228,12 @@
 						//Other functions on storage change event
 					};
 				};
-				localStorage.setItem("verifycode", parseInt(prompt("Open the contestant page and enter the code displayed there below:")));
-				sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
 			};
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<input type="text" id="codeinput" placeholder="Enter code from contestant page...">
+		<button id="entercodebutton" class="button" onclick="submitCode()">Sync pages</button>
 		<button id="startbutton" class="button" onclick="start()">Start game</button>
 		<table id="lifelinestable">
 			<tr>
