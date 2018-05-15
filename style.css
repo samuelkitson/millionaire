@@ -10,7 +10,7 @@
   text-align: center;
   text-decoration: none;
   font-size: 1.5vw;
-  font: arial;
+  font-family: arial;
 }
 #entercodebutton{
   width: 25%;
@@ -22,7 +22,7 @@
 }
 #codeinput{
   width: 25%;
-  height: 4%;
+  height: 5%;
   position: absolute;
   top: 5%;
   left: 5%;
