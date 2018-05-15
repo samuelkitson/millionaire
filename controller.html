@@ -209,6 +209,7 @@
 			
 			function selectans(num) {
 				document.getElementById("revealanswerbutton").style.display = "block";
+				document.getElementById("takemoneybutton").style.display = "none";
 				if (localStorage.getItem("status")=="answer") {
 					localStorage.setItem("status", "answered");
 					localStorage.setItem("answer", String(num));
@@ -218,6 +219,10 @@
 						document.getElementById("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
 					};
 				};
+			};
+			
+			function leave() {
+				alert("Leaving the game...");
 			};
 			
 			function submitCode() {
@@ -243,6 +248,7 @@
 			};
 			
 			function loadQuestion() {
+				document.getElementById("takemoneybutton").style.display = "block";
 				if (localStorage.getItem("status") != "answer") {
 					resetQuestion();
 					document.getElementById("loadquestionbutton").style.display = "none";
