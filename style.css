@@ -2,14 +2,14 @@
   width: 15%;
   height: 10%;
   position: relative;
-  top: 5%;
+  top: 12%;
   left: 5%;
   display: none;
   cursor: pointer;
 }
 #codeinput{
   width: 15%;
-  height: 10%;
+  height: 5%;
   position: relative;
   top: 5%;
   left: 5%;
