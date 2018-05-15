@@ -241,7 +241,7 @@
 			function loadQuestion() {
 				if (localStorage.getItem("status") != "answer") {
 					localStorage.setItem("status", "answer");
-					localStorage.setItem("current", parseInt(localStorage.getItem("status"))+1);
+					localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
 					if (parseInt(localStorage.getItem("current")) < 4) {
 						localStorage.setItem("currentStage", "1");
 						while (True) {
