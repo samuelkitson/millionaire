@@ -253,6 +253,7 @@
 								localStorage.setItem("questionNum", "");
 							} else {
 								done.push("A"+localStorage.getItem("questionNum"));
+								var set = questionset.stage1;
 								break;
 							};
 						};
@@ -264,6 +265,7 @@
 								localStorage.setItem("questionNum", "");
 							} else {
 								done.push("B"+localStorage.getItem("questionNum"));
+								var set = questionset.stage2;
 								break;
 							};
 						};
@@ -274,6 +276,7 @@
 							if (done.includes("C"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
 							} else {
+								var set = questionset.stage3;
 								done.push("C"+localStorage.getItem("questionNum"));
 								break;
 							};
@@ -285,6 +288,7 @@
 							if (done.includes("D"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
 							} else {
+								var set = questionset.stage3;
 								done.push("D"+localStorage.getItem("questionNum"));
 								break;
 							};
@@ -299,18 +303,18 @@
 							} else {
 								filled.push(num);
 								if (i===0) {
-									localStorage.setItem("correctAnswerText", questionset.stage1[localStorage.getItem("questionNum")].Y);
+									localStorage.setItem("correctAnswerText", set[localStorage.getItem("questionNum")].Y);
 									localStorage.setItem("correctAnswerNum", num);
-									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].Y);
+									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].Y);
 									document.getElementById("answer"+num+"text").innerHTML =  questionset.stage1[localStorage.getItem("questionNum")].Y;
 								} else if (i==1) {
-									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N1);
+									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].N1);
 									document.getElementById("answer"+num+"text").innerHTML =  questionset.stage1[localStorage.getItem("questionNum")].N1;
 								} else if (i==2) {
-									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N2);
+									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].N2);
 									document.getElementById("answer"+num+"text").innerHTML =  questionset.stage1[localStorage.getItem("questionNum")].N2;
 								} else if (i==3) {
-									localStorage.setItem("answer"+num+"text", questionset.stage1[localStorage.getItem("questionNum")].N3);
+									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].N3);
 									document.getElementById("answer"+num+"text").innerHTML =  questionset.stage1[localStorage.getItem("questionNum")].N3;
 								};
 								break;
