@@ -225,7 +225,8 @@
 						var ca = String(Math.round((c/total)*100));
 						var da = String(Math.round((d/total)*100));
 						//alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
-						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"<br>B: "+ba+"<br>C: "+ca+"<br>D: "+da;
+						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
+						localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
 						document.getElementById("audienceresults").style.display = "block";
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
