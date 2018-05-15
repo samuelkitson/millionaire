@@ -1,9 +1,18 @@
+#startbutton{
+  width: 31vw;
+  height: 15vh;
+  position: absolute;
+  top: 15vh;
+  left: 15.75vw;
+  display: none;
+  cursor: pointer;
+}
 #buttoncontainer{
   position: absolute;
   top: 2vh;
   left: 2vw;
   width: 71vw;
-  height: 61vh;
+  height: 51vh;
   border: solid black;
 }
 .button{
