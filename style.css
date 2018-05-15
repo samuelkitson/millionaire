@@ -1,8 +1,8 @@
 #entercodebutton{
   width: 25%;
-  height: 10%;
+  height: 6%;
   position: absolute;
-  top: 8%;
+  top: 10%;
   left: 5%;
   cursor: pointer;
 }
@@ -12,7 +12,7 @@
   position: absolute;
   top: 5%;
   left: 5%;
-  font-size: 1vw;
+  font-size: 1.5vw;
 }
 #startbutton{
   width: 15%;
@@ -35,7 +35,6 @@
   background-color: orange;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 2vw;
