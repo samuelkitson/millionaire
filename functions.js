@@ -1,3 +1,14 @@
+function resetQuestion() {
+  document.getElementById("answer1img").src = "images/millionaire small left.png";
+  document.getElementById("answer2img").src = "images/millionaire small right.png";
+  document.getElementById("answer3img").src = "images/millionaire small left.png";
+  document.getElementById("answer4img").src = "images/millionaire small right.png";
+  document.getElementById("questiontext").innerHTML = "";
+  document.getElementById("answer1text").innerHTML = "";
+  document.getElementById("answer2text").innerHTML = "";
+  document.getElementById("answer3text").innerHTML = "";
+  document.getElementById("answer4text").innerHTML = "";
+};
 function addScript( src ) {
   var s = document.createElement( 'script' );
   s.setAttribute( 'src', src );
