@@ -236,7 +236,12 @@
 				document.getElementById("entercodebutton").style.display = "none";
 			};
 			
+			function loadQuestion() {
+				localStorage.setItem("status", "answer");
+			};
+			
 			function onload() {
+				localStorage.setItem("current", "1");
 				localStorage.setItem("lifeline5050", "ready");
 				localStorage.setItem("lifelinephone", "ready");
 				localStorage.setItem("lifelineaudience", "ready");
@@ -247,6 +252,9 @@
 					document.getElementById("prizestable").style.fontSize = "3.5vw";
 				};
 				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
+				//TEMP
+				addScript("questions/productdesign.js");
+				//END TEMP
 				fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
 				fixPrizeHighlight();
 				window.addEventListener("storage", storage_handler, false);
