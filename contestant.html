@@ -149,6 +149,18 @@
 				var cell2 = row.insertCell(1);
 			};*/
 			
+			function resetQuestion() {
+				document.getElementById("answer1img").src = "images/millionaire small left.png";
+				document.getElementById("answer2img").src = "images/millionaire small right.png";
+				document.getElementById("answer3img").src = "images/millionaire small left.png";
+				document.getElementById("answer4img").src = "images/millionaire small right.png";
+				document.getElementById("questiontext").innerHTML = "";
+				document.getElementById("answer1text").innerHTML = "";
+				document.getElementById("answer2text").innerHTML = "";
+				document.getElementById("answer3text").innerHTML = "";
+				document.getElementById("answer4text").innerHTML = "";
+			};
+			
 			function onload(){
 				localStorage.setItem("status", "idle");
 				if (window.innerWidth > window.innerHeight*(3/2)) {
@@ -185,6 +197,13 @@
 						};
 						if ((evt.key == "lifelineaudience")&&(evt.newValue == "used")) {
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
+						};
+						if (evt.key == "answer") {
+							if (evt.newValue == "1" || evt.newValue == "3") {
+								document.getElementById("answer"+String(evt.newValue)+"img").src = "images/millionaire small left orange.png";
+							} else {
+								document.getElementById("answer"+String(evt.newValue)+"img").src = "images/millionaire small right orange.png";
+							};
 						};
 					};
 
