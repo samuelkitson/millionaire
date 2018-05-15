@@ -205,6 +205,15 @@
 								document.getElementById("answer"+String(evt.newValue)+"img").src = "images/millionaire small right orange.png";
 							};
 						};
+						if (evt.key == "currentQuestion") {
+							resetQuestion();
+							highlightCurrentPrize(localStorage.getItem("current"));
+							document.getElementById("questiontext").innerHTML = evt.newValue;
+							document.getElementById("answer1text").innerHTML = localStorage.getItem("answer1text");
+							document.getElementById("answer2text").innerHTML = localStorage.getItem("answer2text");
+							document.getElementById("answer3text").innerHTML = localStorage.getItem("answer3text");
+							document.getElementById("answer4text").innerHTML = localStorage.getItem("answer4text");
+						};
 					};
 
 				};
