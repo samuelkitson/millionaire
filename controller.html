@@ -265,6 +265,7 @@
 						};
 						},1000);
 				} else {
+					localStorage.setItem("timeleft", "0");
 					console.log("timer stopped");
 					clearInterval(timerScript);
 					document.getElementById("countdown").style.display = "none";
