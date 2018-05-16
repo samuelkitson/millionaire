@@ -209,13 +209,13 @@
 					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
 						var numstemp = ["1", "2", "3", "4"];
 						var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
-						numstemp.splice(temp, temp);
+						numstemp.splice(temp, 1);
 						var tempa = numstemp[Math.floor(Math.random() * 3)];
 						var temp = numstemp.indexOf(tempa);
-						numstemp.splice(temp, temp);
+						numstemp.splice(temp, 1);
 						var tempb = numstemp[Math.floor(Math.random() * 3)];
 						var temp = numstemp.indexOf(tempb);
-						numstemp.splice(temp, temp);
+						numstemp.splice(temp, 1);
 						document.getElementById("answer"+tempa+"text").innerHTML = "";
 						document.getElementById("answer"+tempb+"text").innerHTML = "";
 						localStorage.setItem("answer"+tempa+"text", "");
