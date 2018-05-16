@@ -257,7 +257,6 @@
 					var timeleft = 10;
 					var timerScript = setInterval(function(){
 						localStorage.setItem("timeleft", (parseInt(localStorage.getItem("timeleft")))-1);
-						timeleft--;
 						document.getElementById("countdown").innerHTML = localStorage.getItem("timeleft");
 						if(parseInt(localStorage.getItem("timeleft")) <= 0)
 							console.log("timer finished");
