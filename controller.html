@@ -253,6 +253,7 @@
 				music1.pause();
 				music2.pause();
 				music3.pause();
+				musicfinal.currentTime = 0;
 				musicfinal.play();
 				document.getElementById("revealanswerbutton").style.display = "block";
 				document.getElementById("takemoneybutton").style.display = "none";
@@ -289,9 +290,11 @@
 				};
 				if (localStorage.getItem("answer")==localStorage.getItem("correctAnswerNum")) {
 					document.getElementById("loadquestionbutton").style.display = "block";
+					musiccorrect.currentTime = 0;
 					musiccorrect.play();
 				} else {
 					document.getElementById("resetbutton").style.display = "block";
+					musicincorrect.currentTime = 0;
 					musicincorrect.play();
 				};
 				document.getElementById("revealanswerbutton").style.display = "none";
@@ -301,10 +304,13 @@
 				musiccorrect.pause();
 				musicincorrect.pause();
 				if (parseInt(localStorage.getItem("current")) < 6) {
+					music1.currentTime = 0;
 					music1.play();
 				} else if (parseInt(localStorage.getItem("current")) < 11) {
+					music2.currentTime = 0;
 					music2.play();
 				} else if (parseInt(localStorage.getItem("current")) < 16) {
+					music3.currentTime = 0;
 					music3.play();
 				};
 			};
