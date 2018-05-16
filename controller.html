@@ -344,6 +344,10 @@
 					document.getElementById("loadquestionbutton").style.display = "block";
 					musiccorrect.currentTime = 0;
 					musiccorrect.play();
+					if (localStorage.getItem("current") == "15") {
+						showWinnings("win");
+						break;
+					};
 				} else {
 					//document.getElementById("resetbutton").style.display = "block";
 					musicincorrect.currentTime = 0;
