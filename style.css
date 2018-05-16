@@ -4,7 +4,23 @@
   text-align: center;
   font-family: arial;
   text-decoration: none;
-  font-size: 4vh;
+  font-size: 20vh;
+  background-color: blue;
+  position: absolute;
+  width: 30%;
+  height: auto;
+  top: 17%;
+  left: 25%;
+  text-align: center;
+  display: none;
+}
+#countdown{
+  border: none;
+  color: orange;
+  text-align: center;
+  font-family: arial;
+  text-decoration: none;
+  font-size: 6vh;
   background-color: blue;
   position: absolute;
   width: 70%;
