@@ -184,8 +184,8 @@
 						};
 					};
 					if (evt.key == "audienceresults") {
-						document.getElementById("audienceResults").style.display = "block";
-						document.getElementById("audienceResults").innerHTML = evt.newValue;
+						document.getElementById("audienceresults").style.display = "block";
+						document.getElementById("audienceresults").innerHTML = evt.newValue;
 					};
 					if ((evt.key == "verifycode")&&(evt.newValue == sessionStorage.getItem("verifycodetempb"))) {
 						localStorage.setItem("verifycode", code+"A");
