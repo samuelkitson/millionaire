@@ -52,7 +52,4 @@ function fillPrizesTable(values) {
     dataCell3.innerHTML = "<a class='prizesC' id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
   };
   var table = document.getElementById("prizestable");
-  var row = table.insertRow(-1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
 };
