@@ -191,6 +191,9 @@
 			var done = [];
 			
 			function showWinnings(type) {
+				music1.pause();
+				music2.pause();
+				music3.play();
 				var prizes = JSON.parse(localStorage.getItem("prizes")).list;
 				var current = localStorage.getItem("current");
 				if (type=="win") {
