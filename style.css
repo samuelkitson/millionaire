@@ -1,4 +1,4 @@
-#countdowm{
+#countdown{
   border: none;
   color: orange;
   text-align: center;
@@ -20,7 +20,7 @@
   text-align: center;
   font-family: arial;
   text-decoration: none;
-  font-size: 6vh;
+  font-size: 4vh;
   background-color: blue;
   position: absolute;
   width: 70%;
