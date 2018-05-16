@@ -4,12 +4,12 @@
   text-align: center;
   font-family: arial;
   text-decoration: none;
-  font-size: 4vw;
+  font-size: 4vh;
   background-color: blue;
   position: absolute;
   width: 70%;
-  height: 30%;
-  top: 20%;
+  height: auto;
+  top: 17%;
   left: 2%;
   text-align: center;
   display: none;
