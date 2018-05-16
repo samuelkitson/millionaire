@@ -183,6 +183,11 @@
 							document.getElementById("answer"+String(localStorage.getItem("answer"))+"img").src = "images/millionaire small right orange.png";
 						};
 					};
+					if (evt.key == "prizetext") {
+						document.getElementById("prizedetails").innerHTML = evt.newValue;
+						setTimeout(function(){ document.getElementById("prizedetails").style.backgroundColor = localStorage.getItem("prizecolour"); }, 50);
+						document.getElementById("prizedetails").style.display = "block";
+					};
 					if (evt.key == "audienceresults") {
 						document.getElementById("audienceresults").style.display = "block";
 						document.getElementById("audienceresults").innerHTML = evt.newValue;
@@ -248,6 +253,7 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<div id="prizedetails"></div>
 		<div id="countdown">30</div>
 		<div id="audienceresults"></div>
 		<table id="lifelinestable">
