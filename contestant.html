@@ -221,7 +221,7 @@
 							document.getElementById("answer4text").innerHTML = localStorage.getItem("answer4text");
 						};
 						if (evt.key == "status" && evt.newValue == "revealed") {
-							document.getElementById("audienceResults").style.display = "none";
+							document.getElementById("audienceresults").style.display = "none";
 							if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 								document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
 							} else {
