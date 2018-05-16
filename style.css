@@ -1,6 +1,6 @@
-#audienceresults{
+#countdowm{
   border: none;
-  color: white;
+  color: orange;
   text-align: center;
   font-family: arial;
   text-decoration: none;
@@ -14,9 +14,9 @@
   text-align: center;
   display: none;
 }
-#countdown{
+#audienceresults{
   border: none;
-  color: orange;
+  color: white;
   text-align: center;
   font-family: arial;
   text-decoration: none;
