@@ -212,6 +212,7 @@
 					document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[parseInt(current)-1]+"!";
 				};
 				localStorage.setItem("prizetext", document.getElementById("prizedetails").innerHTML);
+				localStorage.setItem("prizecolour", document.getElementById("prizedetails").style.backgroundColor);
 				document.getElementById("prizedetails").style.display = "block";
 			};
 			
