@@ -30,6 +30,22 @@
   text-align: center;
   display: none;
 }
+#prizedetails{
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: arial;
+  text-decoration: none;
+  font-size: 4vh;
+  background-color: green;
+  position: absolute;
+  width: 70%;
+  height: auto;
+  top: 17%;
+  left: 2%;
+  text-align: center;
+  display: none;
+}
 #syncfailed{
   width: 25%;
   height: 11%;
