@@ -252,15 +252,18 @@
 			
 			function countdown() {
 				if (localStorage.getItem("countdown") == "30") {
+					console.log("starting timer");
 					var timeleft = 10;
 					var timerScript = setInterval(function(){
 					timeleft--;
 					document.getElementById("countdown").innerHTML = timeleft;
 					if(timeleft <= 0)
+						console.log("timer finished");
 						clearInterval(timerScript);
 						document.getElementById("countdown").style.display = "none";
 					},1000);
 				} else {
+					console.log("timer stopped");
 					clearInterval(timerScript);
 					document.getElementById("countdown").style.display = "none";
 				};
