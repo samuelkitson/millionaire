@@ -253,7 +253,7 @@
 			function countdown() {
 				if (localStorage.getItem("timeleft") == "30") {
 					console.log("starting timer");
-					localStorage.setItem("timeleft", 10);
+					localStorage.setItem("timeleft", 30);
 					var timeleft = 10;
 					var timerScript = setInterval(function(){
 						localStorage.setItem("timeleft", (parseInt(localStorage.getItem("timeleft")))-1);
