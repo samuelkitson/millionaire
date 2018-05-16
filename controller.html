@@ -226,9 +226,10 @@
 						document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
 						localStorage.setItem("lifeline5050", "used");
 					} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
-						alert("Phone a friend used");
 						document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
 						localStorage.setItem("lifelinephone", "used");
+						document.getElementById("countdown").style.display = "block";
+						localStorage.setItem("countdown", "30");
 					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
 						var a = parseInt(prompt("Enter votes for answer A:"));
 						var b = parseInt(prompt("Enter votes for answer B:"));
@@ -246,6 +247,22 @@
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
 					};
+				};
+			};
+			
+			function countdown() {
+				if (localStorage.getItem("countdown") == "30") {
+					var timeleft = 10;
+					var timerScript = setInterval(function(){
+					timeleft--;
+					document.getElementById("countdown").innerHTML = timeleft;
+					if(timeleft <= 0)
+						clearInterval(timerScript);
+						document.getElementById("countdown").style.display = "none";
+					},1000);
+				} else {
+					clearInterval(timerScript);
+					document.getElementById("countdown").style.display = "none";
 				};
 			};
 			
@@ -447,6 +464,7 @@
 	</head>
 	<body onload="onload()" id="body">
 		<div id="audienceresults"></div>
+		<div id="countdown" onclick="countdown()"></div>
 		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
 		<button id="loadquestionbutton" class="button" onclick="loadQuestion()">Load next question</button>
 		<button id="resetbutton" class="button" onclick="resetGame()">Reset</button>
