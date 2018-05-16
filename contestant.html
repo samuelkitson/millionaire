@@ -207,9 +207,16 @@
 						};
 						if ((evt.key == "lifelinephone")&&(evt.newValue == "used")) {
 							document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
+							document.getElementById("countdown").style.display = "block";
 						};
 						if ((evt.key == "lifelineaudience")&&(evt.newValue == "used")) {
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
+						};
+						if (evt.key == "timeleft") {
+							document.getElementById("countdown").innerHTML = evt.newValue;
+							if (evt.newValue == "0") {
+								document.getElementById("countdown").style.display = "none";
+							};
 						};
 						if (evt.key == "currentQuestion") {
 							resetQuestion();
@@ -241,6 +248,7 @@
 		</script>
 	</head>
 	<body onload="onload()" id="body">
+		<div id="countdown" onclick="countdown()">30</div>
 		<div id="audienceresults"></div>
 		<table id="lifelinestable">
 			<tr>
