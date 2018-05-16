@@ -7,6 +7,12 @@
 		<audio id="music1" loop hidden>
 			<source src="https://instaud.io/_/2bla.mp3" type="audio/mpeg">
 		</audio>
+		<audio id="music2" loop hidden>
+			<source src="https://instaud.io/_/2blb.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="music3" loop hidden>
+			<source src="https://instaud.io/_/2blc.mp3" type="audio/mpeg">
+		</audio>
 		<style>
 			/*#startbutton{
 				width: 31vw;
@@ -235,6 +241,9 @@
 			};
 			
 			function selectans(num) {
+				music1.pause();
+				music2.pause();
+				music3.pause();
 				document.getElementById("revealanswerbutton").style.display = "block";
 				document.getElementById("takemoneybutton").style.display = "none";
 				if (localStorage.getItem("status")=="answer") {
@@ -275,13 +284,24 @@
 				document.getElementById("revealanswerbutton").style.display = "none";
 			};
 			
-			function loadQuestion() {
-				document.getElementById("takemoneybutton").style.display = "block";
+			function playMusic() {
+				if (parseInt(localStorage.getItem("current")) < 6) {
+					music1.play();
+				} else if (parseInt(localStorage.getItem("current")) < 11) {
+					music2.play();
+				} else if (parseInt(localStorage.getItem("current")) < 16) {
+					music3.play();
+				};
+			};
+			
+			function loadQuestion() {				
 				if (localStorage.getItem("status") != "answer") {
+					document.getElementById("takemoneybutton").style.display = "block";
 					resetQuestion();
 					document.getElementById("loadquestionbutton").style.display = "none";
 					localStorage.setItem("status", "answer");
 					localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
+					playMusic();
 					if (parseInt(localStorage.getItem("current")) < 4) {
 						localStorage.setItem("currentStage", "1");
 						while (1==1) {
