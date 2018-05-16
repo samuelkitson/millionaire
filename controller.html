@@ -373,6 +373,7 @@
 						};
 					};
 					var filled = [];
+					var questionLetters = ["a", "b", "c", "d"];
 					for (i = 0; i < 4; i++) {
 						while (1==1) {
 							var num = (Math.floor(Math.random() * 4))+1;
@@ -380,20 +381,21 @@
 								num = 0;
 							} else {
 								filled.push(num);
+								var questionId = questionLetters[num-1];
 								if (i===0) {
-									localStorage.setItem("correctAnswerText", set[localStorage.getItem("questionNum")].Y);
+									localStorage.setItem("correctAnswerText", questionId+": "+set[localStorage.getItem("questionNum")].Y);
 									localStorage.setItem("correctAnswerNum", num);
-									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].Y);
-									document.getElementById("answer"+num+"text").innerHTML =  set[localStorage.getItem("questionNum")].Y;
+									localStorage.setItem("answer"+num+"text", questionId+": "+set[localStorage.getItem("questionNum")].Y);
+									document.getElementById("answer"+num+"text").innerHTML =  questionId+": "+set[localStorage.getItem("questionNum")].Y;
 								} else if (i==1) {
-									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].N1);
-									document.getElementById("answer"+num+"text").innerHTML =  set[localStorage.getItem("questionNum")].N1;
+									localStorage.setItem("answer"+num+"text", questionId+": "+set[localStorage.getItem("questionNum")].N1);
+									document.getElementById("answer"+num+"text").innerHTML =  questionId+": "+set[localStorage.getItem("questionNum")].N1;
 								} else if (i==2) {
-									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].N2);
-									document.getElementById("answer"+num+"text").innerHTML =  set[localStorage.getItem("questionNum")].N2;
+									localStorage.setItem("answer"+num+"text", questionId+": "+set[localStorage.getItem("questionNum")].N2);
+									document.getElementById("answer"+num+"text").innerHTML =  questionId+": "+set[localStorage.getItem("questionNum")].N2;
 								} else if (i==3) {
-									localStorage.setItem("answer"+num+"text", set[localStorage.getItem("questionNum")].N3);
-									document.getElementById("answer"+num+"text").innerHTML =  set[localStorage.getItem("questionNum")].N3;
+									localStorage.setItem("answer"+num+"text", questionId+": "+set[localStorage.getItem("questionNum")].N3);
+									document.getElementById("answer"+num+"text").innerHTML =  questionId+": "+set[localStorage.getItem("questionNum")].N3;
 								};
 								break;
 							};
