@@ -13,6 +13,15 @@
 		<audio id="music3" loop hidden>
 			<source src="https://instaud.io/_/2blc.mp3" type="audio/mpeg">
 		</audio>
+		<audio id="musicfinal" hidden>
+			<source src="https://instaud.io/_/2bE0.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="musiccorrect" hidden>
+			<source src="https://instaud.io/_/2bE1.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="musicincorrect" hidden>
+			<source src="https://instaud.io/_/2bE2.mp3" type="audio/mpeg">
+		</audio>
 		<style>
 			/*#startbutton{
 				width: 31vw;
@@ -244,6 +253,7 @@
 				music1.pause();
 				music2.pause();
 				music3.pause();
+				musicfinal.play();
 				document.getElementById("revealanswerbutton").style.display = "block";
 				document.getElementById("takemoneybutton").style.display = "none";
 				if (localStorage.getItem("status")=="answer") {
@@ -269,6 +279,7 @@
 			};
 			
 			function revealAnswer() {
+				musicfinal.pause();
 				document.getElementById("audienceresults").style.display = "none";
 				localStorage.setItem("status", "revealed");
 				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
@@ -278,13 +289,17 @@
 				};
 				if (localStorage.getItem("answer")==localStorage.getItem("correctAnswerNum")) {
 					document.getElementById("loadquestionbutton").style.display = "block";
+					musiccorrect.play();
 				} else {
 					document.getElementById("resetbutton").style.display = "block";
+					musicincorrect.play();
 				};
 				document.getElementById("revealanswerbutton").style.display = "none";
 			};
 			
 			function playMusic() {
+				musiccorrect.pause();
+				musicincorrect.pause();
 				if (parseInt(localStorage.getItem("current")) < 6) {
 					music1.play();
 				} else if (parseInt(localStorage.getItem("current")) < 11) {
