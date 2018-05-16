@@ -229,7 +229,7 @@
 						document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
 						localStorage.setItem("lifelinephone", "used");
 						document.getElementById("countdown").style.display = "block";
-						localStorage.setItem("countdown", "30");
+						localStorage.setItem("timeleft", "30");
 					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
 						var a = parseInt(prompt("Enter votes for answer A:"));
 						var b = parseInt(prompt("Enter votes for answer B:"));
@@ -251,17 +251,19 @@
 			};
 			
 			function countdown() {
-				if (localStorage.getItem("countdown") == "30") {
+				if (localStorage.getItem("timeleft") == "30") {
 					console.log("starting timer");
+					localStorage.setItem("timeleft", 10);
 					var timeleft = 10;
 					var timerScript = setInterval(function(){
-					timeleft--;
-					document.getElementById("countdown").innerHTML = timeleft;
-					if(timeleft <= 0)
-						console.log("timer finished");
-						clearInterval(timerScript);
-						document.getElementById("countdown").style.display = "none";
-					},1000);
+						localStorage.setItem("timeleft", (parseInt(localStorage.getItem("timeleft")))-1);
+						timeleft--;
+						document.getElementById("countdown").innerHTML = localStorage.getItem("timeleft");
+						if(parseInt(localStorage.getItem("timeleft")) <= 0)
+							console.log("timer finished");
+							clearInterval(timerScript);
+							document.getElementById("countdown").style.display = "none";
+						},1000);
 				} else {
 					console.log("timer stopped");
 					clearInterval(timerScript);
