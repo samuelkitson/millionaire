@@ -291,10 +291,10 @@
 			
 			function audienceShow() {
 				document.getElementById("audienceinput").style.display = "none";
-				var a = document.getElementById("audienceinput1").value;
-				var b = document.getElementById("audienceinput2").value;
-				var c = document.getElementById("audienceinput3").value;
-				var d = document.getElementById("audienceinput4").value;
+				var a = parseInt(document.getElementById("audienceinput1").value);
+				var b = parseInt(document.getElementById("audienceinput2").value);
+				var c = parseInt(document.getElementById("audienceinput3").value);
+				var d = parseInt(document.getElementById("audienceinput4").value);
 				var total = a+b+c+d;
 				var aa = String(Math.round((a/total)*100));
 				var ba = String(Math.round((b/total)*100));
