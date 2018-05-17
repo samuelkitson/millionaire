@@ -351,6 +351,7 @@
 			function revealAnswer() {
 				musicfinal.pause();
 				document.getElementById("audienceresults").style.display = "none";
+				document.getElementById("countdown").style.display = "none";
 				localStorage.setItem("status", "revealed");
 				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
@@ -527,6 +528,7 @@
 	<body onload="onload()" id="body">
 		<div id="prizedetails"></div>
 		<div id="audienceresults"></div>
+		<div id="audienceinput"></div>
 		<div id="countdown" onclick="countdown()">30</div>
 		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
 		<button id="newquestionbutton" class="button" onclick="loadQuestion('new')">Generate new question</button>
