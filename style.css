@@ -14,6 +14,14 @@
   text-align: center;
   display: none;
 }
+.audienceinputboxes{
+  width: 25%;
+  height: 5%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  font-size: 1.5vw;
+}
 #audienceresults, #audienceinput{
   border: none;
   color: white;
