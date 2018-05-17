@@ -269,7 +269,7 @@
 						document.getElementById("countdown").style.display = "block";
 						localStorage.setItem("timeleft", "30");
 					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
-						var a = parseInt(prompt("Enter votes for answer A:"));
+						/*var a = parseInt(prompt("Enter votes for answer A:"));
 						var b = parseInt(prompt("Enter votes for answer B:"));
 						var c = parseInt(prompt("Enter votes for answer C:"));
 						var d = parseInt(prompt("Enter votes for answer D:"));
@@ -281,11 +281,28 @@
 						//alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
 						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
 						localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
-						document.getElementById("audienceresults").style.display = "block";
+						document.getElementById("audienceresults").style.display = "block";*/
+						document.getElementById("audienceinput").style.display = "block";
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
 					};
 				};
+			};
+			
+			function audienceShow() {
+				document.getElementById("audienceinput").style.display = "none";
+				var a = document.getElementById("audienceinput1").value;
+				var b = document.getElementById("audienceinput2").value;
+				var c = document.getElementById("audienceinput3").value;
+				var d = document.getElementById("audienceinput4").value;
+				var total = a+b+c+d;
+				var aa = String(Math.round((a/total)*100));
+				var ba = String(Math.round((b/total)*100));
+				var ca = String(Math.round((c/total)*100));
+				var da = String(Math.round((d/total)*100));
+				document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
+				localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
+				document.getElementById("audienceresults").style.display = "block";
 			};
 			
 			function countdown() {
@@ -528,7 +545,13 @@
 	<body onload="onload()" id="body">
 		<div id="prizedetails"></div>
 		<div id="audienceresults"></div>
-		<div id="audienceinput"></div>
+		<div id="audienceinput">
+			<input type="text" id="audienceinput1" class="audienceinputboxes" placeholder="Votes for option A">
+			<input type="text" id="audienceinput2" class="audienceinputboxes" placeholder="Votes for option B">
+			<input type="text" id="audienceinput3" class="audienceinputboxes" placeholder="Votes for option C">
+			<input type="text" id="audienceinput4" class="audienceinputboxes" placeholder="Votes for option D">
+			<button id="audienceinputbutton" onclick="audienceShow()">Show results</button>
+		</div>
 		<div id="countdown" onclick="countdown()">30</div>
 		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
 		<button id="newquestionbutton" class="button" onclick="loadQuestion('new')">Generate new question</button>
