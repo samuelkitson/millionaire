@@ -336,7 +336,7 @@
 			function submitCode() {
 				if (document.getElementById("codeinput").value == "*") {
 					localStorage.setItem("verifycode", "Single screen mode");
-					document.getElementById("questiontext").innerHTML = "Screens synced<br>Ready to start...";
+					document.getElementById("questiontext").innerHTML = "**Single player mode**<br>Ready to start...";
 					localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
 					document.getElementById("startbutton").style.display = "block";
 				} else {
