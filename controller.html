@@ -22,8 +22,11 @@
 		<audio id="musicincorrect" hidden>
 			<source src="https://instaud.io/_/2bE2.mp3" type="audio/mpeg">
 		</audio>
-		<audio id="music lose" hidden>
+		<audio id="musiclose" hidden>
 			<source src="https://instaud.io/_/2bUU.mp3" type="audio/mpeg">
+		</audio>
+		<audio id="musicend" hidden>
+			<source src="https://instaud.io/_/2bYe.mp3" type="audio/mpeg">
 		</audio>
 		<style>
 			/*#startbutton{
@@ -201,9 +204,10 @@
 				document.getElementById("loadquestionbutton").style.display = "none";
 				music1.pause();
 				music2.pause();
+				music3.pause();
 				musicincorrect.pause();
 				musicfinal.pause();
-				music3.play();
+				musicend.play();
 				var prizes = JSON.parse(localStorage.getItem("prizes")).list;
 				var current = localStorage.getItem("current");
 				if (type=="win") {
