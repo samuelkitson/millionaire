@@ -195,6 +195,7 @@
 			
 			function showWinnings(type) {
 				localStorage.setItem("status", "ended");
+				document.getElementById("newquestionbutton").style.display = "none";
 				document.getElementById("takemoneybutton").style.display = "none";
 				document.getElementById("resetbutton").style.display = "none";
 				document.getElementById("loadquestionbutton").style.display = "none";
@@ -349,6 +350,7 @@
 			};
 			
 			function leave() {
+				musiccorrect.play();
 				setTimeout(function(){ showWinnings("leave"); }, 10);
 			};
 			
