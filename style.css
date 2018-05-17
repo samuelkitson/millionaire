@@ -14,7 +14,7 @@
   text-align: center;
   display: none;
 }
-#audienceresults{
+#audienceresults #audienceinput{
   border: none;
   color: white;
   text-align: center;
