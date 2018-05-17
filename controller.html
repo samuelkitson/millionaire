@@ -307,6 +307,7 @@
 			
 			function countdown() {
 				if (localStorage.getItem("timeleft") == "30") {
+					document.getElementById("countdown").style.color = "white";
 					console.log("starting timer");
 					localStorage.setItem("timeleft", "30");
 					var timeleft = 10;
@@ -550,6 +551,7 @@
 			<input type="text" id="audienceinput2" class="audienceinputboxes" placeholder="Votes for option B">
 			<input type="text" id="audienceinput3" class="audienceinputboxes" placeholder="Votes for option C">
 			<input type="text" id="audienceinput4" class="audienceinputboxes" placeholder="Votes for option D">
+			<br>
 			<button id="audienceinputbutton" onclick="audienceShow()">Show results</button>
 		</div>
 		<div id="countdown" onclick="countdown()">30</div>
