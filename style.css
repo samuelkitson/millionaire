@@ -15,9 +15,9 @@
   display: none;
 }
 .audienceinputboxes{
-  width: 25%;
-  height: 25%;
-  position: absolute;
+  width: 20%;
+  height: 3vh;
+  position: relative;
   left: 5%;
   font-size: 1.5vw;
 }
