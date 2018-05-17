@@ -70,6 +70,16 @@
   left: 35%;
   cursor: pointer;
 }
+#newquestionbutton{
+  background-color: red;
+  width: 25%;
+  height: 11%;
+  position: absolute;
+  top: 5%;
+  display: none;
+  left: 5%;
+  cursor: pointer;
+}
 #resetbutton{
   background-color: red;
   width: 25%;
