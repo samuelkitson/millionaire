@@ -383,11 +383,13 @@
 			
 			function loadQuestion() {				
 				if (localStorage.getItem("status") != "answer") {
-					document.getElementById("takemoneybutton").style.display = "block";
 					resetQuestion();
 					document.getElementById("loadquestionbutton").style.display = "none";
 					localStorage.setItem("status", "answer");
 					localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
+					if (parseInt(localStorage.getItem("current")) != "1") {
+						document.getElementById("takemoneybutton").style.display = "block";
+					};
 					playMusic();
 					if (parseInt(localStorage.getItem("current")) < 4) {
 						localStorage.setItem("currentStage", "1");
