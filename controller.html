@@ -390,7 +390,7 @@
 			};
 			
 			function loadQuestion(type) {				
-				if (localStorage.getItem("status") != "answer") {
+				if (localStorage.getItem("status") != "answer" || type == "new") {
 					resetQuestion();
 					document.getElementById("loadquestionbutton").style.display = "none";
 					document.getElementById("newquestionbutton").style.display = "block";
