@@ -357,7 +357,7 @@
 			};
 			
 			function submitCode() {
-				if (document.getElementById("topicselect").value != "") {
+				if (document.getElementById("topicselect").value != "filler") {
 					document.getElementById("topicselect").style.display = "none";
 					localStorage.setItem("topic", document.getElementById("topicselect").value);
 					addScript("questions/"+document.getElementById("topicselect").value+".js");
@@ -372,6 +372,8 @@
 					};
 					document.getElementById("codeinput").style.display = "none";
 					document.getElementById("entercodebutton").style.display = "none";
+				} else {
+					alert("Select a topic first");
 				};
 			};
 			
