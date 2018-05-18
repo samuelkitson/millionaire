@@ -194,8 +194,6 @@
 				var cell2 = row.insertCell(1);
 			};*/
 			
-			var done = [];
-			
 			function showWinnings(type) {
 				localStorage.setItem("status", "ended");
 				document.getElementById("newquestionbutton").style.display = "none";
@@ -428,50 +426,74 @@
 					};
 					playMusic();
 					if (parseInt(localStorage.getItem("current")) < 4) {
+						var done1a = JSON.parse(sessionStorage.getItem("done1"));
+						if (done1a.length == questionset.stage1.length) {
+							sessionStorage.setItem("done1", "[]");
+							done1a = JSON.parse(sessionStorage.getItem("done1"));
+						};
 						localStorage.setItem("currentStage", "1");
 						while (1==1) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage1.length)));
-							if (done.includes("A"+localStorage.getItem("questionNum"))) {
+							if (done1a.includes("A"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
 							} else {
-								done.push("A"+localStorage.getItem("questionNum"));
+								done1a.push("A"+localStorage.getItem("questionNum"));
+								sessionStorage.setItem("done1", JSON.stringify(done1a));
 								var set = questionset.stage1;
 								break;
 							};
 						};
 					} else if (parseInt(localStorage.getItem("current")) < 8) {
+						var done2a = JSON.parse(sessionStorage.getItem("done2"));
+						if (done2a.length == questionset.stage2.length) {
+							sessionStorage.setItem("done2", "[]");
+							done2a = JSON.parse(sessionStorage.getItem("done2"));
+						};
 						localStorage.setItem("currentStage", "2");
 						while (1==1) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage2.length)));
-							if (done.includes("B"+localStorage.getItem("questionNum"))) {
+							if (done2a.includes("B"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
 							} else {
-								done.push("B"+localStorage.getItem("questionNum"));
+								done2a.push("B"+localStorage.getItem("questionNum"));
 								var set = questionset.stage2;
+								sessionStorage.setItem("done2", JSON.stringify(done2a));
 								break;
 							};
 						};
 					} else if (parseInt(localStorage.getItem("current")) < 13) {
+						var done3a = JSON.parse(sessionStorage.getItem("done3"));
+						if (done3a.length == questionset.stage3.length) {
+							sessionStorage.setItem("done3", "[]");
+							done3a = JSON.parse(sessionStorage.getItem("done3"));
+						};
 						localStorage.setItem("currentStage", "3");
 						while (1==1) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage3.length)));
-							if (done.includes("C"+localStorage.getItem("questionNum"))) {
+							if (done3a.includes("C"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
 							} else {
 								var set = questionset.stage3;
-								done.push("C"+localStorage.getItem("questionNum"));
+								done3a.push("C"+localStorage.getItem("questionNum"));
+								sessionStorage.setItem("done3", JSON.stringify(done3a));
 								break;
 							};
 						};
 					} else if (parseInt(localStorage.getItem("current")) > 12) {
+						var done4a = JSON.parse(sessionStorage.getItem("done4"));
+						if (done4a.length == questionset.stage4.length) {
+							sessionStorage.setItem("done4", "[]");
+							done4a = JSON.parse(sessionStorage.getItem("done4"));
+						};
 						localStorage.setItem("currentStage", "4");
 						while (1==1) {
 							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage4.length)));
-							if (done.includes("D"+localStorage.getItem("questionNum"))) {
+							if (done4a.includes("D"+localStorage.getItem("questionNum"))) {
 								localStorage.setItem("questionNum", "");
 							} else {
 								var set = questionset.stage4;
-								done.push("D"+localStorage.getItem("questionNum"));
+								done4a.push("D"+localStorage.getItem("questionNum"));
+								sessionStorage.setItem("done4", JSON.stringify(done4a));
 								break;
 							};
 						};
@@ -512,6 +534,12 @@
 			};
 			
 			function onload() {
+				if (sessionStorage.getItem("done1") === null) {
+					sessionStorage.setItem("done1", "[]");
+					sessionStorage.setItem("done2", "[]");
+					sessionStorage.setItem("done3", "[]");
+					sessionStorage.setItem("done4", "[]");
+				};
 				document.getElementById("resetbutton").style.display = "none";
 				localStorage.setItem("current", "0");
 				localStorage.setItem("currentStage", "1");
