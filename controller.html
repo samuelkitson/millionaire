@@ -538,7 +538,11 @@
 			};
 			
 			function onload() {
-				document.getElementById("topicselect").value = localStorage.getItem("topic");
+				if (localStorage.getItem("topic") === null) {
+					document.getElementById("topicselect").value = "filler";
+				} else {
+					document.getElementById("topicselect").value = localStorage.getItem("topic");
+				};
 				if (sessionStorage.getItem("done1") === null) {
 					sessionStorage.setItem("done1", "[]");
 					sessionStorage.setItem("done2", "[]");
@@ -600,7 +604,7 @@
 		<button id="revealanswerbutton" class="button" onclick="revealAnswer()">Reveal answer</button>
 		<div id="syncfailed"><br>The pages failed to sync.<br>Please reload both and try again.</div>
 		<select id="topicselect">
-			<option value="" disabled>Select a topic</option>
+			<option value="filler" disabled>Select a topic</option>
 			<option value="general">General Knowledge</option>
 			<option value="productdesign">Product Design GCSE - AQA</option>
 		</select>
