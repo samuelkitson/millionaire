@@ -357,17 +357,19 @@
 			};
 			
 			function submitCode() {
-				if (document.getElementById("codeinput").value == "*") {
-					localStorage.setItem("verifycode", "Single screen mode");
-					document.getElementById("questiontext").innerHTML = "**Single player mode**<br>Ready to start...";
-					localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
-					document.getElementById("startbutton").style.display = "block";
-				} else {
-					localStorage.setItem("verifycode", parseInt(document.getElementById("codeinput").value));
-					sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
+				if (document.getElementById("topicselect").value != "") {
+					if (document.getElementById("codeinput").value == "*") {
+						localStorage.setItem("verifycode", "Single screen mode");
+						document.getElementById("questiontext").innerHTML = "**Single player mode**<br>Ready to start...";
+						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
+						document.getElementById("startbutton").style.display = "block";
+					} else {
+						localStorage.setItem("verifycode", parseInt(document.getElementById("codeinput").value));
+						sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
+					};
+					document.getElementById("codeinput").style.display = "none";
+					document.getElementById("entercodebutton").style.display = "none";
 				};
-				document.getElementById("codeinput").style.display = "none";
-				document.getElementById("entercodebutton").style.display = "none";
 			};
 			
 			function revealAnswer() {
