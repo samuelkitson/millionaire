@@ -358,6 +358,7 @@
 			
 			function submitCode() {
 				if (document.getElementById("topicselect").value != "") {
+					localStorage.setItem("topic", document.getElementById("topicselect").value);
 					if (document.getElementById("codeinput").value == "*") {
 						localStorage.setItem("verifycode", "Single screen mode");
 						document.getElementById("questiontext").innerHTML = "**Single player mode**<br>Ready to start...";
@@ -536,6 +537,7 @@
 			};
 			
 			function onload() {
+				document.getElementById("topicselect").value = localStorage.getItem("topic");
 				if (sessionStorage.getItem("done1") === null) {
 					sessionStorage.setItem("done1", "[]");
 					sessionStorage.setItem("done2", "[]");
@@ -599,6 +601,7 @@
 		<div id="syncfailed"><br>The pages failed to sync.<br>Please reload both and try again.</div>
 		<select id="topicselect">
 			<option value="" disabled>Select a topic</option>
+			<option value="general">General Knowledge</option>
 			<option value="productdesign">Product Design GCSE - AQA</option>
 		</select>
 		<input type="text" id="codeinput" placeholder="Enter code from contestant page">
