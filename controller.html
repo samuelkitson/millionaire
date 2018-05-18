@@ -194,6 +194,13 @@
 				var cell2 = row.insertCell(1);
 			};*/
 			
+			function resetRepeatData() {
+				sessionStorage.setItem("done1", "[]");
+				sessionStorage.setItem("done2", "[]");
+				sessionStorage.setItem("done3", "[]");
+				sessionStorage.setItem("done4", "[]");
+			};
+			
 			function showWinnings(type) {
 				localStorage.setItem("status", "ended");
 				document.getElementById("newquestionbutton").style.display = "none";
@@ -606,7 +613,7 @@
 		<button id="resetbutton" class="button" onclick="resetGame()">Reset</button>
 		<button id="revealanswerbutton" class="button" onclick="revealAnswer()">Reveal answer</button>
 		<div id="syncfailed"><br>The pages failed to sync.<br>Please reload both and try again.</div>
-		<select id="topicselect">
+		<select id="topicselect" onchange="resetRepeatData()">
 			<option value="filler" disabled>Select a topic</option>
 			<option value="general">General Knowledge</option>
 			<option value="productdesign">Product Design GCSE - AQA</option>
