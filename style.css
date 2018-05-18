@@ -1,7 +1,7 @@
 #footer{
   position: absolute;
-  bottom: 1px;
-  left: 1px;
+  bottom: 0.5px;
+  left: 2px;
   font-family: arial;
   color: white;
   font-size: 1vw;
