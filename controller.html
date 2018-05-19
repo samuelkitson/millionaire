@@ -525,19 +525,19 @@
 								filled.push(num);
 								var questionId = questionLetters[num-1];
 								if (i===0) {
-									localStorage.setItem("correctAnswerText", "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y);
+									localStorage.setItem("correctAnswerText", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y);
 									localStorage.setItem("correctAnswerNum", num);
-									localStorage.setItem("answer"+num+"text", "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y);
-									document.getElementById("answer"+num+"text").innerHTML =  "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y;
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y;
 								} else if (i==1) {
-									localStorage.setItem("answer"+num+"text", "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N1);
-									document.getElementById("answer"+num+"text").innerHTML =  "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N1;
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N1);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N1;
 								} else if (i==2) {
-									localStorage.setItem("answer"+num+"text", "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N2);
-									document.getElementById("answer"+num+"text").innerHTML =  "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N2;
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N2);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N2;
 								} else if (i==3) {
-									localStorage.setItem("answer"+num+"text", "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N3);
-									document.getElementById("answer"+num+"text").innerHTML =  "<span color='orange'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N3;
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N3);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N3;
 								};
 								break;
 							};
