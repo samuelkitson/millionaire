@@ -199,6 +199,9 @@
 						document.getElementById("questiontext").innerHTML = "Screens synced<br>Waiting for controller to start...";
 						localStorage.setItem("verifycode", sessionStorage.getItem("verifycodetempb")+"AAA");
 					};
+					if ((evt.key == "status")&&(evt.newValue == "idle")) {
+						document.getElementById("prizedetails").style.display = "none";
+					};
 					if (localStorage.getItem("status")!="idle") {
 						if ((evt.key == "status")&&(evt.newValue == "start")) {
 							document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
@@ -216,9 +219,6 @@
 						};
 						if ((evt.key == "lifelineaudience")&&(evt.newValue == "used")) {
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
-						};
-						if ((evt.key == "status")&&(evt.newValue == "idle")) {
-							document.getElementById("prizedetails").style.display = "none";
 						};
 						if (evt.key == "timeleft") {
 							document.getElementById("countdown").innerHTML = evt.newValue;
