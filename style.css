@@ -97,12 +97,12 @@
 }
 #resetbutton{
   background-color: red;
-  width: 25%;
-  height: 11%;
+  width: 70%;
+  height: auto%;
   position: absolute;
-  top: 5%;
+  top: 30%;
   display: none;
-  left: 5%;
+  left: 2%;
   cursor: pointer;
 }
 #entercodebutton{
