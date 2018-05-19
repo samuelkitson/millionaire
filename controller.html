@@ -369,7 +369,7 @@
 			function submitCode() {
 				if (document.getElementById("topicselect").value != "filler") {
 					document.getElementById("topicselect").style.display = "none";
-					localStorage.setItem("topic", document.getElementById("topicselect").value);
+					localStorage.setItem("topic", String(document.getElementById("topicselect").value));
 					addScript("questions/"+document.getElementById("topicselect").value+".js");
 					if (document.getElementById("codeinput").value == "") {
 						localStorage.setItem("verifycode", "Single screen mode");
