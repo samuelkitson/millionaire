@@ -31,7 +31,7 @@ var questionset = {
       "N3": "Humburg"
     },
     {
-      "Q": "Whih Disney film features the song 'Under the Sea'?",
+      "Q": "Which Disney film features the song 'Under the Sea'?",
       "Y": "The Little Mermaid",
       "N1": "Sleeping Beauty",
       "N2": "Bambi",
