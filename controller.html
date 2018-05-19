@@ -371,14 +371,14 @@
 					document.getElementById("topicselect").style.display = "none";
 					localStorage.setItem("topic", document.getElementById("topicselect").value);
 					addScript("questions/"+document.getElementById("topicselect").value+".js");
-					if (document.getElementById("codeinput").value == "*") {
+					if (document.getElementById("codeinput").value == "") {
 						localStorage.setItem("verifycode", "Single screen mode");
 						document.getElementById("questiontext").innerHTML = "**Single player mode**<br>Ready to start...";
-						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
+						localStorage.setItem("verifycode", String(localStorage.getItem("verifycode"))+"A");
 						document.getElementById("startbutton").style.display = "block";
 					} else {
 						localStorage.setItem("verifycode", parseInt(document.getElementById("codeinput").value));
-						sessionStorage.setItem("verifycodetemp", localStorage.getItem("verifycode"));
+						sessionStorage.setItem("verifycodetemp", String(localStorage.getItem("verifycode")));
 					};
 					document.getElementById("codeinput").style.display = "none";
 					document.getElementById("entercodebutton").style.display = "none";
