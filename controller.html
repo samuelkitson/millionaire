@@ -620,7 +620,9 @@
 				musicend.pause();
 				musicend.currentTime = 0;
 				onload();
-				submitCode();
+				if (document.getElementById("codeinput").value == "*") {
+					submitCode();
+				};
 			};
 		</script>
 	</head>
