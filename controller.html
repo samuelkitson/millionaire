@@ -205,6 +205,7 @@
 			
 			function showWinnings(type) {
 				localStorage.setItem("status", "ended");
+				document.getElementById("audienceresults").style.display = "none";
 				document.getElementById("newquestionbutton").style.display = "none";
 				document.getElementById("takemoneybutton").style.display = "none";
 				document.getElementById("resetbutton").style.display = "block";
