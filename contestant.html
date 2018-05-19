@@ -218,7 +218,7 @@
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						};
 						if ((evt.key == "status")&&(evt.newValue == "idle")) {
-							onload();
+							document.getElementById("prizedetails").style.display = "none";
 						};
 						if (evt.key == "timeleft") {
 							document.getElementById("countdown").innerHTML = evt.newValue;
