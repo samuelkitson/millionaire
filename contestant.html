@@ -201,6 +201,9 @@
 					};
 					if ((evt.key == "status")&&(evt.newValue == "idle")) {
 						document.getElementById("prizedetails").style.display = "none";
+						document.getElementById("lifeline5050").src = "images/millionaire 5050.png";
+						document.getElementById("lifelinephone").src = "images/millionaire phone.png";
+						document.getElementById("lifelineaudience").src = "images/millionaire audience.png";
 						resetQuestion();
 					};
 					if (localStorage.getItem("status")!="idle") {
