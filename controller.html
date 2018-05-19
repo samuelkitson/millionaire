@@ -578,7 +578,9 @@
 					sessionStorage.setItem("done3", "[]");
 					sessionStorage.setItem("done4", "[]");
 				};
-				document.getElementById("resetbutton").style.display = "none";
+				document.getElementById("lifeline5050").src = "images/millionaire 5050.png";
+				document.getElementById("lifelinephone").src = "images/millionaire phone.png";
+				document.getElementById("lifelineaudience").src = "images/millionaire audience.png";
 				localStorage.setItem("current", "0");
 				localStorage.setItem("currentStage", "1");
 				localStorage.setItem("lifeline5050", "ready");
@@ -613,6 +615,8 @@
 			};
 			
 			function resetGame() {
+				resetQuestion();
+				musicend.pause();
 				onload();
 			};
 		</script>
