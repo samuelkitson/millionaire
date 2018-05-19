@@ -619,6 +619,7 @@
 				resetQuestion();
 				musicend.pause();
 				onload();
+				submitCode();
 			};
 		</script>
 	</head>
@@ -637,7 +638,7 @@
 		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
 		<button id="newquestionbutton" class="button" onclick="loadQuestion('new')">Generate new question</button>
 		<button id="loadquestionbutton" class="button" onclick="loadQuestion()">Load next question</button>
-		<button id="resetbutton" class="button" onclick="resetGame()">Reset</button>
+		<button id="resetbutton" class="button" onclick="resetGame()">Replay</button>
 		<button id="revealanswerbutton" class="button" onclick="revealAnswer()">Reveal answer</button>
 		<div id="syncfailed"><br>The pages failed to sync.<br>Please reload both and try again.</div>
 		<select id="topicselect" onchange="resetRepeatData()">
