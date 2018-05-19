@@ -217,6 +217,9 @@
 						if ((evt.key == "lifelineaudience")&&(evt.newValue == "used")) {
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						};
+						if ((evt.key == "status")&&(evt.newValue == "idle")) {
+							onload();
+						};
 						if (evt.key == "timeleft") {
 							document.getElementById("countdown").innerHTML = evt.newValue;
 							if (evt.newValue == "0") {
