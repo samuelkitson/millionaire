@@ -200,6 +200,7 @@
 						localStorage.setItem("verifycode", sessionStorage.getItem("verifycodetempb")+"AAA");
 					};
 					if ((evt.key == "status")&&(evt.newValue == "idle")) {
+						document.getElementById("audienceresults").style.display = "none";
 						document.getElementById("prizedetails").style.display = "none";
 						document.getElementById("lifeline5050").src = "images/millionaire 5050.png";
 						document.getElementById("lifelinephone").src = "images/millionaire phone.png";
