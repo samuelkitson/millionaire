@@ -1,11 +1,11 @@
 #footer{
-  position: absolute;
+  position: fixed;
   bottom: 0.5px;
   left: 2px;
   font-family: arial;
   color: white;
   font-size: 1vw;
-}
+  margin: 0px;
 #countdown{
   border: none;
   color: orange;
