@@ -615,6 +615,7 @@
 			};
 			
 			function resetGame() {
+				localStorage.setItem("currentQuestion", "CONTROLLER SCREEN");
 				resetQuestion();
 				musicend.pause();
 				onload();
