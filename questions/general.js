@@ -29,6 +29,13 @@ var questionset = {
       "N1": "Himburg",
       "N2": "Homburg",
       "N3": "Humburg"
+    },
+    {
+      "Q": "Whih Disney film features the song 'Under the Sea'?",
+      "Y": "The Little Mermaid",
+      "N1": "Sleeping Beauty",
+      "N2": "Bambi",
+      "N3": "The Jungle Book"
     }
   ],
   "stage2": [
@@ -73,6 +80,13 @@ var questionset = {
       "N1": "Loud noises",
       "N2": "Salty foods",
       "N3": "Strange smells"
+    },
+    {
+      "Q": "Which city will host the 2020 Summer Olympics?",
+      "Y": "Tokyo",
+      "N1": "Japan",
+      "N2": "Rio",
+      "N3": "Rome"
     }
   ],
   "stage3": [
