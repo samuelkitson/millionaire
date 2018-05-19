@@ -201,6 +201,7 @@
 					};
 					if ((evt.key == "status")&&(evt.newValue == "idle")) {
 						document.getElementById("prizedetails").style.display = "none";
+						resetQuestion();
 					};
 					if (localStorage.getItem("status")!="idle") {
 						if ((evt.key == "status")&&(evt.newValue == "start")) {
