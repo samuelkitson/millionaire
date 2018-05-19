@@ -194,6 +194,8 @@
 				var cell2 = row.insertCell(1);
 			};*/
 			
+			var prizestableloaded = "false";
+			
 			function resetRepeatData() {
 				sessionStorage.setItem("done1", "[]");
 				sessionStorage.setItem("done2", "[]");
@@ -591,7 +593,10 @@
 				//TEMP
 				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
 				//END TEMP
-				fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
+				if (prizestableloaded == "false") {
+					prizestableloaded = "true";
+					fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
+				};
 				fixPrizeHighlight();
 				window.addEventListener("storage", storage_handler, false);
 				function storage_handler(evt){
