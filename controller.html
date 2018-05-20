@@ -301,16 +301,23 @@
 							localStorage.setItem("timeleft", "30");
 						} else {
 							var current = localStorage.getItem("current");
-							var numstemp = ["A", "B", "C", "D"];
-							var correctLetter = numstemp[parseInt(localStorage.getItem("correctAnswerNum"))-1];
+							var letterstemp = ["A", "B", "C", "D"];
+							var correctLetter = letterstemp[parseInt(localStorage.getItem("correctAnswerNum"))-1];
 							var temp = Math.floor(Math.random() * 20);
+							var numstemp = ["1", "2", "3", "4"];
+							var tempnum = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
+							numstemp.splice(tempnum, 1);
+							var tempa = numstemp[Math.floor(Math.random() * 3)];
+							var incorrectLetter = letterstemp[tempa-1];
 							if (parseInt(current) < 6) {
 								if (temp < 3) {
 									localStorage.setItem("phonetext", "I honestly don't know the answer. Sorry.");
 								} else if (temp < 12) {
 									localStorage.setItem("phonetext", "I'm 90% sure that it's answer "+correctLetter+".");
-								} else {
+								} else if (temp < 18) {
 									localStorage.setItem("phonetext", "I know this for sure! It's "+correctLetter+".");
+								} else if (temp < 20) {
+									localStorage.setItem("phonetext", "I'm not sure. If I had to guess, I'd go for "+incorrectLetter+".");
 								};
 							} else if (parseInt(current) < 11) {
 								
