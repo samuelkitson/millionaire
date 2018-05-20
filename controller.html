@@ -314,6 +314,7 @@
 						if (localStorage.getItem("mode") == "quiz") {		
 							document.getElementById("audienceinput").style.display = "block";
 						} else {
+							var current = localStorage.getItem("current");
 							var numstemp = ["1", "2", "3", "4"];
 							var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
 							numstemp.splice(temp, 1);
