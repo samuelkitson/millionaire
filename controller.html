@@ -286,8 +286,11 @@
 						numstemp.splice(temp, 1);
 						document.getElementById("answer"+tempa+"text").innerHTML = "";
 						document.getElementById("answer"+tempb+"text").innerHTML = "";
+						localStorage.setItem("5050usednow", "true");
 						localStorage.setItem("answer"+tempa+"text", "");
 						localStorage.setItem("answer"+tempb+"text", "");
+						localStorage.setItem("50501", tempa);
+						localStorage.setItem("50502", tempb);
 						var tempc = localStorage.getItem("currentQuestion");
 						localStorage.setItem("currentQuestion", "");
 						localStorage.setItem("currentQuestion", tempc);
@@ -362,25 +365,51 @@
 							var numstemp = ["1", "2", "3", "4"];
 							var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
 							numstemp.splice(temp, 1);
-							var tempa = numstemp[Math.floor(Math.random() * 3)];
-							var temp = numstemp.indexOf(tempa);
-							numstemp.splice(temp, 1);
-							var tempb = numstemp[Math.floor(Math.random() * 2)];
-							var temp = numstemp.indexOf(tempb);
-							numstemp.splice(temp, 1);
-							var tempc = numstemp[0];
-							if (parseInt(current) < 6) {
-								var values = {"list":[{"Y":"89","N1":"1","N2":"4","N3":"6"},{"Y":"94","N1":"0","N2":"2","N3":"4"}]};
-							} else if (parseInt(current) < 11) {
-								var values = {"list":[{"Y":"64","N1":"61","N2":"21","N3":"9"},{"Y":"81","N1":"8","N2":"6","N3":"5"}]};
-							} else if (parseInt(current) < 16) {
-								var values = {"list":[{"Y":"26","N1":"25","N2":"26","N3":"23"},{"Y":"57","N1":"38","N2":"4","N3":"1"}]};
+							if (localStorage.getItem("5050usednow") != "true") {
+								var tempa = numstemp[Math.floor(Math.random() * 3)];
+								var temp = numstemp.indexOf(tempa);
+								numstemp.splice(temp, 1);
+								var tempb = numstemp[Math.floor(Math.random() * 2)];
+								var temp = numstemp.indexOf(tempb);
+								numstemp.splice(temp, 1);
+								var tempc = numstemp[0];
+							} else {
+								var temparray = [];
+								var temp = numstemp.indexOf(localStorage.getItem("50501"));
+								temparray.push(temp);
+								numstemp.splice(temp, 1);
+								var temp = numstemp.indexOf(localStorage.getItem("50502"));
+								temparray.push(temp);
+								numstemp.splice(temp, 1);
+								var tempe = numstemp[0];
 							};
-							var valuesa = values.list[Math.floor(Math.random() * values.list.length)];
-							document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = parseInt(valuesa.Y);
-							document.getElementById("audienceinput"+tempa).value = parseInt(valuesa.N1);
-							document.getElementById("audienceinput"+tempb).value = parseInt(valuesa.N2);
-							document.getElementById("audienceinput"+tempc).value = parseInt(valuesa.N3);
+							if (localStorage.getItem("5050usednow") != "true") {
+								if (parseInt(current) < 6) {
+									var values = {"list":[{"Y":"89","N1":"1","N2":"4","N3":"6"},{"Y":"94","N1":"0","N2":"2","N3":"4"}]};
+								} else if (parseInt(current) < 11) {
+									var values = {"list":[{"Y":"64","N1":"61","N2":"21","N3":"9"},{"Y":"81","N1":"8","N2":"6","N3":"5"}]};
+								} else if (parseInt(current) < 16) {
+									var values = {"list":[{"Y":"26","N1":"25","N2":"26","N3":"23"},{"Y":"57","N1":"38","N2":"4","N3":"1"}]};
+								};
+								var valuesa = values.list[Math.floor(Math.random() * values.list.length)];
+								document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = parseInt(valuesa.Y);
+								document.getElementById("audienceinput"+tempa).value = parseInt(valuesa.N1);
+								document.getElementById("audienceinput"+tempb).value = parseInt(valuesa.N2);
+								document.getElementById("audienceinput"+tempc).value = parseInt(valuesa.N3);
+							} else {
+								if (parseInt(current) < 6) {
+									var values = {"list":[{"Y":"76","N":"24"},{"Y":"90","N1":"10"}]};
+								} else if (parseInt(current) < 11) {
+									var values = {"list":[{"Y":"64","N1":"61","N2":"21","N3":"9"},{"Y":"81","N1":"8","N2":"6","N3":"5"}]};
+								} else if (parseInt(current) < 16) {
+									var values = {"list":[{"Y":"26","N1":"25","N2":"26","N3":"23"},{"Y":"57","N1":"38","N2":"4","N3":"1"}]};
+								};
+								var valuesa = values.list[Math.floor(Math.random() * values.list.length)];
+								document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = parseInt(valuesa.Y);
+								document.getElementById("audienceinput"+tempe).value = parseInt(valuesa.N);
+								document.getElementById("audienceinput"+temparray[0]).value = 0;
+								document.getElementById("audienceinput"+temparray[1]).value = 0);
+							};
 							audienceShow();
 						};
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
@@ -504,6 +533,7 @@
 			
 			function loadQuestion(type) {				
 				if (localStorage.getItem("status") != "answer" || type == "new") {
+					localStorage.setItem("5050usednow", "false");
 					resetQuestion();
 					document.getElementById("loadquestionbutton").style.display = "none";
 					document.getElementById("newquestionbutton").style.display = "block";
@@ -678,6 +708,7 @@
 					sessionStorage.setItem("done3", "[]");
 					sessionStorage.setItem("done4", "[]");
 				};
+				localStorage.setItem("5050usednow", "false");
 				document.getElementById("countdown").color = "orange";
 				document.getElementById("audienceinput1").value = "";
 				document.getElementById("audienceinput2").value = "";
