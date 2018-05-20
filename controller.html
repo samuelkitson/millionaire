@@ -553,10 +553,12 @@
 			
 			function modeChange() {
 				if (localStorage.getItem("mode") == "quiz") {
-					document.getElementById("modeselect").innerHTML = "Revision mode (single player)";
+					document.getElementById("modeselect").innerHTML = "Revision mode - single player (click to change)";
+					document.getElementById("modeselect").style.backgroundColor = "red";
 					localStorage.setItem("mode", "revision");
 				} else {
-					document.getElementById("modeselect").innerHTML = "Quiz mode (multi-player)";
+					document.getElementById("modeselect").style.backgroundColor = "green";
+					document.getElementById("modeselect").innerHTML = "Quiz mode - multi-player (click to change)";
 					localStorage.setItem("mode", "quiz");
 				};
 			};
@@ -590,10 +592,12 @@
 					document.getElementById("topicselect").value = localStorage.getItem("topic");
 				};
 				if (localStorage.getItem("mode") === null || localStorage.getItem("mode") == "quiz") {
-					document.getElementById("modeselect").innerHTML = "Quiz mode (multi-player)";
+					document.getElementById("modeselect").style.backgroundColor = "green";
+					document.getElementById("modeselect").innerHTML = "Quiz mode - multi-player (click to change)";
 					localStorage.setItem("mode", "quiz");
 				} else {
-					document.getElementById("modeselect").innerHTML = "Revision mode (single player)";
+					document.getElementById("modeselect").style.backgroundColor = "red";
+					document.getElementById("modeselect").innerHTML = "Revision mode - single player (click to change)";
 				};
 				if (sessionStorage.getItem("done1") === null) {
 					sessionStorage.setItem("done1", "[]");
