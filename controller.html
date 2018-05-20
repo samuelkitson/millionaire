@@ -300,6 +300,7 @@
 							document.getElementById("countdown").style.display = "block";
 							localStorage.setItem("timeleft", "30");
 						} else {
+							var current = localStorage.getItem("current");
 							var numstemp = ["A", "B", "C", "D"];
 							var correctLetter = numstemp[parseInt(localStorage.getItem("correctAnswerNum"))-1];
 							var temp = Math.floor(Math.random() * 20);
