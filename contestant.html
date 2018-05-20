@@ -225,7 +225,9 @@
 						};
 						if ((evt.key == "lifelinephone")&&(evt.newValue == "used")) {
 							document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
-							document.getElementById("countdown").style.display = "block";
+							if (localStorage.getItem("mode") == "quiz") {
+								document.getElementById("countdown").style.display = "block";
+							};
 						};
 						if ((evt.key == "lifelineaudience")&&(evt.newValue == "used")) {
 							document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
