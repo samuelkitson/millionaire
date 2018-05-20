@@ -332,7 +332,7 @@
 									localStorage.setItem("phonetext", "Wow! That's tricky. I don't know, sorry.");
 								} else if (temp < 7) {
 									localStorage.setItem("phonetext", "I'm really not sure. I'd go for "+letterstemp[Math.floor(Math.random() * 4)]+".");
-								} else if (temp < 12) {
+								} else if (temp < 12 && localStorage.getItem("5050usednow") != "true") {
 									localStorage.setItem("phonetext", "It's either "+incorrectLetter+" or "+correctLetter+", but I'm not sure which.");
 								} else if (temp < 16) {
 									localStorage.setItem("phonetext", "I think it's "+correctLetter+", but don't rely on that!");
@@ -344,7 +344,7 @@
 									localStorage.setItem("phonetext", "That's so mean! I don't have a clue.");
 								} else if (temp < 7) {
 									localStorage.setItem("phonetext", "My best guess would be "+letterstemp[Math.floor(Math.random() * 4)]+".");
-								} else if (temp < 11) {
+								} else if (temp < 11 && localStorage.getItem("5050usednow") != "true") {
 									localStorage.setItem("phonetext", "I can't decide between "+incorrectLetter+" or "+correctLetter+". It's one of them.");
 								} else if (temp < 15) {
 									localStorage.setItem("phonetext", "I'm 100% certain that it's not "+incorrectLetter+".");
