@@ -325,27 +325,35 @@
 									localStorage.setItem("phonetext", "I'm not sure. If I had to guess, I'd go for "+incorrectLetter+" or "+correctLetter+".");
 								};
 							} else if (parseInt(current) < 11) {
-								
+								if (temp < 4) {
+									localStorage.setItem("phonetext", "Wow! That's tricky. I don't know, sorry.");
+								} else if (temp < 7) {
+									localStorage.setItem("phonetext", "I'm really not sure. I'd go for "+letterstemp[Math.floor(Math.random() * 4)]+".");
+								} else if (temp < 12) {
+									localStorage.setItem("phonetext", "It's either "+incorrectLetter+" or "+correctLetter+", but I'm not sure which.");
+								} else if (temp < 16) {
+									localStorage.setItem("phonetext", "I think it's "+correctLetter+", but don't rely on that!");
+								} else if (temp < 20) {
+									localStorage.setItem("phonetext", "I read about this the other day! It's "+correctLetter+".");
+								};
 							} else if (parseInt(current) < 16) {
-								
+								if (temp < 4) {
+									localStorage.setItem("phonetext", "That's so mean! I don't have a clue.");
+								} else if (temp < 7) {
+									localStorage.setItem("phonetext", "My best guess would be "+letterstemp[Math.floor(Math.random() * 4)]+".");
+								} else if (temp < 11) {
+									localStorage.setItem("phonetext", "I can't decide between "+incorrectLetter+" or "+correctLetter+". It's one of them.");
+								} else if (temp < 15) {
+									localStorage.setItem("phonetext", "I'm 100% certain that it's not "+incorrectLetter+".");
+								} else if (temp < 18) {
+									localStorage.setItem("phonetext", "I think it could be "+correctLetter+".");
+								} else if (temp < 20) {
+									localStorage.setItem("phonetext", "Easy! It's "+correctLetter+".");
 							};
 							document.getElementById("phoneresults").innerHTML = localStorage.getItem("phonetext");
 							document.getElementById("phoneresults").style.display = "block";
 						};
 					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
-						/*var a = parseInt(prompt("Enter votes for answer A:"));
-						var b = parseInt(prompt("Enter votes for answer B:"));
-						var c = parseInt(prompt("Enter votes for answer C:"));
-						var d = parseInt(prompt("Enter votes for answer D:"));
-						var total = a+b+c+d;
-						var aa = String(Math.round((a/total)*100));
-						var ba = String(Math.round((b/total)*100));
-						var ca = String(Math.round((c/total)*100));
-						var da = String(Math.round((d/total)*100));
-						//alert(aa+"\n"+ba+"\n"+ca+"\n"+da);
-						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
-						localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
-						document.getElementById("audienceresults").style.display = "block";*/
 						if (localStorage.getItem("mode") == "quiz") {		
 							document.getElementById("audienceinput").style.display = "block";
 						} else {
