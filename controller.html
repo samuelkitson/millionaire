@@ -205,6 +205,7 @@
 			
 			function showWinnings(type) {
 				localStorage.setItem("status", "ended");
+				document.getElementById("phoneresults").style.display = "none";
 				document.getElementById("audienceresults").style.display = "none";
 				document.getElementById("newquestionbutton").style.display = "none";
 				document.getElementById("takemoneybutton").style.display = "none";
@@ -295,8 +296,29 @@
 					} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
 						document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
 						localStorage.setItem("lifelinephone", "used");
-						document.getElementById("countdown").style.display = "block";
-						localStorage.setItem("timeleft", "30");
+						if (localStorage.getItem("mode") == "quiz") {		
+							document.getElementById("countdown").style.display = "block";
+							localStorage.setItem("timeleft", "30");
+						} else {
+							var numstemp = ["A", "B", "C", "D"];
+							var correctLetter = numstemp[parseInt(localStorage.getItem("correctAnswerNum"))-1];
+							var temp = Math.floor(Math.random() * 20);
+							if (parseInt(current) < 6) {
+								if (temp < 3) {
+									localStorage.setItem("phonetext", "I honestly don't know the answer. Sorry.");
+								} else if (temp < 12) {
+									localStorage.setItem("phonetext", "I'm 90% sure that it's answer "+correctLetter+".");
+								} else {
+									localStorage.setItem("phonetext", "I know this for sure! It's "+correctLetter+".");
+								};
+							} else if (parseInt(current) < 11) {
+								
+							} else if (parseInt(current) < 16) {
+								
+							};
+							document.getElementById("phoneresults").innerHTML = localStorage.getItem("phonetext");
+							document.getElementById("phoneresults").style.display = "block";
+						};
 					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
 						/*var a = parseInt(prompt("Enter votes for answer A:"));
 						var b = parseInt(prompt("Enter votes for answer B:"));
@@ -417,6 +439,7 @@
 			
 			function revealAnswer() {
 				musicfinal.pause();
+				document.getElementById("phoneresults").style.display = "none";
 				document.getElementById("audienceresults").style.display = "none";
 				document.getElementById("countdown").style.display = "none";
 				localStorage.setItem("status", "revealed");
@@ -598,6 +621,7 @@
 				//Show/hide elements
 				document.getElementById("prizedetails").style.display = "none";
 				document.getElementById("audienceresults").style.display = "none";
+				document.getElementById("phoneresults").style.display = "none";
 				document.getElementById("audienceinput").style.display = "none";
 				document.getElementById("countdown").style.display = "none";
 				document.getElementById("takemoneybutton").style.display = "none";
@@ -692,6 +716,7 @@
 	<body onload="onload()" id="body">
 		<div id="prizedetails"></div>
 		<div id="audienceresults"></div>
+		<div id="phoneresults"></div>
 		<div id="audienceinput">
 			<input type="text" id="audienceinput1" class="audienceinputboxes" placeholder="Votes for option A">
 			<input type="text" id="audienceinput2" class="audienceinputboxes" placeholder="Votes for option B">
