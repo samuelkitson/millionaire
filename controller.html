@@ -349,6 +349,7 @@
 									localStorage.setItem("phonetext", "I think it could be "+correctLetter+".");
 								} else if (temp < 20) {
 									localStorage.setItem("phonetext", "Easy! It's "+correctLetter+".");
+								};
 							};
 							document.getElementById("phoneresults").innerHTML = localStorage.getItem("phonetext");
 							document.getElementById("phoneresults").style.display = "block";
