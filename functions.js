@@ -1,3 +1,10 @@
+function checkMobile() {
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    return "true";
+  } else {
+    return "false";
+  };
+};
 function resetQuestion() {
   document.getElementById("answer1img").src = "images/millionaire small left.png";
   document.getElementById("answer2img").src = "images/millionaire small right.png";
