@@ -30,13 +30,29 @@
   left: 5%;
   font-size: 1.5vw;
 }
-#audienceresults, #phoneresults, #audienceinput{
+#phoneresults {
   border: none;
   color: white;
   text-align: center;
   font-family: arial;
   text-decoration: none;
   font-size: 4vh;
+  background-color: green;
+  position: absolute;
+  width: 70%;
+  height: auto;
+  top: 40%;
+  left: 2%;
+  text-align: center;
+  display: none;
+}
+#audienceresults, #audienceinput{
+  border: none;
+  color: white;
+  text-align: center;
+  font-family: arial;
+  text-decoration: none;
+  font-size: 3vh;
   background-color: blue;
   position: absolute;
   width: 70%;
