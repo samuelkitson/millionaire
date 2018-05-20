@@ -201,6 +201,7 @@
 					};
 					if ((evt.key == "status")&&(evt.newValue == "idle")) {
 						document.getElementById("audienceresults").style.display = "none";
+						document.getElementById("phoneresults").style.display = "none";
 						document.getElementById("prizedetails").style.display = "none";
 						document.getElementById("lifeline5050").src = "images/millionaire 5050.png";
 						document.getElementById("lifelinephone").src = "images/millionaire phone.png";
@@ -214,6 +215,10 @@
 							document.getElementById("answer2text").innerHTML = "???";
 							document.getElementById("answer3text").innerHTML = "???";
 							document.getElementById("answer4text").innerHTML = "???";
+						};
+						if (evt.key == "phonetext") {
+							document.getElementById("phoneresults").style.display = "block";
+							document.getElementById("phoneresults").innerHTML = localStorage.getItem("phonetext");
 						};
 						if ((evt.key == "lifeline5050")&&(evt.newValue == "used")) {
 							document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
@@ -241,6 +246,7 @@
 							document.getElementById("answer4text").innerHTML = localStorage.getItem("answer4text");
 						};
 						if (evt.key == "status" && evt.newValue == "revealed") {
+							document.getElementById("phoneresults").style.display = "none";
 							document.getElementById("audienceresults").style.display = "none";
 							if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
 								document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
@@ -262,6 +268,7 @@
 	</head>
 	<body onload="onload()" id="body">
 		<div id="prizedetails"></div>
+		<div id="phoneresults"></div>
 		<div id="countdown">30</div>
 		<div id="audienceresults"></div>
 		<table id="lifelinestable">
