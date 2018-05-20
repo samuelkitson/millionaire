@@ -255,6 +255,22 @@
 				document.getElementById("answer4text").innerHTML = "???";
 			};
 			
+			function audienceShow() {
+				document.getElementById("audienceinput").style.display = "none";
+				var a = parseInt(document.getElementById("audienceinput1").value);
+				var b = parseInt(document.getElementById("audienceinput2").value);
+				var c = parseInt(document.getElementById("audienceinput3").value);
+				var d = parseInt(document.getElementById("audienceinput4").value);
+				var total = a+b+c+d;
+				var aa = String(Math.round((a/total)*100));
+				var ba = String(Math.round((b/total)*100));
+				var ca = String(Math.round((c/total)*100));
+				var da = String(Math.round((d/total)*100));
+				document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
+				localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
+				document.getElementById("audienceresults").style.display = "block";
+			};
+			
 			function lifeline(type){
 				if (localStorage.getItem("status")!="idle"){
 					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
@@ -295,27 +311,35 @@
 						document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
 						localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
 						document.getElementById("audienceresults").style.display = "block";*/
-						document.getElementById("audienceinput").style.display = "block";
+						if (localStorage.getItem("mode") == "quiz") {		
+							document.getElementById("audienceinput").style.display = "block";
+						} else {
+							var numstemp = ["1", "2", "3", "4"];
+							var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
+							numstemp.splice(temp, 1);
+							var tempa = numstemp[Math.floor(Math.random() * 3)];
+							var temp = numstemp.indexOf(tempa);
+							numstemp.splice(temp, 1);
+							var tempb = numstemp[Math.floor(Math.random() * 2)];
+							var temp = numstemp.indexOf(tempb);
+							numstemp.splice(temp, 1);
+							var tempc = numstemp[0];
+							if (parseInt(current) < 6) {
+								document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = "89";
+								document.getElementById("audienceinput"+tempa).value = "1";
+								document.getElementById("audienceinput"+tempb).value = "6";
+								document.getElementById("audienceinput"+tempa).value = "4";
+							} else if (parseInt(current) < 11) {
+								
+							} else if (parseInt(current) < 16) {
+								
+							};
+							audienceShow();
+						};
 						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
 						localStorage.setItem("lifelineaudience", "used");
 					};
 				};
-			};
-			
-			function audienceShow() {
-				document.getElementById("audienceinput").style.display = "none";
-				var a = parseInt(document.getElementById("audienceinput1").value);
-				var b = parseInt(document.getElementById("audienceinput2").value);
-				var c = parseInt(document.getElementById("audienceinput3").value);
-				var d = parseInt(document.getElementById("audienceinput4").value);
-				var total = a+b+c+d;
-				var aa = String(Math.round((a/total)*100));
-				var ba = String(Math.round((b/total)*100));
-				var ca = String(Math.round((c/total)*100));
-				var da = String(Math.round((d/total)*100));
-				document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
-				localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
-				document.getElementById("audienceresults").style.display = "block";
 			};
 			
 			function countdown() {
