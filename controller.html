@@ -551,8 +551,9 @@
 			};
 			
 			function onload() {
-				if (checkMobile() == "true") {
+				if (checkMobile() == "true" && sessionStorage.getItem("mobilewarning") != "true") {
 					alert("Hey, nice "+navigator.platform+"!\nSadly though, this site isn't designed for your device so you may experience a few issues when using it. If problems persist, we recommend you switch to using Google Chrome on a PC instead.");
+					sessionStorage.setItem("mobilewarning", "true");
 				};
 				//Show/hide elements
 				document.getElementById("prizedetails").style.display = "none";
