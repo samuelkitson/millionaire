@@ -30,7 +30,7 @@
   left: 5%;
   font-size: 1.5vw;
 }
-#audienceresults, #audienceinput{
+#audienceresults, #phoneresults, #audienceinput{
   border: none;
   color: white;
   text-align: center;
