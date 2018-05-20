@@ -398,7 +398,7 @@
 								document.getElementById("audienceinput"+tempc).value = parseInt(valuesa.N3);
 							} else {
 								if (parseInt(current) < 6) {
-									var values = {"list":[{"Y":"76","N":"24"},{"Y":"90","N1":"10"}]};
+									var values = {"list":[{"Y":"76","N":"24"},{"Y":"90","N":"10"}]};
 								} else if (parseInt(current) < 11) {
 									var values = {"list":[{"Y":"64","N1":"61","N2":"21","N3":"9"},{"Y":"81","N1":"8","N2":"6","N3":"5"}]};
 								} else if (parseInt(current) < 16) {
@@ -407,8 +407,8 @@
 								var valuesa = values.list[Math.floor(Math.random() * values.list.length)];
 								document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = parseInt(valuesa.Y);
 								document.getElementById("audienceinput"+tempe).value = parseInt(valuesa.N);
-								document.getElementById("audienceinput"+temparray[0]).value = 0;
-								document.getElementById("audienceinput"+temparray[1]).value = 0;
+								document.getElementById("audienceinput"+(temparray[0]+1)).value = 0;
+								document.getElementById("audienceinput"+(temparray[1]+1)).value = 0;
 							};
 							audienceShow();
 						};
