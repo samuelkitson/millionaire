@@ -368,6 +368,7 @@
 			
 			function submitCode() {
 				if (document.getElementById("topicselect").value != "filler") {
+					document.getElementById("modeselect").style.display = "none";
 					document.getElementById("topicselect").style.display = "none";
 					localStorage.setItem("topic", String(document.getElementById("topicselect").value));
 					addScript("questions/"+document.getElementById("topicselect").value+".js");
@@ -550,6 +551,16 @@
 				};
 			};
 			
+			function modeChange() {
+				if (localStorage.getItem("mode") == "quiz") {
+					document.getElementById("modeselect").innerHTML = "Revision mode (single player)";
+					localStorage.setItem("mode", "revision");
+				} else {
+					document.getElementById("modeselect").innerHTML = "Quiz mode (multi-player)";
+					localStorage.setItem("mode", "quiz");
+				};
+			};
+			
 			function onload() {
 				if (checkMobile() == "true" && sessionStorage.getItem("mobilewarning") != "true") {
 					alert("Hey, nice "+navigator.platform+"!\nSadly though, this site isn't designed for your device so you may experience a few issues when using it. If problems persist, we recommend you switch to using Google Chrome on a PC instead.");
@@ -568,6 +579,7 @@
 				document.getElementById("revealanswerbutton").style.display = "none";
 				document.getElementById("syncfailed").style.display = "block";
 				document.getElementById("topicselect").style.display = "block";
+				document.getElementById("modeselect").style.display = "block";
 				document.getElementById("codeinput").style.display = "block";
 				document.getElementById("entercodebutton").style.display = "block";
 				document.getElementById("startbutton").style.display = "none";
@@ -576,6 +588,12 @@
 					document.getElementById("topicselect").value = "filler";
 				} else {
 					document.getElementById("topicselect").value = localStorage.getItem("topic");
+				};
+				if (localStorage.getItem("mode") === null || localStorage.getItem("mode") == "quiz") {
+					document.getElementById("modeselect").innerHTML = "Quiz mode (multi-player)";
+					localStorage.setItem("mode", "quiz");
+				} else {
+					document.getElementById("modeselect").innerHTML = "Revision mode (single player)";
 				};
 				if (sessionStorage.getItem("done1") === null) {
 					sessionStorage.setItem("done1", "[]");
@@ -663,6 +681,7 @@
 			<option value="general">General Knowledge (23 questions)</option>
 			<option value="productdesign">Product Design GCSE - AQA (61 questions)</option>
 		</select>
+		<button id="modeselect" onclick="modeChange()"></button>
 		<input type="text" id="codeinput" placeholder="Enter code from contestant page">
 		<button id="entercodebutton" class="button" onclick="submitCode()">Sync pages<br><span style="font-size:1vw;">Leave the input box blank for single screen mode</span></button>
 		<button id="startbutton" class="button" onclick="start()">Start game</button>
