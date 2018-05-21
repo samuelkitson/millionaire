@@ -444,21 +444,23 @@
 			};
 			
 			function selectans(num) {
-				music1.pause();
-				music2.pause();
-				music3.pause();
-				musicfinal.currentTime = 0;
-				musicfinal.play();
-				document.getElementById("revealanswerbutton").style.display = "block";
-				document.getElementById("takemoneybutton").style.display = "none";
-				document.getElementById("newquestionbutton").style.display = "none";
-				if (localStorage.getItem("status")=="answer") {
-					localStorage.setItem("answer", String(num));
-					localStorage.setItem("status", "answered");
-					if (num == "1" || num == "3") {
-						document.getElementById("answer"+String(num)+"img").src = "images/millionaire small left orange.png";
-					} else {
-						document.getElementById("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
+				if (localStorage.getItem("status") == "answer") {
+					music1.pause();
+					music2.pause();
+					music3.pause();
+					musicfinal.currentTime = 0;
+					musicfinal.play();
+					document.getElementById("revealanswerbutton").style.display = "block";
+					document.getElementById("takemoneybutton").style.display = "none";
+					document.getElementById("newquestionbutton").style.display = "none";
+					if (localStorage.getItem("status")=="answer") {
+						localStorage.setItem("answer", String(num));
+						localStorage.setItem("status", "answered");
+						if (num == "1" || num == "3") {
+							document.getElementById("answer"+String(num)+"img").src = "images/millionaire small left orange.png";
+						} else {
+							document.getElementById("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
+						};
 					};
 				};
 			};
