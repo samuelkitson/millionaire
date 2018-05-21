@@ -172,8 +172,8 @@ var questionset = {
     },
     {
       "Q": "Which wood is the lightest in colour?",
-      "Y": "Oak",
-      "N1": "Ash",
+      "Y": "Beech",
+      "N1": "Oak",
       "N2": "Scots pine",
       "N3": "Parana pine"
     },
