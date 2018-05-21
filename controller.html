@@ -223,31 +223,36 @@
 					document.getElementById("prizedetails").style.backgroundColor = "DarkOrange";
 					document.getElementById("prizedetails").innerHTML = "Congratulations! You have won:<br>"+prizes[14]+"!";
 					localStorage.setItem("prizesbasic", prizes[14]);
+					localStorage.setItem("prizesbasica", "14");
 				} else if (type=="lose") {
 					if (parseInt(current) < 6) {
 						document.getElementById("prizedetails").style.backgroundColor = "red";
 						document.getElementById("prizedetails").innerHTML = "Sorry! You haven't won a prize<br>";
 						localStorage.setItem("prizesbasic", "No prize");
+						localStorage.setItem("prizesbasica", "0");
 					} else if (parseInt(current) < 11) {
 						document.getElementById("prizedetails").style.backgroundColor = "red";
 						document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[4]+"!";
 						localStorage.setItem("prizesbasic", prizes[4]);
+						localStorage.setItem("prizesbasica", "4");
 					} else if (parseInt(current) < 16) {
 						document.getElementById("prizedetails").style.backgroundColor = "red";
 						document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[9]+"!";
 						localStorage.setItem("prizesbasic", prizes[9]);
+						localStorage.setItem("prizesbasica", "9");
 					};
 				} else if (type=="leave") {
 					document.getElementById("prizedetails").style.backgroundColor = "DarkGreen";
 					document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[parseInt(current)-2]+"!";
 					localStorage.setItem("prizesbasic", prizes[parseInt(current)-2]);
+					localStorage.setItem("prizesbasica", String(parseInt(current)-2));
 				};
 				localStorage.setItem("prizetext", document.getElementById("prizedetails").innerHTML);
 				localStorage.setItem("prizecolour", document.getElementById("prizedetails").style.backgroundColor);
 				document.getElementById("prizedetails").style.display = "block";
 				var date = new Date();
 				//var validatecode = encrypt("Prize: "+String((localStorage.getItem("prizesbasic")).substring(1))+" Time: "+String(date.getTime()), "MillionaireWinCode");
-				var validatecode = {"d":date.getTime(), "l":String((localStorage.getItem("prizesbasic")).substring(1))};
+				var validatecode = {"d":date.getTime(), "p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current"))};
 				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext") + "<br>Your win validation code is: "+JSON.stringify(validatecode);
 			};
 			
