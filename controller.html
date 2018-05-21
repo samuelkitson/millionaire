@@ -252,8 +252,8 @@
 				document.getElementById("prizedetails").style.display = "block";
 				var date = new Date();
 				//var validatecode = encrypt("Prize: "+String((localStorage.getItem("prizesbasic")).substring(1))+" Time: "+String(date.getTime()), "MillionaireWinCode");
-				var validatecode = {"d":date.getTime(), "p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current"))};
-				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext") + "<br>Your win validation code is: "+JSON.stringify(validatecode);
+				var validatecode = {"d":date.getTime(), "p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform};
+				document.getElementById("footer").innerHTML = "Your win validation code is: "+JSON.stringify(validatecode)+"<br>"+sessionStorage.getItem("footertext");
 			};
 			
 			function start(){
