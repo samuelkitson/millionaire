@@ -246,7 +246,7 @@
 				localStorage.setItem("prizecolour", document.getElementById("prizedetails").style.backgroundColor);
 				document.getElementById("prizedetails").style.display = "block";
 				var validatecode = encrypt(localStorage.getItem("prizesbasic"), "MillionaireWinCode");
-				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext") + "     Your win validation code is: "+validatecode;
+				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext") + "<br>Your win validation code is: "+validatecode;
 			};
 			
 			function start(){
@@ -683,6 +683,7 @@
 					alert("Hey, nice "+navigator.platform+"!\nSadly though, this site isn't designed for your device so you may experience a few issues when using it. If problems persist, we recommend you switch to using Google Chrome on a PC instead.");
 					sessionStorage.setItem("mobilewarning", "true");
 				};
+				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext");
 				//Show/hide elements
 				document.getElementById("prizedetails").style.display = "none";
 				document.getElementById("audienceresults").style.display = "none";
