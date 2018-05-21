@@ -411,7 +411,7 @@ var questionset = {
       "N3": "Thin paper"
     },
     {
-      "Q": "What shape are the ends of Allen keys ?",
+      "Q": "What shape are the ends of Allen keys?",
       "Y": "Hexagonal",
       "N1": "Square",
       "N2": "Octagonal",
