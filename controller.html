@@ -273,7 +273,7 @@
 			};
 			
 			function lifeline(type){
-				if (localStorage.getItem("status")!="idle"){
+				if (localStorage.getItem("status")=="answer"){
 					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
 						var numstemp = ["1", "2", "3", "4"];
 						var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
