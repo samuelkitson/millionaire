@@ -1,6 +1,6 @@
 var questionset = {
   "stage1": [
-    {"Q": "New Dheli is located in which country?",
+    {"Q": "New Delhi is located in which country?",
       "Y": "India",
       "N1": "Pakistan",
       "N2": "China",
