@@ -276,7 +276,7 @@ var questionset = {
       "N3": "Blocks of wood"
     },
     {
-      "Q": "Which of these is not an advantage of a battery-operated drill instead of a pillar drill?",
+      "Q": "Which of these is NOT an advantage of using a battery-operated drill instead of a pillar drill?",
       "Y": "More powerful",
       "N1": "No special training",
       "N2": "Can use outside",
@@ -433,9 +433,9 @@ var questionset = {
     },
     {
       "Q": "Phosphorescent pigments absorb and release what?",
-      "Y": "Water",
+      "Y": "Light",
       "N1": "Oil",
-      "N2": "Light",
+      "N2": "Water",
       "N3": "Sound"
     },
     {
