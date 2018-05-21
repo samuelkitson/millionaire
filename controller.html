@@ -245,7 +245,8 @@
 				localStorage.setItem("prizetext", document.getElementById("prizedetails").innerHTML);
 				localStorage.setItem("prizecolour", document.getElementById("prizedetails").style.backgroundColor);
 				document.getElementById("prizedetails").style.display = "block";
-				var validatecode = encrypt("Prize: "+String((localStorage.getItem("prizesbasic")).substring(1))+" Time: "+String(getTime()), "MillionaireWinCode");
+				var date = new Date();
+				var validatecode = encrypt("Prize: "+String((localStorage.getItem("prizesbasic")).substring(1))+" Time: "+String(date.getTime()), "MillionaireWinCode");
 				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext") + "<br>Your win validation code is: "+validatecode;
 			};
 			
