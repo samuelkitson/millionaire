@@ -43,7 +43,7 @@ var questionset = {
       "N3": "Mass production"
     },
     {
-      "Q": "What is the name given to a process that checks for problems and dangers?",
+      "Q": "What is the name given to a process that looks at the likelihood of problems arising?",
       "Y": "Risk assessment",
       "N1": "Danger logging",
       "N2": "Problem spotting",
@@ -302,6 +302,20 @@ var questionset = {
       "N1": "Harder to cut down",
       "N2": "Trees are smaller",
       "N3": "Easier to work with"
+    },
+    {
+      "Q": "Who should all designers aim to target?",
+      "Y": "95th percentile",
+      "N1": "90th percentile",
+      "N2": "98th percentile",
+      "N3": "100th percentile"
+    },
+    {
+      "Q": "What tool is used to make a mortise and tenon joint (for one-off production)?",
+      "Y": "Chisel",
+      "N1": "Saw",
+      "N2": "Sanding machine",
+      "N3": "Bolt"
     }
   ],
   "stage3": [
