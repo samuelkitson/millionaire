@@ -516,7 +516,7 @@ var questionset = {
       "N3": "Polythene Terethphelate"
     },
     {
-      "Q": "which material would be used to make drill bits?",
+      "Q": "Which material would be used to make drill bits?",
       "Y": "Tungsten Carbide",
       "N1": "Tunsten Oxide",
       "N2": "Tungsten Hydrycarbide",
