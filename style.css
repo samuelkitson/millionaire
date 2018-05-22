@@ -1,5 +1,5 @@
 #footer{
-  position: fixed;
+  position: absolute;
   bottom: 0.5px;
   left: 2px;
   font-family: arial;
