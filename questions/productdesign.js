@@ -153,6 +153,13 @@ var questionset = {
       "N1": "Very flexible",
       "N2": "Stronger when stretched",
       "N3": "Can be remoulded"
+    },
+    {
+      "Q": "What is Kevlar used for?",
+      "Y": "Body armour",
+      "N1": "Windows",
+      "N2": "Pencils",
+      "N3": "Books"
     }
   ],
   "stage2": [
