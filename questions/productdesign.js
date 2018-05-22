@@ -146,6 +146,13 @@ var questionset = {
       "N1": "Oak",
       "N2": "Pine",
       "N3": "Ash"
+    },
+    {
+      "Q": "How could the word 'brittle' be described?",
+      "Y": "Hard but breaks easily",
+      "N1": "Very flexible",
+      "N2": "Stronger when stretched",
+      "N3": "Can be remoulded"
     }
   ],
   "stage2": [
@@ -530,6 +537,13 @@ var questionset = {
       "N1": "9",
       "N2": "15",
       "N3": "21"
+    },
+    {
+      "Q": "What type of glue is used to join the wood chips in chip board?",
+      "Y": "Urea formaldehyde",
+      "N1": "PVA",
+      "N2": "Epoxy resin",
+      "N3": "Polyurethane"
     }
   ]
 };
