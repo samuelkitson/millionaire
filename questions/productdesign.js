@@ -316,6 +316,20 @@ var questionset = {
       "N1": "Saw",
       "N2": "Sanding machine",
       "N3": "Bolt"
+    },
+    {
+      "Q": "Which has the correct spelling?",
+      "Y": "Anthropometrics",
+      "N1": "Antropometrics",
+      "N2": "Anfrowpowmetriks",
+      "N3": "Anthrometrics"
+    },
+    {
+      "Q": "Which is generally the cheapest type of wood?",
+      "Y": "Pine",
+      "N1": "Ash",
+      "N2": "Maple",
+      "N3": "Walnut"
     }
   ],
   "stage3": [
@@ -472,6 +486,34 @@ var questionset = {
       "N1": "Water Based Plaster",
       "N2": "Water Bending Press",
       "N3": "Water Based Plywood"
+    },
+    {
+      "Q": "Approximately how much oil is burned for fuel and heating?",
+      "Y": "90%",
+      "N1": "94%",
+      "N2": "60%",
+      "N3": "82%"
+    },
+    {
+      "Q": "Which symbol tells you that a fee has been paid to recover the product's packaging?",
+      "Y": "Green dot",
+      "N1": "Recycle now",
+      "N2": "Bin with cross",
+      "N3": "Green triangle"
+    },
+    {
+      "Q": "What does 'PETE' stand for?",
+      "Y": "Polyethylene Terephthelate",
+      "N1": "Polyethylene Terethphelate",
+      "N2": "Polythene Terephthelate",
+      "N3": "Polythene Terethphelate"
+    },
+    {
+      "Q": "which material would be used to make drill bits?",
+      "Y": "Tungsten Carbide",
+      "N1": "Tunsten Oxide",
+      "N2": "Tungsten Hydrycarbide",
+      "N3": "Tungsten Iodide"
     }
   ],
   "stage4": [
