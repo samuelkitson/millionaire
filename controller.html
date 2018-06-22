@@ -519,7 +519,7 @@
 			
 			function submitCode() {
 				if (document.getElementById("topicselect").value != "filler") {
-					document.getElementById("phoneresults").style.display = "none";
+					document.getElementById("audienceresults").style.display = "none";
 					document.getElementById("modeselect").style.display = "none";
 					document.getElementById("topicselect").style.display = "none";
 					localStorage.setItem("topic", String(document.getElementById("topicselect").value));
@@ -798,8 +798,8 @@
 					fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
 				};
 				//ALERT - COMMENT OUT TO DISABLE
-					document.getElementById("phoneresults").innerHTML = "**NOTICE**<br>The sound files for the game aren't working at the moment.<br>Sorry about this :/";
-					document.getElementById("phoneresults").style.display = "block";
+					document.getElementById("audienceresults").innerHTML = "**NOTICE**<br>The sound files for the game aren't working at the moment.<br>Sorry about this :/";
+					document.getElementById("audienceresults").style.display = "block";
 				//END ALERT
 				fixPrizeHighlight();
 				window.addEventListener("storage", storage_handler, false);
