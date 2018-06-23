@@ -170,7 +170,7 @@ var questionset = {
     },
     {
       "Q": "In which country is the longest solar-powered road?",
-      "Y": "French",
+      "Y": "France",
       "N1": "Antarctica",
       "N2": "Brazil",
       "N3": "South Korea"
