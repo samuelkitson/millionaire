@@ -727,6 +727,9 @@
 			function onload() {
 				console.clear();
 				console.log("Hi there!\nYou've found the developer console which probably means that you're trying to find some shortcuts to the top prize.");
+				console.log("However, what you may not know is that we can detect that you've opened the console and have invalidated your win code.");
+				console.log("Even if you win, you will not be able to validate it now. If you want to re-enable this feature, just reload the tab - and don't open the console!");
+				console.log("- penguin_k, game developer");
 				localStorage.setItem("cheat", "n");
 				localStorage.setItem("setting1", "n");
 				sessionStorage.setItem("newgens", "0");
@@ -839,6 +842,7 @@
 			
 			function cheatDetected() {
 				if ((window.outerWidth - window.innerWidth) > 50) {
+					console.warn("Developer console opened: your win code has been invalidated");
 					localStorage.setItem("cheat", "y");
 					localStorage.setItem("setting1", "y");
 				};
