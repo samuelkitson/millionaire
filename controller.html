@@ -257,6 +257,7 @@
 				var validatecode = {"n":sessionStorage.getItem("newgens"), "s":String(sessionStorage.getItem("starttime")), "e":date.getTime(), "t":elapsed,"p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform, "q":localStorage.getItem("topic")};
 				//var validatecode = {"e":date.getTime(), "p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform};
 				if ((window.outerWidth - window.innerWidth) > 50 || localStorage.getItem("cheat")=="y" || localStorage.getItem("cheat")!=localStorage.getItem("setting1")) {
+					sessionStorage.setItem("starttime", "WinCodeInvalid");
 					document.getElementById("footer").innerHTML = "Win validation code could not be generated. Error #DEV001 (developer console opened)"+"<br>"+sessionStorage.getItem("footertext");
 				} else {
 					document.getElementById("footer").innerHTML = "Your win validation code is: "+JSON.stringify(validatecode)+"<br>"+sessionStorage.getItem("footertext");
@@ -842,6 +843,7 @@
 			
 			function cheatDetected() {
 				if ((window.outerWidth - window.innerWidth) > 50) {
+					sessionStorage.setItem("starttime", "WinCodeInvalid");
 					console.warn("Developer console opened: your win code has been invalidated");
 					localStorage.setItem("cheat", "y");
 					localStorage.setItem("setting1", "y");
