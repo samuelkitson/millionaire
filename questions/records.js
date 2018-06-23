@@ -43,7 +43,7 @@ var questionset = {
       "N3": "34 years"
     },
     {
-      "Q": "Which nation has won the largest number of Commonwealth Games medals?",
+      "Q": "Which nation has won the largest number of Commonwealth Games medals in total?",
       "Y": "Australia",
       "N1": "New Zealand",
       "N2": "Canada",
@@ -71,13 +71,13 @@ var questionset = {
       "N2": "80mph",
       "N3": "20mph"
     },
-    {
+    /*{
       "Q": "Which of these is one of the highest types of clouds?",
       "Y": "Cirrocumulus",
       "N1": "Altostratus",
       "N2": "Altocumulus",
       "N3": "Stratus"
-    },
+    },*/
     {
       "Q": "Where is the highest railway line in the world?",
       "Y": "China",
