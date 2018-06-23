@@ -19,6 +19,34 @@ var questionset = {
       "N1": "English",
       "N2": "Japanese",
       "N3": "Russian"
+    },
+    {
+      "Q": "What counts as the coldest inhabited location on Earth?",
+      "Y": "Oymyakon, Russia",
+      "N1": "The North Pole",
+      "N2": "The South Pole",
+      "N3": "Yukon, Canada"
+    },
+    {
+      "Q": "Which country is the largest producer of fireworks?",
+      "Y": "China",
+      "N1": "South Korea",
+      "N2": "Japan",
+      "N3": "UAE"
+    },
+    {
+      "Q": "What is the most used internet browser?",
+      "Y": "Google Chrome",
+      "N1": "Internet Explorer",
+      "N2": "Firefox",
+      "N3": "Safari"
+    },
+    {
+      "Q": "What is the largest (physical area) country in the world?",
+      "Y": "Russia",
+      "N1": "China",
+      "N2": "USA",
+      "N3": "Italy"
     }
   ],
   "stage2": [
@@ -78,11 +106,32 @@ var questionset = {
       "N3": "Japan"
     },
     {
-      "Q": "Which of these countries is not a member of NATO?",
-      "Y": "Greenland",
-      "N1": "Estonia",
-      "N2": "Iceland",
-      "N3": "Turkey"
+      "Q": "When was the first scripted TV series to be made in Virtual Reality released?",
+      "Y": "2016",
+      "N1": "2013",
+      "N2": "2010",
+      "N3": "2007"
+    },
+    {
+      "Q": "In which country is the longest solar-powered road?",
+      "Y": "French",
+      "N1": "Antarctica",
+      "N2": "Brazil",
+      "N3": "South Korea"
+    },
+    {
+      "Q": "Which world record does a UK train from the 1970s, the Intercity 125, hold?",
+      "Y": "Fastest diesel train",
+      "N1": "Fastest petrol train",
+      "N2": "Fastest electric train",
+      "N3": "Fastest bi-mode train"
+    },
+    {
+      "Q": "Which continent is the world's smallest country located in?",
+      "Y": "Europe",
+      "N1": "South America",
+      "N2": "Antarctica",
+      "N3": "Asia"
     }
   ],
   "stage3": [
@@ -126,6 +175,48 @@ var questionset = {
       "N1": "41,000kg",
       "N2": "410kg",
       "N3": "41kg"
+    },
+    {
+      "Q": "How old was the oldest person to circumnavigate the globe by public transport?",
+      "Y": "106,
+      "N1": "96",
+      "N2": "86",
+      "N3": "76"
+    },
+    {
+      "Q": "The Big Bang Theory has the highest paid TV cast. How much does Jim Parsons, the lead actor, get paid annually?",
+      "Y": "$27.5 million",
+      "N1": "$18.5 million",
+      "N2": "$9.5 million",
+      "N3": "$4.5 million"
+    },
+    {
+      "Q": "The most expensive clapperboard sold in 2016. Which film was it from?",
+      "Y": "Jaws",
+      "N1": "Goldfinger",
+      "N2": "Star Wars: A New Hope",
+      "N3": "Titanic"
+    },
+    {
+      "Q": "Who has the most followers on Twitter?",
+      "Y": "Katy Perry",
+      "N1": "Barack Obama",
+      "N2": "Rihanna",
+      "N3": "Taylor Swift"
+    },
+    {
+      "Q": "What was the name of the shortest song to enter the 'Billboard Hot 100' list?",
+      "Y": "PPAP",
+      "N1": "BBAB",
+      "N2": "QQAQ",
+      "N3": "DDAD"
+    },
+    {
+      "Q": "How fast was the fastest bath tub, created between 2014 and 2015?",
+      "Y": "118mph",
+      "N1": "65mph",
+      "N2": "43mph",
+      "N3": "29mph"
     }
   ],
   "stage4": [
@@ -148,6 +239,34 @@ var questionset = {
       "N1": "40.6 miles",
       "N2": "19.7 miles",
       "N3": "6.1 miles"
+    },
+    {
+      "Q": "How long did the fastest circumnavigation by hot-air balloon take?",
+      "Y": "11 days",
+      "N1": "7 days",
+      "N2": "15 days",
+      "N3": "20 days"
+    },
+    {
+      "Q": "In which year did the first people to row across the Atlantic achieve the record?",
+      "Y": "1896",
+      "N1": "1996",
+      "N2": "1946",
+      "N3": "1846"
+    },
+    {
+      "Q": "Who was the oldest actor to play Batman?",
+      "Y": "Ben Affleck",
+      "N1": "Robert Lowrey",
+      "N2": "Adam West",
+      "N3": "George Clooney"
+    },
+    {
+      "Q": "How many times bigger is the largest country (Russia) than the smallest country (Vatican City)?",
+      "Y": "9 quintillion times",
+      "N1": "9 trillion times",
+      "N2": "9 billion times",
+      "N3": "9 quadrillion times"
     }
   ]
 };
