@@ -62,6 +62,13 @@ var questionset = {
       "N1": "Heaviest sandwich",
       "N2": "Largest sandwich",
       "N3": "Oldest sandwich"
+    },
+    {
+      "Q": "How big is the largest collection of teddy bears?",
+      "Y": "8,026",
+      "N1": "20,298",
+      "N2": "138",
+      "N3": "1,727"
     }
   ],
   "stage3": [
@@ -98,6 +105,13 @@ var questionset = {
       "N1": "China",
       "N2": "Brazil",
       "N3": "USA"
+    },
+    {
+      "Q": "Approximately how heavy is the largest rubber band ball?",
+      "Y": "4,100kg",
+      "N1": "41,000kg",
+      "N2": "410kg",
+      "N3": "41kg"
     }
   ],
   "stage4": [
@@ -113,6 +127,13 @@ var questionset = {
       "N1": "1960",
       "N2": "1900",
       "N3": "1880"
+    },
+    {
+      "Q": "How much tape was used to create the largest tape ball?",
+      "Y": "73.2 miles",
+      "N1": "40.6 miles",
+      "N2": "19.7 miles",
+      "N3": "6.1 miles"
     }
   ]
 };
