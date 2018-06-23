@@ -57,10 +57,10 @@ var questionset = {
     },
     {
       "Q": "What is the smallest type of bird?",
-      "Y": "Bee hummingbirds",
-      "N1": "Pelicans",
-      "N2": "Little penguins",
-      "N3": "Crows"
+      "Y": "Bee hummingbird",
+      "N1": "Pelican",
+      "N2": "Little penguin",
+      "N3": "Crow"
     },
     {
       "Q": "What is the nearest star to Earth?",
