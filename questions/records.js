@@ -69,6 +69,20 @@ var questionset = {
       "N1": "20,298",
       "N2": "138",
       "N3": "1,727"
+    },
+    {
+      "Q": "Which country, according to the 2018 Global Peace Index, is the country most at peace?",
+      "Y": "Iceland",
+      "N1": "Poland",
+      "N2": "The UK",
+      "N3": "Japan"
+    },
+    {
+      "Q": "Which of these countries is not a member of NATO?",
+      "Y": "Greenland",
+      "N1": "Estonia",
+      "N2": "Iceland",
+      "N3": "Turkey"
     }
   ],
   "stage3": [
