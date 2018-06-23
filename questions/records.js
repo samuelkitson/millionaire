@@ -47,6 +47,62 @@ var questionset = {
       "N1": "China",
       "N2": "USA",
       "N3": "Italy"
+    },
+    {
+      "Q": "What is the most common blood group?",
+      "Y": "O",
+      "N1": "A",
+      "N2": "B",
+      "N3": "AB"
+    },
+    {
+      "Q": "What is the smallest type of bird?",
+      "Y": "Bee hummingbirds",
+      "N1": "Pelicans",
+      "N2": "Little penguins",
+      "N3": "Crows"
+    },
+    {
+      "Q": "What is the nearest star to Earth?",
+      "Y": "The Sun",
+      "N1": "Polaris",
+      "N2": "Alpha Centauri",
+      "N3": "Proxima Centauri"
+    },
+    {
+      "Q": "Which element is the most common in the Earth's crust?",
+      "Y": "Oxygen",
+      "N1": "Gold",
+      "N2": "Platinum",
+      "N3": "Silicon"
+    },
+    {
+      "Q": "Where is the Sahara desert, the world's largest hot desert?",
+      "Y": "Africa",
+      "N1": "South America",
+      "N2": "Asia",
+      "N3": "Europe"
+    },
+    {
+      "Q": "Where is the highest point on Earth?",
+      "Y": "Mount Everest",
+      "N1": "The Alps",
+      "N2": "Ben Nevis",
+      "N3": "The Leaning Tower of Pisa"
+    },
+    {
+      "Q": "Rounded to 1 decimal place, what is the population density of Greenland (the country with the lowest PD)?",
+      "Y": "0.0 people per sq km",
+      "N1": "10,863.6 people per sq km",
+      "N2": "12,973 people per sq km",
+      "N3": "56,186.0 people per sq km"
+    },
+    {
+      "Q": "How old was the oldest person ever when they died?",
+      "Y": "122",
+      "N1": "132",
+      "N2": "142",
+      "N3": "112"
     }
   ],
   "stage2": [
@@ -130,7 +186,7 @@ var questionset = {
       "Q": "Which continent is the world's smallest country located in?",
       "Y": "Europe",
       "N1": "South America",
-      "N2": "Antarctica",
+      "N2": "Antarctica"
     },
     {
       "Q": "How long is the most crooked road?",
@@ -161,13 +217,6 @@ var questionset = {
       "N2": "80mph",
       "N3": "20mph"
     },
-    /*{
-      "Q": "Which of these is one of the highest types of clouds?",
-      "Y": "Cirrocumulus",
-      "N1": "Altostratus",
-      "N2": "Altocumulus",
-      "N3": "Stratus"
-    },*/
     {
       "Q": "Where is the highest railway line in the world?",
       "Y": "China",
@@ -198,7 +247,7 @@ var questionset = {
     },
     {
       "Q": "How old was the oldest person to circumnavigate the globe by public transport?",
-      "Y": "106,
+      "Y": "106",
       "N1": "96",
       "N2": "86",
       "N3": "76"
@@ -287,6 +336,13 @@ var questionset = {
       "N1": "9 trillion times",
       "N2": "9 billion times",
       "N3": "9 quadrillion times"
+    },
+    {
+      "Q": "What was the smallest ever production car?",
+      "Y": "Peel P50",
+      "N1": "Peel P45",
+      "N2": "Peel P55",
+      "N3": "Peel P40"
     }
   ]
 };
