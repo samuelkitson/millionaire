@@ -8,25 +8,25 @@
 			<source src="https://cdn.rawgit.com/penguin-k/millionaire/6ed880d0/music/stage1.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="music2" loop hidden>
-			<source src="https://instaud.io/_/2blb.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/stage2.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="music3" loop hidden>
-			<source src="https://instaud.io/_/2blc.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/stage3.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="musicfinal" hidden>
-			<source src="https://instaud.io/_/2bE0.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/finalanswer.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="musiccorrect" hidden>
-			<source src="https://instaud.io/_/2bE1.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/correct.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="musicincorrect" hidden>
-			<source src="https://instaud.io/_/2bE2.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/incorrect.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="musiclose" hidden>
-			<source src="https://instaud.io/_/2bUU.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/lose.m4a" type="audio/mpeg">
 		</audio>
 		<audio id="musicend" hidden>
-			<source src="https://instaud.io/_/2bYe.mp3" type="audio/mpeg">
+			<source src="https://cdn.rawgit.com/penguin-k/millionaire/b1788459/music/end.m4a" type="audio/mpeg">
 		</audio>
 		<style>
 			/*#startbutton{
@@ -798,8 +798,8 @@
 					fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
 				};
 				//ALERT - COMMENT OUT TO DISABLE
-					document.getElementById("audienceresults").innerHTML = "**NOTICE**<br>The sound files for the game aren't working at the moment.<br>Sorry :(";
-					document.getElementById("audienceresults").style.display = "block";
+				//document.getElementById("audienceresults").innerHTML = "**NOTICE**<br>The sound files for the game aren't working at the moment.<br>Sorry :(";
+				//document.getElementById("audienceresults").style.display = "block";
 				//END ALERT
 				fixPrizeHighlight();
 				window.addEventListener("storage", storage_handler, false);
