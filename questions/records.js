@@ -131,7 +131,27 @@ var questionset = {
       "Y": "Europe",
       "N1": "South America",
       "N2": "Antarctica",
-      "N3": "Asia"
+    },
+    {
+      "Q": "How long is the most crooked road?",
+      "Y": "400m",
+      "N1": "4km",
+      "N2": "40km",
+      "N3": "4m"
+    },
+    {
+      "Q": "Where is the largest rotating boat lift?",
+      "Y": "Falkirk",
+      "N1": "Falkirck",
+      "N2": "Fullkirk",
+      "N3": "Fullkirck"
+    },
+    {
+      "Q": "Which country did the most decorated Olympian represent until their retirement in 2016?",
+      "Y": "USA",
+      "N1": "China",
+      "N2": "Denmark",
+      "N3": "Russia"
     }
   ],
   "stage3": [
