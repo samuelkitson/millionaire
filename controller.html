@@ -838,8 +838,10 @@
 			};
 			
 			function cheatDetected() {
-				localStorage.setItem("cheat", "y");
-				localStorage.setItem("setting1", "y");
+				if ((window.outerWidth - window.innerWidth) > 50) {
+					localStorage.setItem("cheat", "y");
+					localStorage.setItem("setting1", "y");
+				};
 			};
 		</script>
 	</head>
