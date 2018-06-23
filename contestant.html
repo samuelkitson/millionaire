@@ -162,6 +162,7 @@
 			};
 			
 			function onload(){
+				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext")+"331 lines of code";
 				localStorage.setItem("status", "idle");
 				if (window.innerWidth > window.innerHeight*(3/2)) {
 					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
