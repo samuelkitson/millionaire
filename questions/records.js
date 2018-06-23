@@ -48,6 +48,20 @@ var questionset = {
       "N1": "New Zealand",
       "N2": "Canada",
       "N3": "India"
+    },
+    {
+      "Q": "For how long did the longest ever earthquake last?",
+      "Y": "10 minutes",
+      "N1": "20 minutes",
+      "N2": "1 minute",
+      "N3": "15 minutes"
+    },
+    {
+      "Q": "Which record does 'The Quintessential Grilled Cheese Sandwich' hold?",
+      "Y": "Most expensive sandwich",
+      "N1": "Heaviest sandwich",
+      "N2": "Largest sandwich",
+      "N3": "Oldest sandwich"
     }
   ],
   "stage3": [
@@ -77,6 +91,13 @@ var questionset = {
       "N1": "2009",
       "N2": "2004",
       "N3": "1994"
+    },
+    {
+      "Q": "Which country did the youngest ever Olmypic swimming gold medalist represent?",
+      "Y": "Japan",
+      "N1": "China",
+      "N2": "Brazil",
+      "N3": "USA"
     }
   ],
   "stage4": [
