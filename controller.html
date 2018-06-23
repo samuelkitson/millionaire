@@ -256,8 +256,11 @@
 				var validatecode = encrypt("Prize: "+String((localStorage.getItem("prizesbasic")).substring(1))+" Time: "+String(date.getTime()), "MillionaireWinCode");
 				var validatecode = {"n":sessionStorage.getItem("newgens"), "s":String(sessionStorage.getItem("starttime")), "e":date.getTime(), "t":elapsed,"p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform, "q":localStorage.getItem("topic")};
 				//var validatecode = {"e":date.getTime(), "p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform};
-				document.getElementById("footer").innerHTML = "Your win validation code is: "+JSON.stringify(validatecode)+"<br>"+sessionStorage.getItem("footertext");
-				
+				if ((window.outerHeight - window.innerHeight) > 5) {
+					document.getElementById("footer").innerHTML = "Win validation code could not be generated. Error: developer console opened.";
+				} else {
+					document.getElementById("footer").innerHTML = "Your win validation code is: "+JSON.stringify(validatecode)+"<br>"+sessionStorage.getItem("footertext");
+				};
 			};
 			
 			function start(){
@@ -723,7 +726,7 @@
 			
 			function onload() {
 				console.clear();
-				console.log("Hi there!"\nYou've found the developer console!");
+				console.log("Hi there!\nYou've found the developer console which probably means that you're trying to find some shortcuts to the top prize.");
 				sessionStorage.setItem("newgens", "0");
 				var date = new Date();
 				sessionStorage.setItem("starttime", String(date.getTime()));
