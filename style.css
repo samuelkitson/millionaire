@@ -2,10 +2,13 @@
   position: absolute;
   bottom: 5%;
   left: 0%;
-  width: 10%;
+  width: 100%;
   height: auto;
   text-align: center;
   font-size: 5vw;
+  margin: 0px;
+  font-family: sans-serif;
+  color: white;
 }
 #nosignal{
   z-index: 1;
@@ -20,7 +23,7 @@
 #nosignalimg{
   position: absolute;
   top: 5%;
-  left: 20%;
+  left: 30%;
   width: 40%;
   height: auto;
 }
