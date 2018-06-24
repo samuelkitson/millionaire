@@ -110,6 +110,20 @@ var questionset = {
       "N1": "Purple whale",
       "N2": "Green whale",
       "N3": "Red whale"
+    },
+    {
+      "Q": "What is the tallest mammal to current live on Earth?",
+      "Y": "Giraffe",
+      "N1": "Elephant",
+      "N2": "Zebra",
+      "N3": "Cow"
+    },
+    {
+      "Q": "Where is Uluru, the largest rock on Earth?",
+      "Y": "Australia",
+      "N1": "China",
+      "N2": "USA",
+      "N3": "Nepal"
     }
   ],
   "stage2": [
@@ -186,7 +200,8 @@ var questionset = {
       "Q": "Which continent is the world's smallest country located in?",
       "Y": "Europe",
       "N1": "South America",
-      "N2": "Antarctica"
+      "N2": "Antarctica",
+      "N3": "Asia",
     },
     {
       "Q": "How long is the most crooked road?",
@@ -307,6 +322,13 @@ var questionset = {
       "N1": "Nico Rosberg",
       "N2": "Jenson Button",
       "N3": "Carlos Sainz Jnr"
+    },
+    {
+      "Q": "What is the largest (and deepest) ocean in the world?",
+      "Y": "The Pacific Ocean",
+      "N1": "The Atlantic Ocean",
+      "N2": "The Arctic Ocean",
+      "N3": "The Indian Ocean"
     }
   ],
   "stage4": [
