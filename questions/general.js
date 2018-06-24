@@ -138,7 +138,7 @@ var questionset = {
       "N3": "Burma"
     },
     {
-      "Q": "How many British town have a name ending with 'mouth'?",
+      "Q": "How many British towns have a name ending with 'mouth'?",
       "Y": "29",
       "N1": "9",
       "N2": "19",
