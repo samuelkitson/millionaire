@@ -84,13 +84,6 @@ var questionset = {
       "N3": "The Leaning Tower of Pisa"
     },
     {
-      "Q": "Rounded to 1 decimal place, what is the population density of Greenland (the country with the lowest PD)?",
-      "Y": "0.0 people per sq km",
-      "N1": "10,863.6 people per sq km",
-      "N2": "12,973 people per sq km",
-      "N3": "56,186.0 people per sq km"
-    },
-    {
       "Q": "How old was the oldest person ever when they died?",
       "Y": "122",
       "N1": "132",
@@ -124,6 +117,20 @@ var questionset = {
       "N1": "China",
       "N2": "USA",
       "N3": "Nepal"
+    },
+    {
+      "Q": "What is the official slowest mammal on Earth?",
+      "Y": "Sloth",
+      "N1": "Cheetah",
+      "N2": "Dingo",
+      "N3": "Antelope"
+    },
+    {
+      "Q": "Which country has the highest population?",
+      "Y": "China",
+      "N1": "USA",
+      "N2": "Indonesia",
+      "N3": "Brazil"
     }
   ],
   "stage2": [
@@ -201,7 +208,7 @@ var questionset = {
       "Y": "Europe",
       "N1": "South America",
       "N2": "Antarctica",
-      "N3": "Asia",
+      "N3": "Asia"
     },
     {
       "Q": "How long is the most crooked road?",
@@ -230,6 +237,27 @@ var questionset = {
       "N1": "A",
       "N2": "B",
       "N3": "AB"
+    },
+    {
+      "Q": "How old was the oldest ever parrot?",
+      "Y": "82",
+      "N1": "5",
+      "N2": "103",
+      "N3": "21"
+    },
+    {
+      "Q": "Rounded to 1 decimal place, what is the population density of Greenland (the country with the lowest PD)?",
+      "Y": "0.0 people per sq km",
+      "N1": "10,863.6 people per sq km",
+      "N2": "12,973 people per sq km",
+      "N3": "56,186.0 people per sq km"
+    },
+    {
+      "Q": "What is the name of the shortest donkey, with a height of just 64.2cm?",
+      "Y": "KneeHi",
+      "N1": "HeadHi",
+      "N2": "FootHi",
+      "N3": "NeckHi"
     }
   ],
   "stage3": [
@@ -329,6 +357,34 @@ var questionset = {
       "N1": "The Atlantic Ocean",
       "N2": "The Arctic Ocean",
       "N3": "The Indian Ocean"
+    },
+    {
+      "Q": "An animal named 'Desi' lived to be just over 22 years and 3 months old. What was she?",
+      "Y": "A duck",
+      "N1": "A cow",
+      "N2": "A cat",
+      "N3": "A guinea pig"
+    },
+    {
+      "Q": "What was the top speed (in water) of the fastest amphibious car?",
+      "Y": "60mph",
+      "N1": "150mph",
+      "N2": "20mph",
+      "N3": "40mph"
+    },
+    {
+      "Q": "The African Cicada is the world's loudest insect. At 50cm away, how loud is its calling song?",
+      "Y": "106 decibels",
+      "N1": "59 decibels",
+      "N2": "152 decibels",
+      "N3": "84 decibels"
+    },
+    {
+      "Q": "The largest zoo is located in Berlin. How many individual animals do they have?",
+      "Y": "19,439",
+      "N1": "190,439",
+      "N2": "1,439",
+      "N3": "439"
     }
   ],
   "stage4": [
@@ -386,6 +442,20 @@ var questionset = {
       "N1": "Peel P45",
       "N2": "Peel P55",
       "N3": "Peel P40"
+    },
+    {
+      "Q": "A record breaking-model of the Parisian skyline, created in 2015, weighed 1075kg. What was it made from?",
+      "Y": "Butter",
+      "N1": "Cheese",
+      "N2": "Pizza",
+      "N3": "Pie"
+    },
+    {
+      "Q": "In 2013, the record for the fastest 100m in a pumpkin was broken. What was the time?",
+      "Y": "2 minutes 0 seconds",
+      "N1": "5 minutes 48 seconds",
+      "N2": "52 seconds",
+      "N3": "8 minutes 11 seconds"
     }
   ]
 };
