@@ -1,3 +1,12 @@
+#nosignaltext{
+  position: absolute;
+  bottom: 5%;
+  left: 0%;
+  width: 10%;
+  height: auto;
+  text-align: center;
+  font-size: 5vw;
+}
 #nosignal{
   z-index: 1;
   position: absolute;
