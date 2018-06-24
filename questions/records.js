@@ -105,7 +105,7 @@ var questionset = {
       "N3": "Red whale"
     },
     {
-      "Q": "What is the tallest mammal to current live on Earth?",
+      "Q": "What is the tallest mammal to currently live on Earth?",
       "Y": "Giraffe",
       "N1": "Elephant",
       "N2": "Zebra",
