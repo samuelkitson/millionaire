@@ -736,7 +736,7 @@
 				sessionStorage.setItem("newgens", "0");
 				var date = new Date();
 				sessionStorage.setItem("starttime", String(date.getTime()));
-				sessionStorage.setItem("footertext", "Coding and graphics by Samuel Kitson - Music from the TV show - Questions from various sources - Last modified on "+String(document.lastModified)+" - 937 lines of code");
+				sessionStorage.setItem("footertext", "Coding and graphics by Samuel Kitson - Music from the TV show - Questions from various sources - Last modified on "+String(document.lastModified)+" - 940 lines of code");
 				addScript("https://cdn.rawgit.com/penguin-k/encrypt/eceaf8409ce67d1d8a05cfdfaafa0e6f43b4e73f/encrypt.js");
 				if (checkMobile() == "true" && sessionStorage.getItem("mobilewarning") != "true") {
 					alert("Hey, nice "+navigator.platform+"!\nSadly though, this site isn't designed for your device so you may experience a few issues when using it. If problems persist, we recommend you switch to using Google Chrome on a PC instead.");
@@ -881,7 +881,7 @@
 		<button id="entercodebutton" class="button" onclick="submitCode()">Sync pages<br><span style="font-size:0.9vw;">Leave the input box blank for single screen mode</span></button>
 		<button id="startbutton" class="button" onclick="start()">Start game</button>
 		<div id="nosignal">
-			<img id="nosignalimg" src="../images/millionaire no signal">
+			<img id="nosignalimg" src="images/millionaire no signal.png">
 		</div>
 		<table id="lifelinestable">
 			<tr>
