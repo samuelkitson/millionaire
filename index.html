@@ -576,44 +576,10 @@
 				document.getElementById("audienceinput3").value = "";
 				document.getElementById("audienceinput4").value = "";
 				document.getElementById("countdown").innerHTML = "30";
-				document.getElementById("lifeline5050").src = "images/millionaire 5050.png";
-				document.getElementById("lifelinephone").src = "images/millionaire phone.png";
-				document.getElementById("lifelineaudience").src = "images/millionaire audience.png";
-				localStorage.setItem("prizetext", "");
-				localStorage.setItem("current", "0");
-				localStorage.setItem("currentStage", "1");
-				localStorage.setItem("lifeline5050", "ready");
-				localStorage.setItem("lifelinephone", "ready");
-				localStorage.setItem("lifelineaudience", "ready");
-				localStorage.setItem("status", "idle");
 				if (window.innerWidth > window.innerHeight*(3/2)) {
 					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
 				} else {
 					document.getElementById("prizestable").style.fontSize = "3.5vw";
-				};
-				//TEMP
-				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
-				//END TEMP
-				if (prizestableloaded == "false") {
-					prizestableloaded = "true";
-					fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
-				};
-				//ALERT - COMMENT OUT TO DISABLE
-				//document.getElementById("audienceresults").innerHTML = "**NOTICE**<br>The sound files for the game aren't working at the moment.<br>Sorry :(";
-				//document.getElementById("audienceresults").style.display = "block";
-				//END ALERT
-				fixPrizeHighlight();
-				window.addEventListener("storage", storage_handler, false);
-				function storage_handler(evt){
-					//Check code receiveed from other window
-					if ((evt.key == "verifycode")&&(evt.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
-						document.getElementById("questiontext").innerHTML = "Screens synced<br>Ready to start...";
-						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
-						document.getElementById("startbutton").style.display = "block";
-					};
-					if (localStorage.getItem("status")!="idle") {
-						//Other functions on storage change event
-					};
 				};
 			};
 			
