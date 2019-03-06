@@ -715,7 +715,7 @@
 			
 			function modeChange() {
 				if (localStorage.getItem("mode") == "quiz") {
-					document.getElementById("modeselect").innerHTML = "Revision mode - single player (click to change)";
+					document.getElementById("modeselect").innerHTML = "Practice mode - single player (click to change)";
 					document.getElementById("modeselect").style.backgroundColor = "red";
 					localStorage.setItem("mode", "revision");
 				} else {
@@ -728,8 +728,8 @@
 			function onload() {
 				console.clear();
 				console.log("Hi there!\nYou've found the developer console which probably means that you're trying to find some shortcuts to the top prize.");
-				console.log("However, what you may not know is that we can detect that you've opened the console and have invalidated your win code.");
-				console.log("Even if you win, you will not be able to prove it now. If you want to re-enable this feature, just close the develope tools and reload the tab - and don't open the console!");
+				console.log("This is commonly known as cheating, and as such, your win code has been invalidated.");
+				console.log("This means that at the end of the game, no win code will be shown. If you want to re-enable this feature, just close the developer tools and reload the tab - and don't open the console!");
 				console.log("- Game developers");
 				localStorage.setItem("cheat", "n");
 				localStorage.setItem("setting1", "n");
