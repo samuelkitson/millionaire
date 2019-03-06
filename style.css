@@ -89,6 +89,9 @@
   left: 2%;
   text-align: center;
 }
+#helptext {
+  font-size: 3vw;
+}
 #audienceresults, #audienceinput{
   border: none;
   color: white;
