@@ -1,0 +1,925 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta title="Who Wants to be a Millionaire? - Controller">
+		<title>(Beta) Who Wants to be a Millionaire? - Controller</title>
+		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the setup screen.">
+		<style>
+			/*#startbutton{
+				width: 31vw;
+				height: 15vh;
+				position: absolute;
+				top: 15vh;
+				left: 15.75vw;
+				display: none;
+				cursor: pointer;
+			}
+			.button{
+				background-color: orange;
+				border: none;
+				color: white;
+				padding: 15px 32px;
+				text-align: center;
+				text-decoration: none;
+				font-size: 2vw;
+			}
+			#body{
+				background-color: MidnightBlue;
+			}
+			#lifelinestable{
+				border: none;
+				table-layout: fixed;
+				width: 70vw;
+				height: 6vw;
+				position: absolute;
+				left: 2vw;
+				bottom: 30vw
+			}
+			.lifelineimg{
+				width: 60%;
+				height: auto;
+				position: relative;
+				left: 20%;
+				display: block;
+				text-align: center;
+			}
+			#questiontable{
+				border: none;
+				table-layout: fixed;
+				width: 70vw;
+				position: absolute;
+				left: 2vw;
+				bottom: 2vw
+			}
+			#questiontable td {
+				width: 35vw;
+			}
+			.imgcontainer {
+				position: relative;
+				color: white;
+				font-family: arial;
+			}
+			.tableimg {
+				height: auto;
+				width: 100%;
+			}
+			#questiontext {
+				font-size: 2.2vw;
+				display: table-cell; 
+				text-align: center;
+				vertical-align: middle; 
+				position: absolute;
+				top: 10%;
+				left: 10%;
+				width: 80%;
+				height: 80%;
+			}
+			.answertext {
+				font-size: 2vw;
+				display: table-cell; 
+				text-align: left;
+				vertical-align: middle; 
+				position: absolute;
+				top: 27%;
+				width: 80%;
+				height: 80%;
+			}
+			.answertextleft {
+				left: 12%;
+			}
+			.answertextright {
+				left: 4%;
+			}
+			#prizestable{
+				border: 1px solid white;
+				font-family: arial;
+				color: orange;
+				width: 25vw;
+				position: absolute;
+				bottom: 1vw;
+				right: 1vw;
+			}
+			#prizestable td {
+				height: 5.5vh;
+			}
+			.prizesA {
+				width: auto;
+				align: right;
+				height: 3vh;
+			}
+			.prizesB {
+				width: auto;
+				align: centre;
+				height: 3vh;
+			}
+			.prizesA {
+				width: auto;
+				align: left;
+				height: 3vh;
+			}*/
+			/*#prizes5A, #prizes5B, #prizes5C, #prizes10A, #prizes10B, #prizes10C, #prizes15A, #prizes15B, #prizes15C{
+				color: white;
+			}*/
+		</style>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="functions.js"></script>
+		<script>
+			/*function fixPrizeHighlight(){
+				for (i = 0; i < 15; i++) {
+					if ((String(i+1))=="5"||(String(i+1))=="10"||(String(i+1))=="15") {
+						document.getElementById("prizes"+String(i+1)+"A").style.color = "white";
+						document.getElementById("prizes"+String(i+1)+"B").style.color = "white";
+						document.getElementById("prizes"+String(i+1)+"C").style.color = "white";
+					} else {
+						document.getElementById("prizes"+String(i+1)+"A").style.color = "orange";
+						document.getElementById("prizes"+String(i+1)+"B").style.color = "orange";
+						document.getElementById("prizes"+String(i+1)+"C").style.color = "orange";
+					};
+					document.getElementById("prizes"+String(i+1)+"A").style.backgroundColor = "transparent";
+					document.getElementById("prizes"+String(i+1)+"B").style.backgroundColor = "transparent";
+					document.getElementById("prizes"+String(i+1)+"C").style.backgroundColor = "transparent";
+				};
+			};
+			
+			function highlightCurrentPrize(current){
+				fixPrizeHighlight();
+				document.getElementById("prizes"+String(current)+"A").style.color = "white";
+				document.getElementById("prizes"+String(current)+"B").style.color = "white";
+				document.getElementById("prizes"+String(current)+"C").style.color = "white";
+				document.getElementById("prizes"+String(current)+"A").parentElement.parentElement.style.backgroundColor = "orange";
+			};
+			
+			function fillPrizesTable(values) {
+				document.getElementById("prizes15A").innerHTML = "15";
+				document.getElementById("prizes15B").innerHTML = "~";
+				document.getElementById("prizes15C").innerHTML = values[14];
+				
+				for (i = 0; i < (values.length)-1; i++) {
+					var dataTable = document.getElementById("prizestable");
+					var dataRow = dataTable.insertRow(1);
+					var dataCell1 = dataRow.insertCell(0);
+					var dataCell2 = dataRow.insertCell(1);
+					var dataCell3 = dataRow.insertCell(2);
+					dataCell1.innerHTML = "<a class='prizesA' id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
+					dataCell2.innerHTML = "<a class='prizesB' id='prizes"+String(i+1)+"B'>~</a>";
+					dataCell3.innerHTML = "<a class='prizesC' id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
+				};
+				var table = document.getElementById("prizestable");
+				var row = table.insertRow(-1);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+			};*/
+			
+			var prizestableloaded = "false";
+			
+			function resetRepeatData() {
+				sessionStorage.setItem("done1", "[]");
+				sessionStorage.setItem("done2", "[]");
+				sessionStorage.setItem("done3", "[]");
+				sessionStorage.setItem("done4", "[]");
+			};
+			
+			function showWinnings(type) {
+				localStorage.setItem("status", "ended");
+				document.getElementById("revealanswerbutton").style.display = "none";
+				document.getElementById("phoneresults").style.display = "none";
+				document.getElementById("audienceresults").style.display = "none";
+				document.getElementById("newquestionbutton").style.display = "none";
+				document.getElementById("takemoneybutton").style.display = "none";
+				document.getElementById("resetbutton").style.display = "block";
+				document.getElementById("loadquestionbutton").style.display = "none";
+				music1.pause();
+				music2.pause();
+				music3.pause();
+				musicincorrect.pause();
+				musicfinal.pause();
+				musicend.play();
+				var prizes = JSON.parse(localStorage.getItem("prizes")).list;
+				var current = localStorage.getItem("current");
+				if (type=="win") {
+					document.getElementById("prizedetails").style.backgroundColor = "DarkOrange";
+					document.getElementById("prizedetails").innerHTML = "Congratulations! You have won:<br>"+prizes[14]+"!";
+					localStorage.setItem("prizesbasic", prizes[14]);
+					localStorage.setItem("prizesbasica", "14");
+				} else if (type=="lose") {
+					if (parseInt(current) < 6) {
+						document.getElementById("prizedetails").style.backgroundColor = "red";
+						document.getElementById("prizedetails").innerHTML = "Sorry! You haven't won a prize<br>";
+						localStorage.setItem("prizesbasic", " 0");
+						localStorage.setItem("prizesbasica", "0");
+					} else if (parseInt(current) < 11) {
+						document.getElementById("prizedetails").style.backgroundColor = "red";
+						document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[4]+"!";
+						localStorage.setItem("prizesbasic", prizes[4]);
+						localStorage.setItem("prizesbasica", "4");
+					} else if (parseInt(current) < 16) {
+						document.getElementById("prizedetails").style.backgroundColor = "red";
+						document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[9]+"!";
+						localStorage.setItem("prizesbasic", prizes[9]);
+						localStorage.setItem("prizesbasica", "9");
+					};
+				} else if (type=="leave") {
+					document.getElementById("prizedetails").style.backgroundColor = "DarkGreen";
+					document.getElementById("prizedetails").innerHTML = "You have won:<br>"+prizes[parseInt(current)-2]+"!";
+					localStorage.setItem("prizesbasic", prizes[parseInt(current)-2]);
+					localStorage.setItem("prizesbasica", String(parseInt(current)-2));
+				};
+				localStorage.setItem("prizetext", document.getElementById("prizedetails").innerHTML);
+				localStorage.setItem("prizecolour", document.getElementById("prizedetails").style.backgroundColor);
+				document.getElementById("prizedetails").style.display = "block";
+				var date = new Date();
+				var elapsed = String((date.getTime() - parseInt(sessionStorage.getItem("starttime")))/1000);
+				var validatecode = encrypt("Prize: "+String((localStorage.getItem("prizesbasic")).substring(1))+" Time: "+String(date.getTime()), "MillionaireWinCode");
+				var validatecode = {"n":sessionStorage.getItem("newgens"), "s":String(sessionStorage.getItem("starttime")), "e":date.getTime(), "t":elapsed,"p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform, "q":localStorage.getItem("topic")};
+				//var validatecode = {"e":date.getTime(), "p":String((localStorage.getItem("prizesbasic")).substring(1)), "l":localStorage.getItem("prizesbasica"), "v":String(localStorage.getItem("current")), "w":navigator.platform};
+				if ((window.outerWidth - window.innerWidth) > 50 || localStorage.getItem("cheat")=="y" || localStorage.getItem("cheat")!=localStorage.getItem("setting1")) {
+					sessionStorage.setItem("starttime", "WinCodeInvalid");
+					document.getElementById("footer").innerHTML = "Win validation code could not be generated. Error #DEV001 (developer console opened)"+"<br>"+sessionStorage.getItem("footertext");
+				} else {
+					document.getElementById("footer").innerHTML = "Your win validation code is: "+JSON.stringify(validatecode)+"<br>"+sessionStorage.getItem("footertext");
+				};
+			};
+			
+			function start(){
+				highlightCurrentPrize(1);
+				document.getElementById("music1").play();
+				document.getElementById("startbutton").style.display = "none";
+				document.getElementById("syncfailed").style.display = "none";
+				document.getElementById("loadquestionbutton").style.display = "block";
+				localStorage.setItem("status", "start");
+				document.getElementById("questiontext").innerHTML = "Who Wants to be a Millionaire?";
+				document.getElementById("answer1text").innerHTML = "???";
+				document.getElementById("answer2text").innerHTML = "???";
+				document.getElementById("answer3text").innerHTML = "???";
+				document.getElementById("answer4text").innerHTML = "???";
+			};
+			
+			function audienceShow() {
+				document.getElementById("audienceinput").style.display = "none";
+				var a = parseInt(document.getElementById("audienceinput1").value);
+				var b = parseInt(document.getElementById("audienceinput2").value);
+				var c = parseInt(document.getElementById("audienceinput3").value);
+				var d = parseInt(document.getElementById("audienceinput4").value);
+				var total = a+b+c+d;
+				var aa = String(Math.round((a/total)*100));
+				var ba = String(Math.round((b/total)*100));
+				var ca = String(Math.round((c/total)*100));
+				var da = String(Math.round((d/total)*100));
+				document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
+				localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
+				document.getElementById("audienceresults").style.display = "block";
+			};
+			
+			function lifeline(type){
+				if (localStorage.getItem("status")=="answer"){
+					if(type == "5050" && (localStorage.getItem("lifeline5050")=="ready")){
+						var numstemp = ["1", "2", "3", "4"];
+						var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
+						numstemp.splice(temp, 1);
+						var tempa = numstemp[Math.floor(Math.random() * 3)];
+						var temp = numstemp.indexOf(tempa);
+						numstemp.splice(temp, 1);
+						var tempb = numstemp[Math.floor(Math.random() * 2)];
+						var temp = numstemp.indexOf(tempb);
+						numstemp.splice(temp, 1);
+						document.getElementById("answer"+tempa+"text").innerHTML = "";
+						document.getElementById("answer"+tempb+"text").innerHTML = "";
+						localStorage.setItem("5050usednow", "true");
+						localStorage.setItem("answer"+tempa+"text", "");
+						localStorage.setItem("answer"+tempb+"text", "");
+						localStorage.setItem("50501", tempa);
+						localStorage.setItem("50502", tempb);
+						var tempc = localStorage.getItem("currentQuestion");
+						localStorage.setItem("currentQuestion", "");
+						localStorage.setItem("currentQuestion", tempc);
+						document.getElementById("lifeline5050").src = "images/millionaire 5050 used.png";
+						localStorage.setItem("lifeline5050", "used");
+					} else if(type == "phone" && (localStorage.getItem("lifelinephone")=="ready")){
+						document.getElementById("lifelinephone").src = "images/millionaire phone used.png";
+						localStorage.setItem("lifelinephone", "used");
+						if (localStorage.getItem("mode") == "quiz") {		
+							document.getElementById("countdown").style.display = "block";
+							localStorage.setItem("timeleft", "30");
+						} else {
+							var current = localStorage.getItem("current");
+							var letterstemp = ["A", "B", "C", "D"];
+							var correctLetter = letterstemp[parseInt(localStorage.getItem("correctAnswerNum"))-1];
+							var temp = Math.floor(Math.random() * 20);
+							var numstemp = ["1", "2", "3", "4"];
+							var tempnum = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
+							numstemp.splice(tempnum, 1);
+							while (1==1) {
+								var tempa = numstemp[Math.floor(Math.random() * 3)];
+								var incorrectLetter = letterstemp[tempa-1];
+								if (document.getElementById("answer"+String(tempa)+"text").innerHTML != "") {
+									break;
+								};
+							};
+							if (parseInt(current) < 6) {
+								if (temp < 1) {
+									localStorage.setItem("phonetext", "I honestly don't know the answer. Sorry.");
+								} else if (temp < 2) {
+									localStorage.setItem("phonetext", "This is embarrasing, but you've asked the wrong person!");
+								} else if (temp < 4 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "Well, it's definitely not "+incorrectLetter+". It might be "+correctLetter+".");
+								} else if (temp < 6 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I really don't know. I'd probably go for "+incorrectLetter+".");
+								} else if (temp < 8) {
+									localStorage.setItem("phonetext", "You've come to the right person! It's "+correctLetter+".");
+								} else if (temp < 10) {
+									localStorage.setItem("phonetext", "I'm 90% sure that it's answer "+correctLetter+".");
+								} else if (temp < 12) {
+									localStorage.setItem("phonetext", "My best guess would be "+correctLetter+".");
+								} else if (temp < 14) {
+									localStorage.setItem("phonetext", "How did you not know this? It's "+correctLetter+".");
+								} else if (temp < 16) {
+									localStorage.setItem("phonetext", "You called the right person! It's definitely "+correctLetter+".");
+								} else if (temp < 18 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I'm not sure. If I had to guess, I'd go for "+incorrectLetter+" or "+correctLetter+".");
+								} else if (temp < 20) {
+									localStorage.setItem("phonetext", "I know this for sure! It's "+correctLetter+".");
+								};
+							} else if (parseInt(current) < 11) {
+								if (temp < 2) {
+									localStorage.setItem("phonetext", "Wow! That's tricky. I don't know, sorry.");
+								} else if (temp < 4) {
+									localStorage.setItem("phonetext", "Did you honestly think that I'd know this?");
+								} else if (temp < 6 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I'd try "+letterstemp[Math.floor(Math.random() * 4)]+". It looks most likely to be right.");
+								} else if (temp < 8 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I'm really not sure. I'd go for "+letterstemp[Math.floor(Math.random() * 4)]+".");
+								} else if (temp < 10 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "It's either "+incorrectLetter+" or "+correctLetter+", but I'm not sure which.");
+								} else if (temp < 12) {
+									localStorage.setItem("phonetext", "I don't know. "+correctLetter+" just doesn't seem right to me.");
+								} else if (temp < 14) {
+									localStorage.setItem("phonetext", "I'm pretty sure that the answer is "+correctLetter+".");
+								} else if (temp < 16) {
+									localStorage.setItem("phonetext", "I think it's "+correctLetter+", but don't rely on that!");
+								} else if (temp < 18) {
+									localStorage.setItem("phonetext", "I'm 100% certain that it's "+correctLetter+".!");
+								} else if (temp < 20) {
+									localStorage.setItem("phonetext", "I read about this the other day! It's "+correctLetter+".");
+								};
+							} else if (parseInt(current) < 16) {
+								if (temp < 2) {
+									localStorage.setItem("phonetext", "That's so mean! I don't have a clue.");
+								} else if (temp < 4) {
+									localStorage.setItem("phonetext", "I'm afraid I can't help you with that.");
+								} else if (temp < 6 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "My best guess would be "+letterstemp[Math.floor(Math.random() * 4)]+".");
+								} else if (temp < 8 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I can't decide between "+incorrectLetter+" or "+correctLetter+". It's one of them.");
+								} else if (temp < 10 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I'm 70% sure that it isn't "+letterstemp[Math.floor(Math.random() * 4)]+".");
+								} else if (temp < 12 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I'm 100% certain that it's not "+incorrectLetter+".");
+								} else if (temp < 14) {
+									localStorage.setItem("phonetext", "I think it could be "+correctLetter+".");
+								} else if (temp < 16 && localStorage.getItem("5050usednow") != "true") {
+									localStorage.setItem("phonetext", "I doubt that the answer would be "+incorrectLetter+".");
+								} else if (temp < 18) {
+									localStorage.setItem("phonetext", "I studied this at school! The answer is "+correctLetter+".");
+								} else if (temp < 20) {
+									localStorage.setItem("phonetext", "Easy! It's "+correctLetter+".");
+								};
+							};
+							document.getElementById("phoneresults").innerHTML = localStorage.getItem("phonetext");
+							document.getElementById("phoneresults").style.display = "block";
+						};
+					} else if(type == "audience" && (localStorage.getItem("lifelineaudience")=="ready")){
+						if (localStorage.getItem("mode") == "quiz") {		
+							document.getElementById("audienceinput").style.display = "block";
+						} else {
+							var current = localStorage.getItem("current");
+							var numstemp = ["1", "2", "3", "4"];
+							var temp = numstemp.indexOf(localStorage.getItem("correctAnswerNum"));
+							numstemp.splice(temp, 1);
+							if (localStorage.getItem("5050usednow") != "true") {
+								var tempa = numstemp[Math.floor(Math.random() * 3)];
+								var temp = numstemp.indexOf(tempa);
+								numstemp.splice(temp, 1);
+								var tempb = numstemp[Math.floor(Math.random() * 2)];
+								var temp = numstemp.indexOf(tempb);
+								numstemp.splice(temp, 1);
+								var tempc = numstemp[0];
+							} else {
+								var temparray = [];
+								var temp = numstemp.indexOf(localStorage.getItem("50501"));
+								temparray.push(localStorage.getItem("50501"));
+								numstemp.splice(temp, 1);
+								var temp = numstemp.indexOf(localStorage.getItem("50502"));
+								temparray.push(localStorage.getItem("50502"));
+								numstemp.splice(temp, 1);
+								var tempe = numstemp[0];
+							};
+							if (localStorage.getItem("5050usednow") != "true") {
+								if (parseInt(current) < 6) {
+									var values = {"list":[{"Y":"89","N1":"1","N2":"4","N3":"6"},{"Y":"94","N1":"0","N2":"2","N3":"4"},{"Y":"95","N1":"2","N2":"2","N3":"1"},{"Y":"76","N1":"5","N2":"11","N3":"8"}]};
+								} else if (parseInt(current) < 11) {
+									var values = {"list":[{"Y":"64","N1":"61","N2":"21","N3":"9"},{"Y":"81","N1":"8","N2":"6","N3":"5"},{"Y":"93","N1":"1","N2":"6","N3":"0"},{"Y":"53","N1":"46","N2":"1","N3":"0"}]};
+								} else if (parseInt(current) < 16) {
+									var values = {"list":[{"Y":"26","N1":"25","N2":"26","N3":"23"},{"Y":"57","N1":"38","N2":"4","N3":"1"},{"Y":"52","N1":"42","N2":"2","N3":"4"},{"Y":"48","N1":"47","N2":"2","N3":"3"}]};
+								};
+								var valuesa = values.list[Math.floor(Math.random() * values.list.length)];
+								document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = parseInt(valuesa.Y);
+								document.getElementById("audienceinput"+tempa).value = parseInt(valuesa.N1);
+								document.getElementById("audienceinput"+tempb).value = parseInt(valuesa.N2);
+								document.getElementById("audienceinput"+tempc).value = parseInt(valuesa.N3);
+							} else {
+								if (parseInt(current) < 6) {
+									var values = {"list":[{"Y":"76","N":"24"},{"Y":"90","N":"10"},{"Y":"87","N":"13"},{"Y":"61","N":"39"}]};
+								} else if (parseInt(current) < 11) {
+									var values = {"list":[{"Y":"59","N":"41"},{"Y":"81","N":"19"},{"Y":"83","N":"17"},{"Y":"49","N":"51"}]};
+								} else if (parseInt(current) < 16) {
+									var values = {"list":[{"Y":"62","N":"38"},{"Y":"77","N":"23"},{"Y":"44","N":"56"},{"Y":"57","N":"43"}]};
+								};
+								var valuesa = values.list[Math.floor(Math.random() * values.list.length)];
+								document.getElementById("audienceinput"+localStorage.getItem("correctAnswerNum")).value = parseInt(valuesa.Y);
+								document.getElementById("audienceinput"+tempe).value = parseInt(valuesa.N);
+								document.getElementById("audienceinput"+temparray[0]).value = 0;
+								document.getElementById("audienceinput"+temparray[1]).value = 0;
+							};
+							audienceShow();
+						};
+						document.getElementById("lifelineaudience").src = "images/millionaire audience used.png";
+						localStorage.setItem("lifelineaudience", "used");
+					};
+				};
+			};
+			
+			function countdown() {
+				if (localStorage.getItem("timeleft") == "30") {
+					document.getElementById("countdown").style.color = "white";
+					console.log("starting timer");
+					localStorage.setItem("timeleft", "30");
+					var timeleft = 10;
+					var timerScript = setInterval(function(){
+						localStorage.setItem("timeleft", (parseInt(localStorage.getItem("timeleft")))-1);
+						document.getElementById("countdown").innerHTML = localStorage.getItem("timeleft");
+						if(parseInt(localStorage.getItem("timeleft")) <= 0) {
+							console.log("timer finished");
+							clearInterval(timerScript);
+							document.getElementById("countdown").style.display = "none";
+						};
+						},1000);
+				} else {
+					localStorage.setItem("timeleft", "0");
+					console.log("timer stopped");
+					clearInterval(timerScript);
+					document.getElementById("countdown").style.display = "none";
+				};
+			};
+			
+			function selectans(num) {
+				if (localStorage.getItem("status") == "answer") {
+					music1.pause();
+					music2.pause();
+					music3.pause();
+					musicfinal.currentTime = 0;
+					musicfinal.play();
+					document.getElementById("revealanswerbutton").style.display = "block";
+					document.getElementById("takemoneybutton").style.display = "none";
+					document.getElementById("newquestionbutton").style.display = "none";
+					if (localStorage.getItem("status")=="answer") {
+						localStorage.setItem("answer", String(num));
+						localStorage.setItem("status", "answered");
+						if (num == "1" || num == "3") {
+							document.getElementById("answer"+String(num)+"img").src = "images/millionaire small left orange.png";
+						} else {
+							document.getElementById("answer"+String(num)+"img").src = "images/millionaire small right orange.png";
+						};
+					};
+				};
+			};
+			
+			function leave() {
+				musiccorrect.play();
+				setTimeout(function(){ showWinnings("leave"); }, 10);
+			};
+			
+			function submitCode() {
+				if (document.getElementById("topicselect").value != "filler") {
+					document.getElementById("audienceresults").style.display = "none";
+					document.getElementById("modeselect").style.display = "none";
+					document.getElementById("topicselect").style.display = "none";
+					localStorage.setItem("topic", String(document.getElementById("topicselect").value));
+					addScript("questions/"+document.getElementById("topicselect").value+".js");
+					if (document.getElementById("codeinput").value == "") {
+						localStorage.setItem("verifycode", "Single screen mode");
+						document.getElementById("questiontext").innerHTML = "**Single player mode**<br>Ready to start...";
+						localStorage.setItem("verifycode", String(localStorage.getItem("verifycode"))+"A");
+						document.getElementById("startbutton").style.display = "block";
+					} else {
+						localStorage.setItem("verifycode", String(document.getElementById("codeinput").value));
+						sessionStorage.setItem("verifycodetemp", String(localStorage.getItem("verifycode")));
+					};
+					document.getElementById("codeinput").style.display = "none";
+					document.getElementById("entercodebutton").style.display = "none";
+				} else {
+					alert("Select a topic first");
+				};
+			};
+			
+			function revealAnswer() {
+				musicfinal.pause();
+				document.getElementById("phoneresults").style.display = "none";
+				document.getElementById("audienceresults").style.display = "none";
+				document.getElementById("countdown").style.display = "none";
+				localStorage.setItem("status", "revealed");
+				if (localStorage.getItem("correctAnswerNum") == "1" || localStorage.getItem("correctAnswerNum") == "3") {
+					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small left green.png";
+				} else {
+					document.getElementById("answer"+localStorage.getItem("correctAnswerNum")+"img").src = "images/millionaire small right green.png";
+				};
+				if (localStorage.getItem("answer")==localStorage.getItem("correctAnswerNum")) {
+					document.getElementById("loadquestionbutton").style.display = "block";
+					musiccorrect.currentTime = 0;
+					musiccorrect.play();
+					if (localStorage.getItem("current") == "15") {
+						showWinnings("win");
+						return(" ");
+					};
+				} else {
+					//document.getElementById("resetbutton").style.display = "block";
+					musicincorrect.currentTime = 0;
+					musicincorrect.play();
+					setTimeout(function(){ showWinnings("lose"); }, 2000);
+				};
+				document.getElementById("revealanswerbutton").style.display = "none";
+			};
+			
+			function playMusic() {
+				musiccorrect.pause();
+				musicincorrect.pause();
+				if (parseInt(localStorage.getItem("current")) < 6) {
+					music1.currentTime = 0;
+					music1.play();
+				} else if (parseInt(localStorage.getItem("current")) < 11) {
+					music2.currentTime = 0;
+					music2.play();
+				} else if (parseInt(localStorage.getItem("current")) < 16) {
+					music3.currentTime = 0;
+					music3.play();
+				};
+			};
+			
+			function loadQuestion(type) {				
+				if (localStorage.getItem("status") != "answer" || type == "new") {
+					localStorage.setItem("5050usednow", "false");
+					resetQuestion();
+					document.getElementById("loadquestionbutton").style.display = "none";
+					document.getElementById("newquestionbutton").style.display = "block";
+					localStorage.setItem("status", "answer");
+					if (type != "new") {
+						localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
+					} else {
+						var newgenstemp = parseInt(sessionStorage.getItem("newgens"))+1;
+						sessionStorage.setItem("newgens", String(newgenstemp));
+					};
+					if (parseInt(localStorage.getItem("current")) != "1") {
+						document.getElementById("takemoneybutton").style.display = "block";
+					};
+					playMusic();
+					if (parseInt(localStorage.getItem("current")) < 4) {
+						var done1a = JSON.parse(sessionStorage.getItem("done1"));
+						if (done1a.length == questionset.stage1.length) {
+							sessionStorage.setItem("done1", "[]");
+							done1a = JSON.parse(sessionStorage.getItem("done1"));
+						};
+						localStorage.setItem("currentStage", "1");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage1.length)));
+							if (done1a.includes("A"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								done1a.push("A"+localStorage.getItem("questionNum"));
+								sessionStorage.setItem("done1", JSON.stringify(done1a));
+								var set = questionset.stage1;
+								break;
+							};
+						};
+					} else if (parseInt(localStorage.getItem("current")) < 8) {
+						var done2a = JSON.parse(sessionStorage.getItem("done2"));
+						if (done2a.length == questionset.stage2.length) {
+							sessionStorage.setItem("done2", "[]");
+							done2a = JSON.parse(sessionStorage.getItem("done2"));
+						};
+						localStorage.setItem("currentStage", "2");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage2.length)));
+							if (done2a.includes("B"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								done2a.push("B"+localStorage.getItem("questionNum"));
+								var set = questionset.stage2;
+								sessionStorage.setItem("done2", JSON.stringify(done2a));
+								break;
+							};
+						};
+					} else if (parseInt(localStorage.getItem("current")) < 13) {
+						var done3a = JSON.parse(sessionStorage.getItem("done3"));
+						if (done3a.length == questionset.stage3.length) {
+							sessionStorage.setItem("done3", "[]");
+							done3a = JSON.parse(sessionStorage.getItem("done3"));
+						};
+						localStorage.setItem("currentStage", "3");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage3.length)));
+							if (done3a.includes("C"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								var set = questionset.stage3;
+								done3a.push("C"+localStorage.getItem("questionNum"));
+								sessionStorage.setItem("done3", JSON.stringify(done3a));
+								break;
+							};
+						};
+					} else if (parseInt(localStorage.getItem("current")) > 12) {
+						var done4a = JSON.parse(sessionStorage.getItem("done4"));
+						if (done4a.length == questionset.stage4.length) {
+							sessionStorage.setItem("done4", "[]");
+							done4a = JSON.parse(sessionStorage.getItem("done4"));
+						};
+						localStorage.setItem("currentStage", "4");
+						while (1==1) {
+							localStorage.setItem("questionNum", (Math.floor(Math.random() * questionset.stage4.length)));
+							if (done4a.includes("D"+localStorage.getItem("questionNum"))) {
+								localStorage.setItem("questionNum", "");
+							} else {
+								var set = questionset.stage4;
+								done4a.push("D"+localStorage.getItem("questionNum"));
+								sessionStorage.setItem("done4", JSON.stringify(done4a));
+								break;
+							};
+						};
+					};
+					var filled = [];
+					var questionLetters = ["A", "B", "C", "D"];
+					for (i = 0; i < 4; i++) {
+						while (1==1) {
+							var num = (Math.floor(Math.random() * 4))+1;
+							if (filled.includes(num)) {
+								num = 0;
+							} else {
+								filled.push(num);
+								var questionId = questionLetters[num-1];
+								if (i===0) {
+									localStorage.setItem("correctAnswerText", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y);
+									localStorage.setItem("correctAnswerNum", num);
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].Y;
+								} else if (i==1) {
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N1);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N1;
+								} else if (i==2) {
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N2);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N2;
+								} else if (i==3) {
+									localStorage.setItem("answer"+num+"text", "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N3);
+									document.getElementById("answer"+num+"text").innerHTML =  "<span style='color:orange;'>"+questionId+":</span> "+set[localStorage.getItem("questionNum")].N3;
+								};
+								break;
+							};
+						};
+					};
+					localStorage.setItem("currentQuestion", set[localStorage.getItem("questionNum")].Q);
+					document.getElementById("questiontext").innerHTML = localStorage.getItem("currentQuestion");
+					highlightCurrentPrize(localStorage.getItem("current"));
+				};
+			};
+			
+			function modeChange() {
+				if (localStorage.getItem("mode") == "quiz") {
+					document.getElementById("modeselect").innerHTML = "Practice mode - single player (click to change)";
+					document.getElementById("modeselect").style.backgroundColor = "red";
+					localStorage.setItem("mode", "revision");
+				} else {
+					document.getElementById("modeselect").style.backgroundColor = "green";
+					document.getElementById("modeselect").innerHTML = "Quiz mode - multi-player (click to change)";
+					localStorage.setItem("mode", "quiz");
+				};
+			};
+			
+			function onload() {
+				console.clear();
+				console.log("Hi there!\nYou've found the developer console which probably means that you're trying to find some shortcuts to the top prize.");
+				console.log("This is commonly known as cheating, and as such, your win code has been invalidated.");
+				console.log("This means that at the end of the game, no win code will be shown. If you want to re-enable this feature, just close the developer tools and reload the tab - and don't open the console!");
+				console.log("- Game developers");
+				localStorage.setItem("cheat", "n");
+				localStorage.setItem("setting1", "n");
+				sessionStorage.setItem("newgens", "0");
+				var date = new Date();
+				sessionStorage.setItem("starttime", String(date.getTime()));
+				sessionStorage.setItem("footertext", "Coding and graphics by Samuel Kitson - Music from the TV show - Questions from various sources - Last modified on "+String(document.lastModified)+" - 949 lines of code");
+				addScript("https://cdn.rawgit.com/penguin-k/encrypt/eceaf8409ce67d1d8a05cfdfaafa0e6f43b4e73f/encrypt.js");
+				if (checkMobile() == "true" && sessionStorage.getItem("mobilewarning") != "true") {
+					alert("Hey, nice "+navigator.platform+"!\nSadly though, this site isn't designed for your device so you may experience a few issues when using it. If problems persist, we recommend you switch to using Google Chrome on a PC instead.");
+					sessionStorage.setItem("mobilewarning", "true");
+				};
+				document.getElementById("footer").innerHTML = sessionStorage.getItem("footertext");
+				//Show/hide elements
+				document.getElementById("prizedetails").style.display = "none";
+				document.getElementById("audienceresults").style.display = "none";
+				document.getElementById("phoneresults").style.display = "none";
+				document.getElementById("audienceinput").style.display = "none";
+				document.getElementById("countdown").style.display = "none";
+				document.getElementById("takemoneybutton").style.display = "none";
+				document.getElementById("prizedetails").style.display = "none";
+				document.getElementById("newquestionbutton").style.display = "none";
+				document.getElementById("loadquestionbutton").style.display = "none";
+				document.getElementById("resetbutton").style.display = "none";
+				document.getElementById("revealanswerbutton").style.display = "none";
+				document.getElementById("syncfailed").style.display = "block";
+				document.getElementById("topicselect").style.display = "block";
+				document.getElementById("modeselect").style.display = "block";
+				document.getElementById("codeinput").style.display = "block";
+				document.getElementById("entercodebutton").style.display = "block";
+				document.getElementById("startbutton").style.display = "none";
+				if (localStorage.getItem("topic") === null) {
+					document.getElementById("topicselect").value = "filler";
+				} else {
+					document.getElementById("topicselect").value = localStorage.getItem("topic");
+				};
+				if (localStorage.getItem("mode") === null || localStorage.getItem("mode") == "quiz") {
+					document.getElementById("modeselect").style.backgroundColor = "green";
+					document.getElementById("modeselect").innerHTML = "Quiz mode - multi-player (click to change)";
+					localStorage.setItem("mode", "quiz");
+				} else {
+					document.getElementById("modeselect").style.backgroundColor = "red";
+					document.getElementById("modeselect").innerHTML = "Revision mode - single player (click to change)";
+				};
+				if (sessionStorage.getItem("done1") === null) {
+					sessionStorage.setItem("done1", "[]");
+					sessionStorage.setItem("done2", "[]");
+					sessionStorage.setItem("done3", "[]");
+					sessionStorage.setItem("done4", "[]");
+				};
+				localStorage.setItem("5050usednow", "false");
+				document.getElementById("countdown").color = "orange";
+				document.getElementById("audienceinput1").value = "";
+				document.getElementById("audienceinput2").value = "";
+				document.getElementById("audienceinput3").value = "";
+				document.getElementById("audienceinput4").value = "";
+				document.getElementById("countdown").innerHTML = "30";
+				document.getElementById("lifeline5050").src = "images/millionaire 5050.png";
+				document.getElementById("lifelinephone").src = "images/millionaire phone.png";
+				document.getElementById("lifelineaudience").src = "images/millionaire audience.png";
+				localStorage.setItem("prizetext", "");
+				localStorage.setItem("current", "0");
+				localStorage.setItem("currentStage", "1");
+				localStorage.setItem("lifeline5050", "ready");
+				localStorage.setItem("lifelinephone", "ready");
+				localStorage.setItem("lifelineaudience", "ready");
+				localStorage.setItem("status", "idle");
+				if (window.innerWidth > window.innerHeight*(3/2)) {
+					document.getElementById("prizestable").style.fontSize = String(window.innerHeight/25);
+				} else {
+					document.getElementById("prizestable").style.fontSize = "3.5vw";
+				};
+				//TEMP
+				localStorage.setItem('prizes', '{"list": ["£100","£200","£300","£500","£1,000","£2,000","£4,000","£8,000","£16,000","£32,000","£64,000","£125,000","£250,000","£500,000","£1,000,000"]}');
+				//END TEMP
+				if (prizestableloaded == "false") {
+					prizestableloaded = "true";
+					fillPrizesTable((JSON.parse(localStorage.getItem("prizes"))).list);
+				};
+				//ALERT - COMMENT OUT TO DISABLE
+				//document.getElementById("audienceresults").innerHTML = "**NOTICE**<br>The sound files for the game aren't working at the moment.<br>Sorry :(";
+				//document.getElementById("audienceresults").style.display = "block";
+				//END ALERT
+				fixPrizeHighlight();
+				window.addEventListener("storage", storage_handler, false);
+				function storage_handler(evt){
+					//Check code receiveed from other window
+					if ((evt.key == "verifycode")&&(evt.newValue == (sessionStorage.getItem("verifycodetemp"))+"A")) {
+						document.getElementById("questiontext").innerHTML = "Screens synced<br>Ready to start...";
+						localStorage.setItem("verifycode", localStorage.getItem("verifycode")+"A");
+						document.getElementById("startbutton").style.display = "block";
+					};
+					if (localStorage.getItem("status")!="idle") {
+						//Other functions on storage change event
+					};
+				};
+			};
+			
+			function resetGame() {
+				localStorage.setItem("currentQuestion", "CONTROLLER SCREEN");
+				resetQuestion();
+				musicend.pause();
+				musicend.currentTime = 0;
+				onload();
+				/*if (document.getElementById("codeinput").value == "*") {
+					submitCode();
+				};*/
+				submitCode();
+				setTimeout(function(){ start(); }, 50);
+			};
+			
+			function cheatDetected() {
+				if ((window.outerWidth - window.innerWidth) > 50) {
+					sessionStorage.setItem("starttime", "WinCodeInvalid");
+					console.warn("Developer console opened: your win code has been invalidated");
+					localStorage.setItem("cheat", "y");
+					localStorage.setItem("setting1", "y");
+				};
+			};
+			
+			function online() {
+				document.getElementById("nosignal").style.display = "none";
+			};
+			
+			function offline() {
+				document.getElementById("nosignal").style.display = "block";
+			};
+		</script>
+	</head>
+	<body ononline="online()" onoffline="offline()" onload="onload()" onresize="cheatDetected()" id="body">
+		<div id="prizedetails"></div>
+		<div id="audienceresults"></div>
+		<div id="phoneresults"></div>
+		<div id="audienceinput">
+			<input type="text" id="audienceinput1" class="audienceinputboxes" placeholder="Votes for option A">
+			<input type="text" id="audienceinput2" class="audienceinputboxes" placeholder="Votes for option B">
+			<input type="text" id="audienceinput3" class="audienceinputboxes" placeholder="Votes for option C">
+			<input type="text" id="audienceinput4" class="audienceinputboxes" placeholder="Votes for option D">
+			<br>
+			<button id="audienceinputbutton" onclick="audienceShow()">Show results</button>
+		</div>
+		<div id="countdown" onclick="countdown()">30</div>
+		<button id="takemoneybutton" class="button" onclick="leave()">Leave with the money</button>
+		<button id="newquestionbutton" class="button" onclick="loadQuestion('new')">Generate new question</button>
+		<button id="loadquestionbutton" class="button" onclick="loadQuestion()">Load next question</button>
+		<button id="resetbutton" class="button" onclick="resetGame()">Replay</button>
+		<button id="revealanswerbutton" class="button" onclick="revealAnswer()">Reveal answer</button>
+		<div id="syncfailed"><br>The pages failed to sync.<br>Please reload both and try again.</div>
+		<select id="topicselect" onchange="resetRepeatData()">
+			<option value="filler" disabled>Select a topic (175 questions in total)</option>
+			<option value="records">World Records (NEW! - 65 questions)</option>
+			<option value="general">General Knowledge (23 questions)</option>
+			<option value="productdesign">Product Design GCSE - AQA (87 questions)</option>
+		</select>
+		<button id="modeselect" onclick="modeChange()"></button>
+		<input type="text" id="codeinput" placeholder="Enter code from contestant page">
+		<button id="entercodebutton" class="button" onclick="submitCode()">Sync pages<br><span style="font-size:0.9vw;">Leave the input box blank for single screen mode</span></button>
+		<button id="startbutton" class="button" onclick="start()">Start game</button>
+		<div id="nosignal">
+			<img id="nosignalimg" src="images/millionaire no signal.png">
+			<p id="nosignaltext">No signal<br>Reconnect to continue</p>
+		</div>
+		<table id="lifelinestable">
+			<tr>
+				<td><img id="lifeline5050" class="lifelineimg" src="images/millionaire 5050.png" onclick="lifeline('5050')"></td>
+				<td><img id="lifelinephone" class="lifelineimg" src="images/millionaire phone.png" onclick="lifeline('phone')"></td>
+				<td><img id="lifelineaudience" class="lifelineimg" src="images/millionaire audience.png" onclick="lifeline('audience')"></td>
+			</tr>
+		</table>
+		<table id="questiontable">
+			<tr>
+				<td colspan="2" id="questioncell">
+					<div class="imgcontainer">
+						<img src="images/millionaire large.png" class="tableimg">
+						<div id="questiontext">CONTROLLER SCREEN</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="answer1cell">
+					<div class="imgcontainer">
+						<img onclick="selectans(1)" id="answer1img" src="images/millionaire small left.png" class="tableimg">
+						<div onclick="selectans(1)" class="answertext answertextleft" id="answer1text"></div>
+					</div>
+				</td>
+				<td id="answer2cell">
+					<div class="imgcontainer">
+						<img onclick="selectans(2)" id="answer2img" src="images/millionaire small right.png" class="tableimg">
+						<div onclick="selectans(2)" class="answertext answertextright" id="answer2text"></div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td id="answer3cell">
+					<div class="imgcontainer">
+						<img onclick="selectans(3)" id="answer3img" src="images/millionaire small left.png" class="tableimg">
+						<div onclick="selectans(3)" class="answertext answertextleft" id="answer3text"></div>
+					</div>
+				</td>
+				<td id="answer4cell">
+					<div class="imgcontainer">
+						<img onclick="selectans(4)" id="answer4img" src="images/millionaire small right.png" class="tableimg">
+						<div onclick="selectans(4)" class="answertext answertextright" id="answer4text"></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table id="prizestable">
+			<tr>
+				<td><a id="prizes15A" class="prizesA"></a></td>
+				<td><a id="prizes15B" class="prizesB"></a></td>
+				<td><a id="prizes15C" class="prizesC"></a></td>
+			</tr>
+		</table>
+		<p id="footer">Coding and graphics by Samuel Kitson - Music from the TV show - Questions from various sources</p>
+	</body>
+</html>
