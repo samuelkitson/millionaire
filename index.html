@@ -4,180 +4,9 @@
 		<meta title="Who Wants to be a Millionaire? - Controller">
 		<title>(Beta) Who Wants to be a Millionaire? - Controller</title>
 		<meta name="description" content="Who Wants to be a Millionaire? Quiz Edition for Desktop. This is the setup screen.">
-		<style>
-			/*#startbutton{
-				width: 31vw;
-				height: 15vh;
-				position: absolute;
-				top: 15vh;
-				left: 15.75vw;
-				display: none;
-				cursor: pointer;
-			}
-			.button{
-				background-color: orange;
-				border: none;
-				color: white;
-				padding: 15px 32px;
-				text-align: center;
-				text-decoration: none;
-				font-size: 2vw;
-			}
-			#body{
-				background-color: MidnightBlue;
-			}
-			#lifelinestable{
-				border: none;
-				table-layout: fixed;
-				width: 70vw;
-				height: 6vw;
-				position: absolute;
-				left: 2vw;
-				bottom: 30vw
-			}
-			.lifelineimg{
-				width: 60%;
-				height: auto;
-				position: relative;
-				left: 20%;
-				display: block;
-				text-align: center;
-			}
-			#questiontable{
-				border: none;
-				table-layout: fixed;
-				width: 70vw;
-				position: absolute;
-				left: 2vw;
-				bottom: 2vw
-			}
-			#questiontable td {
-				width: 35vw;
-			}
-			.imgcontainer {
-				position: relative;
-				color: white;
-				font-family: arial;
-			}
-			.tableimg {
-				height: auto;
-				width: 100%;
-			}
-			#questiontext {
-				font-size: 2.2vw;
-				display: table-cell; 
-				text-align: center;
-				vertical-align: middle; 
-				position: absolute;
-				top: 10%;
-				left: 10%;
-				width: 80%;
-				height: 80%;
-			}
-			.answertext {
-				font-size: 2vw;
-				display: table-cell; 
-				text-align: left;
-				vertical-align: middle; 
-				position: absolute;
-				top: 27%;
-				width: 80%;
-				height: 80%;
-			}
-			.answertextleft {
-				left: 12%;
-			}
-			.answertextright {
-				left: 4%;
-			}
-			#prizestable{
-				border: 1px solid white;
-				font-family: arial;
-				color: orange;
-				width: 25vw;
-				position: absolute;
-				bottom: 1vw;
-				right: 1vw;
-			}
-			#prizestable td {
-				height: 5.5vh;
-			}
-			.prizesA {
-				width: auto;
-				align: right;
-				height: 3vh;
-			}
-			.prizesB {
-				width: auto;
-				align: centre;
-				height: 3vh;
-			}
-			.prizesA {
-				width: auto;
-				align: left;
-				height: 3vh;
-			}*/
-			/*#prizes5A, #prizes5B, #prizes5C, #prizes10A, #prizes10B, #prizes10C, #prizes15A, #prizes15B, #prizes15C{
-				color: white;
-			}*/
-		</style>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="functions.js"></script>
 		<script>
-			/*function fixPrizeHighlight(){
-				for (i = 0; i < 15; i++) {
-					if ((String(i+1))=="5"||(String(i+1))=="10"||(String(i+1))=="15") {
-						document.getElementById("prizes"+String(i+1)+"A").style.color = "white";
-						document.getElementById("prizes"+String(i+1)+"B").style.color = "white";
-						document.getElementById("prizes"+String(i+1)+"C").style.color = "white";
-					} else {
-						document.getElementById("prizes"+String(i+1)+"A").style.color = "orange";
-						document.getElementById("prizes"+String(i+1)+"B").style.color = "orange";
-						document.getElementById("prizes"+String(i+1)+"C").style.color = "orange";
-					};
-					document.getElementById("prizes"+String(i+1)+"A").style.backgroundColor = "transparent";
-					document.getElementById("prizes"+String(i+1)+"B").style.backgroundColor = "transparent";
-					document.getElementById("prizes"+String(i+1)+"C").style.backgroundColor = "transparent";
-				};
-			};
-			
-			function highlightCurrentPrize(current){
-				fixPrizeHighlight();
-				document.getElementById("prizes"+String(current)+"A").style.color = "white";
-				document.getElementById("prizes"+String(current)+"B").style.color = "white";
-				document.getElementById("prizes"+String(current)+"C").style.color = "white";
-				document.getElementById("prizes"+String(current)+"A").parentElement.parentElement.style.backgroundColor = "orange";
-			};
-			
-			function fillPrizesTable(values) {
-				document.getElementById("prizes15A").innerHTML = "15";
-				document.getElementById("prizes15B").innerHTML = "~";
-				document.getElementById("prizes15C").innerHTML = values[14];
-				
-				for (i = 0; i < (values.length)-1; i++) {
-					var dataTable = document.getElementById("prizestable");
-					var dataRow = dataTable.insertRow(1);
-					var dataCell1 = dataRow.insertCell(0);
-					var dataCell2 = dataRow.insertCell(1);
-					var dataCell3 = dataRow.insertCell(2);
-					dataCell1.innerHTML = "<a class='prizesA' id='prizes"+String(i+1)+"A'>"+String(i+1)+"</a>";
-					dataCell2.innerHTML = "<a class='prizesB' id='prizes"+String(i+1)+"B'>~</a>";
-					dataCell3.innerHTML = "<a class='prizesC' id='prizes"+String(i+1)+"C'>"+values[i]+"</a>";
-				};
-				var table = document.getElementById("prizestable");
-				var row = table.insertRow(-1);
-				var cell1 = row.insertCell(0);
-				var cell2 = row.insertCell(1);
-			};*/
-			
-			var prizestableloaded = "false";
-			
-			function resetRepeatData() {
-				sessionStorage.setItem("done1", "[]");
-				sessionStorage.setItem("done2", "[]");
-				sessionStorage.setItem("done3", "[]");
-				sessionStorage.setItem("done4", "[]");
-			};
 			
 			function showWinnings(type) {
 				localStorage.setItem("status", "ended");
@@ -252,22 +81,6 @@
 				document.getElementById("answer2text").innerHTML = "???";
 				document.getElementById("answer3text").innerHTML = "???";
 				document.getElementById("answer4text").innerHTML = "???";
-			};
-			
-			function audienceShow() {
-				document.getElementById("audienceinput").style.display = "none";
-				var a = parseInt(document.getElementById("audienceinput1").value);
-				var b = parseInt(document.getElementById("audienceinput2").value);
-				var c = parseInt(document.getElementById("audienceinput3").value);
-				var d = parseInt(document.getElementById("audienceinput4").value);
-				var total = a+b+c+d;
-				var aa = String(Math.round((a/total)*100));
-				var ba = String(Math.round((b/total)*100));
-				var ca = String(Math.round((c/total)*100));
-				var da = String(Math.round((d/total)*100));
-				document.getElementById("audienceresults").innerHTML = "<strong>Ask the audience results:</strong><br>A: "+aa+"%<br>B: "+ba+"%<br>C: "+ca+"%<br>D: "+da+"%";
-				localStorage.setItem("audienceresults", document.getElementById("audienceresults").innerHTML);
-				document.getElementById("audienceresults").style.display = "block";
 			};
 			
 			function lifeline(type){
@@ -868,13 +681,13 @@
 			<img id="nosignalimg" src="images/millionaire no signal.png">
 			<p id="nosignaltext">No signal<br>Reconnect to continue</p>
 		</div>
-		<table id="lifelinestable">
+		<!--<table id="lifelinestable">
 			<tr>
 				<td><img id="lifeline5050" class="lifelineimg" src="images/millionaire 5050.png" onclick="lifeline('5050')"></td>
 				<td><img id="lifelinephone" class="lifelineimg" src="images/millionaire phone.png" onclick="lifeline('phone')"></td>
 				<td><img id="lifelineaudience" class="lifelineimg" src="images/millionaire audience.png" onclick="lifeline('audience')"></td>
 			</tr>
-		</table>
+		</table>-->
 		<table id="questiontable">
 			<tr>
 				<td colspan="2" id="questioncell">
