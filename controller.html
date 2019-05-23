@@ -593,7 +593,9 @@
 					localStorage.setItem("5050usednow", "false");
 					resetQuestion();
 					document.getElementById("loadquestionbutton").style.display = "none";
-					document.getElementById("newquestionbutton").style.display = "block";
+					if (localStorage.getItem("mode") == "quiz") {
+						document.getElementById("newquestionbutton").style.display = "block";
+					}
 					localStorage.setItem("status", "answer");
 					if (type != "new") {
 						localStorage.setItem("current", parseInt(localStorage.getItem("current"))+1);
